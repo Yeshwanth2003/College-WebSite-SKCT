@@ -1,0 +1,56 @@
+.isl-wrapper {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.isl-contents {
+  width: 98%;
+  height: max-content;
+}
+.isl-headingDiv {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.isl-heading {
+  color: orange;
+  font-family: sans-serif;
+  white-space: normal;
+}
+.isl-body {
+  width: 100%;
+  display: flex;
+
+  align-items: center;
+  margin: 20px 0;
+}
+.isl-table {
+  width: 98%;
+  height: max-content;
+  background-color: aliceblue;
+  font-family: sans-serif;
+  text-align: center;
+}
+.isl-thead {
+  height: 40px;
+  background-color: rgb(126, 126, 234);
+  font-weight: bolder;
+}
+.isl-td {
+  padding: 0 20px;
+}
+.islCard-td {
+  padding: 10px 20px;
+  background-color: white;
+}
+@media (max-device-width: 1100px), (width<1100px) {
+  .isl-body {
+    overflow-x: scroll;
+  }
+  .isl-body::-webkit-scrollbar {
+    display: none;
+  }
+}

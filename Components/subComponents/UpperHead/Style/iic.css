@@ -1,0 +1,100 @@
+.iic-wrapper {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+.iic-contents {
+  width: 97%;
+  height: max-content;
+}
+.iic-headingDiv {
+  min-height: 60px;
+  max-height: max-content;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(136, 135, 135);
+}
+.iic-body {
+  width: 100%;
+  height: max-content;
+  margin: 20px 0;
+}
+.iic-heading {
+  color: orange;
+  white-space: normal;
+}
+.iic-body-heading {
+  margin: 20px 0;
+  color: royalblue;
+}
+.iic-about-p {
+  text-align: justify;
+}
+.iic-people-div table {
+  width: 98%;
+  height: max-content;
+  vertical-align: middle;
+  text-align: center;
+  white-space: nowrap;
+}
+.iic-people-div td,
+.iic-people-div th {
+  border: 1px solid gray;
+  padding: 15px 10px;
+}
+.iicCalCard-wrapper {
+  height: fit-content;
+  width: 98%;
+  /* background-color: darkorange; */
+}
+.iicCalCard-linkWrapper {
+  text-decoration: none;
+  color: black;
+  font-size: 1em;
+  font-family: sans-serif;
+}
+.iicCalCard-body {
+  /* background-color: fuchsia;  */
+  display: flex;
+  min-height: 65px;
+  max-height: max-content;
+}
+.iicCalCard-body:hover {
+  background-color: aliceblue;
+}
+.iicCalCard-iconDiv {
+  width: 70px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calanderCard-nameDiv {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.iicCard2-a{
+     text-decoration: none;
+     color: black;
+}
+.iicCard2-a:hover{
+     color: orange;
+}
+.iicCard-li{
+     margin: 10px 10px;
+}
+@media (max-device-width: 1100px), (width<1100px) {
+  .iic-people-div {
+    overflow-x: scroll;
+  }
+  .iic-people-div::-webkit-scrollbar {
+    display: none;
+  }
+  .iic-contents{
+     width: 93%;
+  }
+}

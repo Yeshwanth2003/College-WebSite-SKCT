@@ -1,79 +1,84 @@
-.IQAC-main{
-    width: 100%;
-   height: max-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: cadetblue; */
+.IQAC-main {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: cadetblue; */
 }
-.iqac-container{
-    width: 98%;
-    height: max-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.iqac-container {
+  width: 98%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.IQAC-img{
-    vertical-align: middle;
-    width: 90%;
-}
-
-.IQAC-Home{
-    background-color: #f44336;
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-    margin: 30px 0px 0px;
-    padding: 12px 20px;
-    outline: none;
-    border: none;
+.IQAC-img {
+  vertical-align: middle;
+  width: 90%;
 }
 
-.IQAC-h3{
-    color: #ffa500;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 35px;
-    text-align: center;
-    margin: 20px 0;
+.IQAC-Home {
+  background-color: #f44336;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  margin: 30px 0px 0px;
+  padding: 12px 20px;
+  outline: none;
+  border: none;
+}
+
+.IQAC-h3 {
+  color: #ffa500;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  text-align: center;
+  margin: 20px 0;
 }
 /* @media for button  POTTUKO*/
 
-.IQAC-about{
- /* background-color: magenta; */
- width: 100%;
-padding: 20px 10px;
- height: max-content;
- display: flex;
- justify-content: center;
- align-items: center;
- flex-wrap: wrap;
+.IQAC-about {
+  /* background-color: magenta; */
+  width: 100%;
+  padding: 20px 10px;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.IQAC-button{
-    background-color: #3f51b5;
-    color: #ffffff;
-    font-size: 18px;
-    font-family: sans-serif;
-    margin: 5px 1px 0px;
-    padding: 13px 16px;
-    
+.IQAC-button {
+  background-color: #3f51b5;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: sans-serif;
+  margin: 5px 1px 0px;
+  padding: 13px 16px;
 }
 
-.IQAC-details{
-    /* background-color: coral; */
-    width: 99%;
-    text-align: justify;
-    margin: 0px 0px 10px 10px;
+.IQAC-details {
+  /* background-color: coral; */
+  width: 99%;
+  text-align: justify;
+  margin: 0px 0px 10px 10px;
 }
 
-.IQAC-content{
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #333333;
-    margin: 20px 5px;
-    text-align: justify;
+.IQAC-content {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333333;
+  margin: 20px 5px;
+  text-align: justify;
 }
 
-.IQAC-Home:hover{background-color: rgb(203, 196, 196);color: #000000;}
+.IQAC-Home:hover {
+  background-color: rgb(203, 196, 196);
+  color: #000000;
+}
 
-.IQAC-button:hover{background-color: rgb(193, 186, 186);color: #000000;}
+.IQAC-button:hover {
+  background-color: rgb(193, 186, 186);
+  color: #000000;
+}

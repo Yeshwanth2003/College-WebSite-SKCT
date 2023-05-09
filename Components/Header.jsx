@@ -61,7 +61,7 @@ function LaptopHeader() {
                 <div className="laptopHeader-upperLink-contentDiv">
                   <h5>
                     <a
-                      href="/"
+                      href="/iic"
                       className="laptopHeader-addLink"
                       style={{ color: "gold" }}
                     >
@@ -87,7 +87,7 @@ function LaptopHeader() {
               <li className="laptopHeader-upperLink-li">
                 <div className="laptopHeader-upperLink-contentDiv">
                   <h5>
-                    <a href="/" className="laptopHeader-addLink">
+                    <a href="/nisp" className="laptopHeader-addLink">
                       NISP
                     </a>
                   </h5>
@@ -360,7 +360,7 @@ function LaptopHeader() {
                         <li className="laptopHeader-dropDown-li">NSS/YRC</li>
                       </a>
                       <a
-                        href="/"
+                        href="/social"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
@@ -456,7 +456,7 @@ function LaptopHeader() {
                         </li>
                       </a>
                       <a
-                        href="/"
+                        href="/iic"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
@@ -491,7 +491,7 @@ function LaptopHeader() {
                   <div className="laptopHeader-dropDownDiv IC-dropDown-Lap">
                     <ul className="laptopHeader-dropDown-ul">
                       <a
-                        href="/"
+                        href="/mous"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
@@ -505,7 +505,7 @@ function LaptopHeader() {
                         <li className="laptopHeader-dropDown-li">COE</li>
                       </a>
                       <a
-                        href="/"
+                        href="/industry_supported_lab"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
@@ -668,7 +668,7 @@ export function MobileNav() {
                   </div>
                   <div className="mobile-nav-link-content">
                     <div className="mobile-nav-linkDiv">
-                      <a className="mobile-nav-link" href="/">
+                      <a className="mobile-nav-link" href="/nisp">
                         NISP
                       </a>
                     </div>
@@ -1307,7 +1307,7 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <a className="mobile-nav-link" href="/">
+                            <a className="mobile-nav-link" href="/iic">
                               IIC
                             </a>
                           </div>
@@ -1360,7 +1360,7 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <a className="mobile-nav-link" href="/">
+                            <a className="mobile-nav-link" href="/mous">
                               MoUS
                             </a>
                           </div>
@@ -1388,7 +1388,7 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <a className="mobile-nav-link" href="/">
+                            <a className="mobile-nav-link" href="/industry_supported_lab">
                               Industry Supported Lab
                             </a>
                           </div>

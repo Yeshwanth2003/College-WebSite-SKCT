@@ -1,0 +1,173 @@
+.nisp-wrapper{
+     width: 100%;
+     height: max-content;
+     display: flex;
+     font-family: sans-serif;
+     transition: 0.2s;
+}
+.nisp-header-wrapper{
+     width: 250px;
+     height: 88vh;
+     overflow-y: scroll;
+}
+.nisp-header-headingDiv{
+     width: 100%;
+     min-height: 70px;
+     max-height: max-content;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-bottom: 1px solid rgb(143, 141, 141);
+}
+.nisp-navli-p{
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: start;
+     align-items: center;
+     cursor: pointer;
+}
+.nisp-header-h2{
+     color: orange;
+     font-family: sans-serif;
+     white-space: normal;
+}
+.nisp-header-body{
+     width: 100%;
+     height: max-content;
+}
+.nisp-navUl{
+     width: 100%;
+     height: max-content;
+     display: flex;
+     gap: 10px;
+     flex-direction: column;
+}
+.nisp-navli{
+     list-style: none;
+     display: flex;
+     height: 50px;
+     width: 100%;
+     transition: 0.15s;
+}
+.nisp-navli:hover{
+     border-left: 3px solid royalblue;
+     border-right: 3px solid royalblue;
+     background-color: rgb(220, 214, 214);
+}
+.nisp-navli-logo{
+     width: 20%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.nisp-navli-logo svg{
+     fill: royalblue;
+}
+.nisp-navli-text{
+     width: 80%;
+     height: 100%;
+     display: flex;
+     justify-content:start;
+     align-items: center;
+     padding: 0 10px;
+}
+.nisp-body-wrapper{
+     flex: 1;
+     height: 88vh;
+     /* background-color: yellow; */
+     overflow-y: scroll;
+}
+.nisp-body-wrapper::-webkit-scrollbar{
+     display: none;
+}
+.nav-body-main{
+     width: 100%;
+     height: 100%;
+     padding: 0 10px;
+}
+.nisp-body-headerDiv{
+     width: 100%;
+     min-height: 60px;
+     display: flex;
+     align-items: center;
+     border-bottom: 1px solid rgb(195, 192, 192);
+     padding: 5px 10px;
+}
+.nisp-body-headings{
+     margin: 20px 0;
+     color: royalblue;
+}
+.nisp-CMdiv{
+     width: 100%;
+     height: max-content;
+}
+.nisp-CMdiv table{
+     width: 98%;
+     height: max-content;
+     text-align: center;
+}
+.nisp-CMdiv tbody{
+     border: 1px solid gray;
+}
+.nisp-CMdiv tr{
+     height: 40px;
+}
+.nisp-CMdiv td,
+.nisp-CMdiv th{
+     background-color: white;
+     padding: 0 10px;
+     border: 1px solid gray;
+}
+.nisp-policy-doc{
+     width: 100%;
+     height: max-content;
+}
+.nispCard-wrapper{
+height: fit-content;
+     width: 98%;
+     /* background-color: darkorange; */
+}
+.nispCard-linkWrapper{
+     text-decoration: none;
+     color: black;
+     font-size: 1em;
+     font-family: sans-serif;
+}
+.nispCard-body{
+     /* background-color: fuchsia;  */
+     display: flex;
+     min-height: 65px;
+     max-height: max-content;
+}
+.nispCard-body:hover{
+   background-color: aliceblue;
+}
+.nispCard-iconDiv{
+  width: 70px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calanderCard-nameDiv{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+@media (max-device-width: 1100px), (width<1100px) {
+     .nisp-header-wrapper{
+          display: none;
+     }
+     .nisp-body-wrapper{
+          height: max-content;
+          overflow: auto;
+     }
+     .nisp-CMdiv{
+          overflow-x: scroll;
+     }
+     .nisp-CMdiv::-webkit-scrollbar{
+          display: none;
+     }
+}

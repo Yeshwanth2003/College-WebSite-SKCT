@@ -434,9 +434,7 @@ function MyRouter() {
         </>
       );
     }
-  } 
-  
-  else if (window.location.pathname === "/gallery") {
+  } else if (window.location.pathname === "/gallery") {
     let Component = lazy(() => import("./subComponents/CGallery"));
     return (
       <>
@@ -445,8 +443,7 @@ function MyRouter() {
         </Suspense>
       </>
     );
-  } 
-  else if (window.location.pathname === "/social") {
+  } else if (window.location.pathname === "/social") {
     let Component = lazy(() => import("./subComponents/Social"));
     return (
       <>
@@ -455,8 +452,43 @@ function MyRouter() {
         </Suspense>
       </>
     );
-  } 
-  else {
+  } else if (window.location.pathname === "/mous") {
+    let Component = lazy(() => import("./subComponents/MoUs"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  } else if (window.location.pathname === "/industry_supported_lab") {
+    let Component = lazy(() => import("./subComponents/IndustrySupportedLab"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  } else if (window.location.pathname === "/nisp") {
+    let Component = lazy(() => import("./subComponents/UpperHead/NISP"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  } else if (window.location.pathname === "/iic") {
+    let Component = lazy(() => import("./subComponents/UpperHead/IIC"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  } else {
     let Component = lazy(() => import("./MainHome"));
     return (
       <>
