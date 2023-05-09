@@ -1,0 +1,67 @@
+.calender-wrapper {
+  /* background-color: darkgoldenrod; */
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+  font-size: 1em;
+}
+.calender-content {
+  width: 98%;
+  height: max-content;
+  /* background-color: olive; */
+}
+.calederHeader-div {
+  height: 70px;
+  width: 100%;
+  /* background-color: rgb(243, 118, 243); */
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid grey;
+}
+.calenderHeader-h2 {
+  color: #e67e22;
+  font-family: sans-serif;
+  margin: 0 2%;
+  white-space: normal;
+}
+.calender-body{
+     box-shadow: 0 0 2px black;
+     margin: 20px 0;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     flex-direction: column;
+     padding: 20px 0;
+}
+.calenderCard-wrapper{
+     height: fit-content;
+     width: 98%;
+     /* background-color: darkorange; */
+}
+.calenderCard-linkWrapper{
+     text-decoration: none;
+     color: blue;
+     font-size: 1em;
+     font-family: sans-serif;
+}
+.calenderCard-body{
+     /* background-color: fuchsia;  */
+     display: flex;
+     min-height: 65px;
+     max-height: max-content;
+}
+.calenderCard-body:hover{
+   background-color: aliceblue;
+}
+.calenderCard-iconDiv{
+  width: 70px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calanderCard-nameDiv{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}

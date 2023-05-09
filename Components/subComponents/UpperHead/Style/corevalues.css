@@ -1,0 +1,54 @@
+.corevalues-wrapper {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+}
+
+.total_cv_div {
+  width: 98%;
+  height: fit-content;
+  /* background-color: aqua; */
+  font-family: sans-serif;
+}
+.cv_header {
+  width: 100%;
+  height: 45px;
+  /* background-color: rgb(120, 120, 248); */
+  color: #ffa500;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(198, 195, 195);
+}
+.cv_header_border {
+  height: 1px;
+  width: 96%;
+  /* background-color: rgb(206, 203, 203); */
+  background-color: rgb(205, 205, 205);
+}
+.cv_body {
+  width: 100%;
+  height: fit-content;
+  /* background-color: rgb(201, 144, 255); */
+}
+#cv_title {
+  color: blue;
+  font-size: 1.2em;
+  font-weight: bolder;
+  margin: 5px 5px;
+}
+#cv_cnt {
+  font-size: 0.975em;
+  line-height: 23px;
+  text-align: justify;
+  margin: 0 25px;
+}
+.cv_div_cnt {
+  width: 100%;
+  height: fit-content;
+  margin: 30px 0;
+  /* background-color: burlywood; */
+}

@@ -1,0 +1,330 @@
+.contact-wrapper {
+  width: 100%;
+  height: fit-content;
+  /* background-color: royalblue; */
+  display: flex;
+  justify-content: center;
+  font-size: 1em;
+}
+.contact-contant {
+  width: 99%;
+  height: max-content;
+  /* background-color: indianred; */
+}
+.contact-header-div {
+  height: 60px;
+  /* background-color: khaki; */
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid rgb(171, 171, 171);
+}
+.contact-heading-h2 {
+  color: #e67e22;
+  font-family: sans-serif;
+  white-space: normal;
+}
+.contact-body {
+  width: 100%;
+  height: fit-content;
+  /* background-color: darkcyan; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+.contact-getter-heading {
+  height: 90px;
+  box-shadow: 0 2px 10px black;
+  display: flex;
+  align-items: center;
+}
+.contact-getterBox {
+  width: 70%;
+  box-shadow: 0 0 10px black;
+  /* background-color: darkgray; */
+}
+.contact-getter-heading-inner {
+  display: flex;
+  width: 100%;
+  height: 35%;
+  /* background-color: red; */
+  padding: 0 20px;
+  justify-content: center;
+}
+.contact-round {
+  width: 30px;
+  max-height: 100%;
+  background-color: royalblue;
+  border-radius: 100px;
+  font-size: larger;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.contact-round-one::after{
+   content: '✔';
+   position: absolute;
+   z-index: 1;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: royalblue;
+}
+.contact-roundNotIN {
+  background-color: gray;
+}
+.contact-getter-heading-text {
+  align-self: center;
+  margin: 0 10px;
+}
+.contact-getter-heading-text span {
+  white-space: nowrap;
+  font-family: sans-serif;
+}
+.contact-getter-liner {
+  flex: 1;
+  height: 2px;
+  align-self: center;
+  margin: 0 10px;
+  background-color: gray;
+}
+.contact-getter-body {
+  /* background-color: darkmagenta; */
+  width: 100%;
+  height: 450px;
+  position: relative;
+  overflow-x: hidden;
+}
+.contact-getter-bodyDivsHolder {
+  width: 200%;
+  height: 100%;
+  display: flex;
+  transition: 0.5s;
+}
+.contact-getter-bodyDivsHolderMove{
+  transform: translateX(-50%);
+}
+.contact-getter-bodyDiv1,
+.contact-getter-bodyDiv2 {
+  width: 50%;
+  height: 100%;
+  /* background-color: darkcyan; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-getter-bodyDiv1 {
+  flex-direction: column;
+  justify-content: space-around;
+}
+.contact-getter-bodyDiv2 {
+  /* background-color: chartreuse; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+.contact-getter-bodyDiv2-contents{
+  /* background-color: red; */
+  width: 95%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-bD2-textDiv{
+  width: 100%;
+  height: max-content;
+  /* background-color: chocolate; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact-bd2-imgDiv{
+  width: 250px;
+  height: 250px;
+  /* background-color: darkblue; */
+}
+.contact-bd2-img{
+  width: 100%;
+  height: 100%;
+}
+.contact-bd2-p{
+  color: red;
+  font-size: 1.5em;
+}
+.contact-bd2-heading{
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+.contact-getter-whole-inputholder {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: darkorange; */
+}
+.contact-submitDiv {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+.contact-buttonDiv{
+  width: 15%;
+  height: 60%;
+  border-radius: 50px;
+  overflow: hidden;
+  border: 1px black solid;
+}
+.contact-button{
+  width: 100%;
+  height: 100%;
+  outline: transparent;
+  border: none;
+  font-size: 1.2em;
+  font-family: sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: aliceblue;
+}
+.contact-button:active{
+  transform: scale(0.8);
+}
+.contact-flaw-div{
+  height: 25px;
+  width: 100%;
+  /* background-color: black; */
+}
+.Contact-flawmessage{
+  color: red;
+  font-family: sans-serif;
+  margin: 0 10px;
+  display: none;
+}
+.contact-flawmessageDisplay{
+  display: inline;
+  cursor: pointer;
+}
+.contact-validContent-Responder{
+  color: royalblue;
+  fill: royalblue;
+}
+.contact-invalidContent-Responder{
+  color: red;
+  fill: red;
+}
+/* input Manipulator */
+.contact-input-wrapper {
+  width: 100%;
+  height: 60px;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  border: 2px solid rgb(64, 64, 250);
+  border-radius: 5px;
+}
+.contact-input-holder {
+  width: 100%;
+  height: 60%;
+  /* background-color: cornflowerblue; */
+  display: flex;
+}
+.contact-input-iconDiv {
+  width: 80px;
+  /* background-color: turquoise; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-inputDiv {
+  flex: 1;
+  /* background-color: springgreen; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.contact-input-div {
+  width: 100%;
+  height: 0;
+  transition: 0.4s;
+  /* background-color: slategrey; */
+}
+.contact-input-lable {
+  transition: 0.4s;
+  font-family: sans-serif;
+}
+.contact-actInput-tag {
+  width: 99%;
+  height: 100%;
+  outline: none;
+  border: none;
+}
+.namelabel,
+.emaillabel,
+.messagelabel {
+  cursor: text;
+}
+.contact-input-div-name:has(#nameInput:focus),
+.contact-input-div-email:has(#emailInput:focus),
+.contact-input-div-message:has(#messageInput:focus) {
+  height: 70%;
+}
+.contact-inputDiv-name:has(#nameInput:focus) label[for="nameInput"],
+.contact-inputDiv-email:has(#emailInput:focus) label[for="emailInput"],
+.contact-inputDiv-message:has(#messageInput:focus) label[for="messageInput"] {
+  font-size: 0.7em;
+}
+.contact-input-wrapper-textArea {
+  height: 150px;
+}
+@media (max-device-width: 1100px), (width<1100px) {
+  .contact-getterBox {
+    width: 93%;
+  }
+  .contact-getter-body {
+    height: 400px;
+  }
+  .contact-getter-heading-inner {
+    padding: 0 3px;
+  }
+  .contact-input-wrapper {
+    height: 60px;
+  }
+  .contact-input-wrapper-textArea {
+    height: 130px;
+  }
+  .contact-getter-whole-inputholder {
+    width: 95%;
+  }
+  .contact-input-holder {
+    height: 80%;
+  }
+  .contact-input-iconDiv {
+    width: 60px;
+  }
+  .contact-buttonDiv{
+    width: 50%;
+  }
+  .contact-flaw-div{
+    height: 20px;
+  }
+  .contact-bd2-heading{
+    font-size: 1.2em;
+  }
+  .contact-bd2-p{
+    font-size: 1em;
+  }
+}

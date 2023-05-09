@@ -1,0 +1,273 @@
+.departmentHome-mainDiv {
+  width: 100%;
+  height: fit-content;
+  /* background-color: brown; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.departmentHome-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 1%;
+  /* background-color: chartreuse; */
+  margin-bottom: 18px;
+  border-bottom: 1px rgb(138, 138, 138) solid;
+}
+.departmentHome-heading {
+  color: #e67e22;
+  font-family: sans-serif;
+}
+.departmentHome-contentDiv {
+  width: 95%;
+  /* background-color: seagreen; */
+  margin: 5px 0;
+}
+.departmentHome-Summery {
+  display: flexbox;
+  flex-direction: row;
+  margin: 0 20px;
+}
+.departmentHome-summeryDiv {
+  display: inline-block;
+  /* background-color: pink; */
+  flex: 1;
+  padding: 16px 10px;
+  width: 90%;
+}
+.departmentHome-summeryLink {
+  text-decoration: none;
+  color: black;
+}
+.departmentHome-li {
+  list-style: none;
+  border-bottom: 1px rgb(138, 138, 138) solid;
+}
+.departmentHome-detailsUl {
+  /* background-color: coral; */
+  margin: 0;
+}
+.departmentHome-detailsUl-listz {
+  /* background-color: greenyellow; */
+  margin: 1% 5%;
+}
+.departmentHome-body {
+  box-shadow: 0 0 2px black;
+}
+.departmentHome-Summery::marker {
+  color: rgb(55, 55, 252);
+}
+
+/* DepartmentWrapper */
+.departmentWrapper-main {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.departmentWrapper-header {
+  height: 12vh;
+  /* background-color: red; */
+  box-shadow: 0px 0px 6px black;
+  position: sticky;
+  top: 0px;
+  z-index: 10000;
+}
+.fb {
+  width: 100%;
+  height: 100%;
+  background-color: #3b5998;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.twitter {
+  width: 100%;
+  height: 100%;
+  background-color: #55acee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.instagram {
+  width: 100%;
+  height: 100%;
+  background-color: #814ca6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.linkedin {
+  width: 100%;
+  height: 100%;
+  background-color: #007bb5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.youtube {
+  width: 100%;
+  height: 100%;
+  background-color: #bb0000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-social-links {
+  width: 25px;
+  height: 20%;
+  /* background-color: red; */
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.home-social-links-ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+}
+.home-social-links-li {
+  list-style: none;
+  flex: 1;
+  cursor: pointer;
+  /* background-color: yellow;   
+     filter: hue-rotate(calc(90deg*var(--i))); */
+}
+.home-social-links-li:hover {
+  transform: scale(1.1);
+}
+.scrollTo-topDiv {
+  width: 60px;
+  height: 60px;
+  top: 85%;
+  position: fixed;
+  right: 5%;
+  background-color: rgba(0, 0, 255, 0.6);
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  display: none;
+  transition: 0.5s;
+}
+.showScroll-Div {
+  display: flex;
+}
+.departmentWrapper-body {
+  /* background-color: red; */
+  display: flex;
+}
+.departmentWrapper-navWrapper {
+  width: 280px;
+  height: 88vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: white;
+  padding-bottom: 100px;
+}
+.departmentWrapper-bodyWrapper {
+  flex: 1;
+  height: 88vh;
+  overflow-y: scroll;
+}
+/* DepartmentWrapper */
+/* mobile navSlider */
+.dept-mobileNavSlider {
+  position: fixed;
+  width: 100%;
+  height: 100dvh;
+  /* background-color: rgba(255, 0, 0,0.4); */
+  z-index: 20000;
+  top: 0;
+  overflow: hidden;
+  display: none;
+}
+.dept-mobileNavSlider-display {
+  display: block;
+}
+.dept-mobileNavSlider::-webkit-scrollbar {
+  display: none;
+}
+.dept-mobileNav-slide {
+  position: absolute;
+  width: 200%;
+  height: 100dvh;
+  display: flex;
+  justify-content: flex-end;
+  /* background-color: rgba(0, 0, 255,0.4); */
+  left: -100%;
+}
+.dept-mobileNav-slide-SildeIn {
+  left: -100%;
+}
+.mobileNavHolder {
+  width: 50%;
+  height: 100dvh;
+  /* background-color: red; */
+  display: flex;
+}
+.mobileNav-contentsHoldz {
+  width: 85%;
+  height: 100%;
+  background-color: white;
+  overflow-y: scroll;
+}
+.mobileNav-outer {
+  width: 15%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.deptMobileNav-logoDiv {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.deptMobileNav-logoDiv-imgDiv {
+  width: 96%;
+  height: 85%;
+  border: 1px solid black;
+}
+.deptMobileNav-logoDiv-img {
+  width: 100%;
+  height: 100%;
+}
+/* ----- */
+@media (max-device-width: 1100px), (width<1100px) {
+  .departmentWrapper-main {
+    display: block;
+  }
+  .departmentHome-detalis {
+    margin: 0 20px;
+  }
+  .departmentHome-body {
+    padding: 0px;
+  }
+  .departmentHome-detailsUl-listz {
+    /* background-color: greenyellow; */
+    margin: 15px 10%;
+  }
+  .departmentHome-Summery {
+    margin: 0;
+  }
+  .departmentWrapper-header {
+    height: 60px;
+  }
+  .home-social-links {
+    opacity: 0;
+    display: none;
+  }
+  .departmentWrapper-navWrapper {
+    display: none;
+  }
+  .departmentWrapper-body {
+    display: block;
+  }
+  .departmentWrapper-bodyWrapper {
+    overflow: auto;
+  }
+}

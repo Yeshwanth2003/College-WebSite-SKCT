@@ -1,0 +1,34 @@
+.deptBe-wrap{
+     width: 100%;
+     height: max-content;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 1em;
+}
+.deptBe-container{
+     width: 98%;
+     height: max-content;
+}
+.deptBe-headingdiv{
+     width: 100%;
+     height: 70px;
+     display: flex;
+     align-items: center;
+     border-bottom: 1px solid rgb(174, 173, 173);
+}
+.deptBe-heading{
+     color: orange;
+     font-family: sans-serif;
+}
+.deptBe-body{
+     width: 100%;
+     height: max-content;
+     padding: 20px 5px;
+}
+.deptBe-para{
+     font-size: 1.1em;
+     font-family: sans-serif;
+     margin: 20px 0;
+     text-align: justify;
+}

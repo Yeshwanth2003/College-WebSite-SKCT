@@ -1,0 +1,52 @@
+.ceoOffice-wrapper{
+     width: 100%;
+     height: max-content;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.ceoOffice-contentDiv{
+     width: 97%;
+     height: max-content;
+}
+.ceoOff-headingDiv{
+     height: 70px;
+     display: flex;
+     align-items: center;
+     border-bottom: 1px solid rgb(158, 157, 157);
+}
+.ceoOff-heading{
+     color: orange;
+     font-family: sans-serif;
+     white-space: normal;
+}
+.ceoOff-body{
+     margin: 20px 0;
+}
+.coeOff-table{
+     background-color: rgb(198, 197, 197);
+     width: 100%;
+}
+.ceoOff-h-td,
+.cS-card-data{
+     background-color: white;
+     width: max-content;
+     white-space: nowrap;
+     padding: 20px 20px;
+     font-family: sans-serif;
+}
+.ceoOff-h-td{
+     font-weight: bolder;
+}
+.cS-card-tr{
+     cursor: pointer;
+}
+.cS-card-tr:hover .cS-card-data{
+     background-color: rgb(213, 211, 226);
+}
+
+@media (max-device-width: 1100px),(width<1100px) {
+     .ceoOff-body{
+          overflow-x: scroll;
+     }
+}

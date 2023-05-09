@@ -1,0 +1,50 @@
+.deptLib-wrapper{
+     width: 100%;
+     height: max-content;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     font-size: 1em;
+}
+.deptLib-coverDiv{
+     width: 100%;
+     height: 380px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     overflow: hidden;
+}
+.deptLib-coverImg{
+     width: 200%;
+     height: 200%;
+     image-orientation: flip;
+}
+.deptLib-contents{
+     width: 95%;
+     height: max-content;
+}
+.deptLib-headingDiv{
+     height: 60px;
+     display: flex;
+     align-items: center;
+     border-bottom: 1px solid rgb(160, 159, 159);
+}
+.deptLib-heading{
+     color: orange;
+     font-family: sans-serif;
+}
+.deptLib-body{
+     margin: 20px 0;
+}
+.deptLib-p-Container{
+     font-size: 1.2em;
+     font-family: sans-serif;
+     text-align: justify;
+}
+.deptLib-p-Container li{
+     margin: 0 40px;
+}
+.deptLib-p-Container ol{
+     margin: 20px 0;
+}

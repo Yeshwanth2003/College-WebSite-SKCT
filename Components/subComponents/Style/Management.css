@@ -1,0 +1,144 @@
+.management-wrapper {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: royalblue; */
+  font-size: 1em;
+}
+.management-contentDiv {
+  width: 98%;
+  height: max-content;
+  /* background-color: brown; */
+}
+.management-headingDiv {
+  height: 60px;
+  /* background-color: gold; */
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid gray;
+}
+.management-h2,
+.managementCard-pos,
+.managementCard-name,
+.leaderCard-position {
+  color: #e67e22;
+  font-family: sans-serif;
+  margin: 0 2%;
+  white-space: normal;
+}
+.managementCard-name,
+.leaderCard-name{
+  color: mediumblue;
+  white-space: normal;
+}
+.management-body{
+     width: 100%;
+     height: max-content;
+     margin: 20px 0;
+     /* background-color: cornsilk; */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     gap: 20px;
+}
+.managementCard-UpperCards{
+     width: 80vw;
+     height: max-content;
+     /* background-color: aqua; */
+     text-align: center;
+}
+.managementCard-wrapper{
+  width: 100%;
+  height: max-content;
+  /* background-color: slategray; */
+  display: flex;
+}
+.managenentCard-imgDiv{
+  width: 30vw;
+  /* background-color: yellow; */
+}
+.managementCard-img{
+  max-width: 100%;
+  max-height: 100%;
+}
+.managementCard-div2{
+  flex: 1;
+  /* background-color: darkgray; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.managementCard-p,
+.managementCard-quote{
+  text-align: justify;
+  margin: 10px 0;
+  font-size: 1em;
+  font-family: sans-serif;
+  line-height: 25px;
+}
+.managementCard-quoteSpan{
+  color: slateblue;
+  font-style: italic;
+}
+.managementCard-img{
+  border-radius: 5px;
+}
+.management-leadersDiv{
+  width: 100%;
+  /* background-color: darkseagreen; */
+  display: flex;
+  justify-content: space-around;
+}
+.management-leaderCardHolders{
+  width: 25vw;
+  /* background-color: crimson; */
+}
+.leaderCard-wrapper{
+  /* background-color: darkmagenta; */
+  width: 100%;
+  height: 100%;
+}
+.leaderCard-imgDiv{
+  height: 70%;
+  /* background-color: darkgreen; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leaderCard-img{
+  max-width: 100%;
+  max-height: 100%;
+}
+.leaderCard-contentDiv{
+  text-align: center;
+  line-height: 40px;
+}
+.leaderCard-email{
+  color: gray;
+  font-family: sans-serif;
+}
+@media (max-device-width: 1100px),(width<1100px) {
+  .managementCard-wrapper{
+    flex-direction: column;
+  }
+  .management-leadersDiv{
+    flex-direction: column;
+    align-items: center;
+    /* background-color: red; */
+  }
+  .management-leaderCardHolders{
+    /* background-color: yellow; */
+    width: 90vw;
+  }
+  .managenentCard-imgDiv{
+    width: 80vw;
+  }
+  .managementCard-pos{
+    line-height: 40px;
+  }
+}

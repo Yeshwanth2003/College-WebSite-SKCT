@@ -1,0 +1,64 @@
+.xmresult-wrapper{
+     width: 100%;
+     height: max-content;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.xmresult-contentDiv{
+     width: 98%;
+     height: max-content;
+}
+.xmresult-headingDiv{
+     width: 100%;
+     height: 70px;
+     border-bottom: 1px solid rgb(179, 178, 178);
+     display: flex;
+     align-items: center;
+}
+.xmresult-heading{
+     color: orange;
+     font-family: sans-serif;
+     white-space: normal;
+}
+.xmresult-body{
+     width: 100%;
+     height: max-content;
+     margin-top: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.xmreult-link-holder{
+     width: 98%;
+     height: max-content;
+}
+.xmresultCard-contentDiv{
+     width: 100%;
+     display: flex;
+     margin: 20px 0;
+     padding: 20px 0;
+     cursor: pointer;
+     border-bottom: 3px dotted rgb(115, 114, 114);
+}
+.xmresultCard-contentDiv:hover{
+     background-color: rgb(235, 232, 243);
+}
+.xmresultcard-logoDiv{
+     width: 50px;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.xmresultcard-pDiv{
+     flex: 1;
+     display: flex;
+     align-items: center;
+     text-align: justify;
+}
+.xmresultCard-link{
+     text-decoration: none;
+     color: rgb(94, 94, 94);
+     font-size: 1.2em;
+}

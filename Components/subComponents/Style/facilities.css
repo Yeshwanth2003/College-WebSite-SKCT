@@ -1,0 +1,192 @@
+.facilities-wrapper {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: red; */
+  font-size: 1em;
+}
+.facilities-heading{
+     color: orange;
+     font-family: sans-serif;
+}
+.facilities-heading-div {
+  height: 70px;
+  width: 96%;
+  /* background-color: tomato; */
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(181, 178, 178);
+}
+.facilities-body {
+  display: flex;
+  width: 100%;
+  height: 560px;
+  margin: 20px 0;
+  box-shadow: 0 0 2px;
+}
+.facilities-lapNav {
+  width: 300px;
+  /* background-color: cornflowerblue; */
+  height: 100%;
+}
+.facilities-lapNav-ul {
+  width: 100%;
+  height: 100%;
+  /* background-color: aliceblue; */
+  display: flex;
+  flex-direction: column;
+}
+.facilityNavCard-li {
+  /* background-color: hotpink; */
+  height: 50px;
+}
+.facilityNavCard-wrapper {
+  width: 100%;
+  height: 100%;
+  /* background-color: silver; */
+  display: flex;
+  cursor: pointer;
+}
+.facilityNavCard-wrapper:hover{
+     background-color: rgb(211, 206, 206);
+}
+.facilityNavCard-iconDiv {
+  height: 100%;
+  width: 40px;
+  /* background-color: darkgoldenrod; */
+  position: relative;
+}
+.facilityNavCard-iconDiv::after {
+  content: "\2022";
+  position: absolute;
+  inset: 0;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  color: royalblue;
+  font-weight: bolder;
+  font-size: 1.7em;
+}
+.facilityNavCard-textDiv {
+  flex: 1;
+  /* background-color: slategrey; */
+}
+.facilityNavCard-h3 {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  white-space: normal;
+  cursor: pointer;
+}
+.facilities-runner {
+  flex: 1;
+  /* background-color: yellowgreen; */
+  box-shadow: 0 0 5px;
+}
+.facilities-runner-wrapper{
+     width: 100%;
+     height: 100%;
+     overflow-x: hidden;
+     position: relative;
+     /* background-color: darkgreen; */
+}
+.facilities-reelDiv{
+     display: flex;
+     height: 100%;
+     position: absolute;
+     transition: 0.2s;
+}
+.facilityCard-wrapper{
+     height: 100%;
+     width: 100%;
+     /* background-color: aqua; */
+}
+.facilityCard-div1{
+     width: 100%;
+     height: max-content;
+     /* background-color: springgreen; */
+     display: flex;
+     flex-direction: column;
+}
+.facilityCard-headingDiv{
+     width: 100%;
+     height: 70px;
+     /* background-color: slateblue; */
+     display: flex;
+     align-items: center;
+     padding: 0 30px;
+}
+.facilityCard-heading{
+     color: royalblue;
+     font-family: sans-serif;
+}
+.facilityCard-imgWrapper{
+     width: 100%;
+     height: max-content;
+     padding: 20px 10px;
+     /* background-color: pink; */
+}
+.facilityCard-imgDiv{
+     width: 400px;
+     height: 250px;
+     border-radius: 5px;
+     overflow: hidden;
+}
+.facilityCard-img{
+     width: 100%;
+     height: 100%;
+}
+.facilityCard-div2{
+     padding: 0 10px;
+}
+.facilityCard-p{
+     text-align: justify;
+     font-size: 1.09em;
+     font-family: sans-serif;
+}
+.facilityNavCard-h3{
+     /* background-color: honeydew; */
+     width: 100%;
+     height: 100%;
+     display: flex;
+  align-items: center;
+}
+@media (max-device-width: 1100px),(width<1100px){
+     .facilities-lapNav{
+          display: none;
+     }
+     .facilities-runner {
+          height: max-content;
+          flex-wrap: wrap;
+          box-shadow:0 0 0 transparent;
+          /* background-color: red; */
+     }
+     .facilities-body{
+          height: max-content;
+          box-shadow:0 0 0 transparent;
+     }
+     .facilities-reelDiv{
+         display: block;
+         position: relative;
+     }
+     .facilityCard-imgDiv{
+          width: 300px;
+          height: 200px;
+     }
+     .facilityCard-p{
+          font-size: 1em;
+     }
+     .facilityCard-headingDiv{
+          padding: 0;
+          justify-content: center;
+     }
+     .facilityCard-div1{
+          flex-direction: column-reverse;
+     }
+     .facilityCard-imgWrapper{
+          justify-content: center;
+          display: flex;
+     }
+}

@@ -1,0 +1,43 @@
+.campuslife-box {
+    width: 100%;
+    /* background-color: aqua; */
+}
+
+.video-box-bg {
+    background-image: url('https://skct.edu.in/static/img/footerback.1f4477f.png');
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+}
+
+.video-box {
+    background-color: rgba(3, 15, 177, .89);
+    display: flex;
+    justify-content: space-evenly;
+    -webkit-font-smoothing: antialiased !important;
+    height: max-content;
+    padding: 2%;
+    gap: 10px;
+}
+
+.video {
+    height: 250px;
+    width: 460px;
+}
+
+.video  iframe {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+@media (max-device-width: 1100px),(width<1100px) {
+    .video-box {
+        flex-direction: column;
+        align-items: center;
+    }
+    .video{
+        height: 200px;
+        width: 90vw;
+    }
+}

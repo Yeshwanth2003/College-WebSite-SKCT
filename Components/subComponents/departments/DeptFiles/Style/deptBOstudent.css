@@ -1,0 +1,64 @@
+.deptBos-wrapper{
+     width: 100%;
+     height: max-content;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.deptBos-container{
+     width: 98%;
+     height: max-content;
+}
+.deptBos-headingDiv{
+     height: 60px;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     border-bottom: 1px solid rgb(163, 162, 162);
+}
+.deptBos-heading{
+     color: orange;
+     font-family: sans-serif;
+     white-space: normal;
+}
+.deptBos-body{
+     width: 100%;
+     height: max-content;
+     display: flex;
+     margin: 20px 0;
+}
+.deptBos-table{
+     width: 98%;
+     height: max-content;
+     background-color: aliceblue;
+     font-family: sans-serif;
+     font-size: 1.2em;
+     white-space: nowrap;
+     margin: 20px 0;
+}
+.deptBos-thead{
+     height: 50px;
+     text-align: center;
+     background-color: rgb(247, 190, 235);
+     font-weight: bolder;
+     padding: 10px 15px;
+}
+.bosCard-td{
+     height: 40px;
+     text-align: center;
+     padding: 10px 15px;
+}
+.deptBos-tbody{
+     background-color: white;
+}
+.bosCard-tr:hover{
+     background-color: rgb(204, 240, 240);
+}
+@media (max-device-width: 1100px),(width<1100px) {
+     .deptBos-body{
+          overflow-x: scroll;
+     }
+     .deptBos-body::-webkit-scrollbar{
+          display: none;
+     }
+}

@@ -1,0 +1,73 @@
+.deptrh-wrapper{
+     width: 100%;
+     height: max-content;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.deptrh-container{
+     width: 98%;
+     height: max-content;
+}
+.deptrh-headingDiv{
+     height: 60px;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     border-bottom: 1px solid  rgb(153, 151, 151);
+}
+.deptrh-heading{
+     color: orange;
+     font-family: sans-serif;
+}
+.deptrh-body{
+     width: 100%;
+     height: max-content;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: wrap;
+     margin: 20px 0;
+     gap: 20px;
+}
+.rankcard-wrapper{
+     width: 390px;
+     height: 160px;
+     display: flex;
+     box-shadow: 0 0 3px black;
+     justify-content: center;
+     align-items: center;
+     padding: 0 10px;
+     gap: 2px;
+}
+.rankcard-imgDiv{
+     width: 30%;
+     height: 90%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 80px;
+     overflow: hidden;
+}
+.rankCard-img{
+     width: 120%;
+     height: 120%;
+}
+.rankCard-contentDiv{
+     width: 70%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+}
+.rankccard-name{
+     color: royalblue;
+     text-align: center;
+     white-space: normal;
+}
+.rankcard-batch,
+.rankcard-rank{
+     font-family: sans-serif;
+     color: rgb(151, 150, 150);
+}

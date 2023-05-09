@@ -1,0 +1,70 @@
+.campusNssYrc-wrapper{
+     width: 100%;
+     height: max-content;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.nss_total_div {
+  width: 95%;
+  height: fit-content;
+  /* background-color: aqua; */
+  font-family: sans-serif;
+}
+.nss_header {
+  width: 95%;
+  height: 45px;
+  /* background-color: rgb(120, 120, 248); */
+  color: #ffa500;
+ margin: 10px 20px;
+  /* margin-left: 40px; */
+  border-bottom: 1px solid rgb(205, 205, 205);
+}
+.nss_body {
+  width: 100%;
+  height: fit-content;
+  /* background-color: rgb(201, 144, 255); */
+}
+#nss_title {
+  padding: 0 10px;
+  color: blue;
+  font-size: 20px;
+  font-weight: bolder;
+}
+#nss_cnt {
+ padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 5px;
+  line-height: 25px;
+  text-align: justify;
+}
+.nss_div_cnt {
+  width: 98%;
+  height: fit-content;
+  padding-top: 5px;
+  /* background-color: burlywood; */
+}
+#nss_li {
+  padding-left: 25px;
+}
+.nss_act {
+  width: 95%;
+  height: fit-content;
+  /* background-color: aqua; */
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 10px 20px;
+}
+.nss_img {
+  width: 380px;
+  height: 250px;
+  /* background-color: black; */
+  border-radius: 5px;
+  overflow: hidden;
+}
+#nss_img {
+  width: 100%;
+  height: 100%;
+}

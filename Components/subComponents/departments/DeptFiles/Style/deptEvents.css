@@ -1,0 +1,71 @@
+.deptEvents-wrapper{
+     width: 100%;
+     height: max-content;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 1em;
+}
+.deptEvents-container{
+     width: 98%;
+     height: max-content;
+}
+.deptEvents-headingDiv{
+     height: 60px;
+     display: flex;
+     align-items: center;
+     border-bottom: 1px solid rgb(165, 163, 163);
+}
+.deptEvents-heading{
+     color: orange;
+     font-family: sans-serif;
+}
+.deptEveC-wrapper{
+     width: 300px;
+     height: 380px;
+     box-shadow: 0 0 5px black;
+}
+.deptHeading-body{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 10px;
+     flex-wrap: wrap;
+     padding: 20px 0;
+}
+.deptEveC-imgDiv{
+     width: 100%;
+     height: 60%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     overflow: hidden;
+}
+.deptEveC-img{
+     height: 200%;
+     width: 200%;
+}
+.deptEveC-h2{
+     white-space: normal;
+}
+.deptEveC-contents{
+     width: 100%;
+     height: 40%;
+     display: flex;
+     justify-content: center;
+     gap: 20px;
+     flex-direction: column;
+     padding: 0 7px;
+}
+.deptEveC-a{
+     text-decoration: none;
+     font-family: sans-serif;
+}
+.deptEveC-a:hover{
+     text-decoration: underline;
+}
+.deptEveC-p{
+     font-family: sans-serif;
+     color: gray;
+     font-size: 1.1em;
+}
