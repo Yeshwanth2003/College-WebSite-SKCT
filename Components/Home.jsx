@@ -488,7 +488,66 @@ function MyRouter() {
         </Suspense>
       </>
     );
-  } else {
+  } else if (window.location.pathname === "/placement/training") {
+    let Component = lazy(() => import("./subComponents/PTraining"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  } else if (window.location.pathname === "/hostel") {
+    let Component = lazy(() => import("./subComponents/Hostel"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  }
+  else if (window.location.pathname === "/sports") {
+    let Component = lazy(() => import("./subComponents/Sports"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  }
+  else if (window.location.pathname === "/library") {
+    let Component = lazy(() => import("./subComponents/Library"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  }
+  else if (window.location.pathname === "/placement/placement_cell") {
+    let Component = lazy(() => import("./subComponents/PlacementCell"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  }
+  else if (window.location.pathname === "/admissions") {
+    let Component = lazy(() => import("./subComponents/Admission"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  }
+  else {
     let Component = lazy(() => import("./MainHome"));
     return (
       <>

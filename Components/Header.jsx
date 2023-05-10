@@ -332,21 +332,21 @@ function LaptopHeader() {
                         <li className="laptopHeader-dropDown-li">Facilities</li>
                       </a>
                       <a
-                        href="/"
+                        href="/library"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
                         <li className="laptopHeader-dropDown-li">Library</li>
                       </a>
                       <a
-                        href="/"
+                        href="/sports"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
                         <li className="laptopHeader-dropDown-li">Sports</li>
                       </a>
                       <a
-                        href="/"
+                        href="/hostel"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
@@ -392,7 +392,7 @@ function LaptopHeader() {
                   <div className="laptopHeader-dropDownDiv placements-dropDown-Lap">
                     <ul className="laptopHeader-dropDown-ul">
                       <a
-                        href="/"
+                        href="/placement/placement_cell"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
@@ -408,7 +408,7 @@ function LaptopHeader() {
                         <li className="laptopHeader-dropDown-li">Recruiters</li>
                       </a>
                       <a
-                        href="/"
+                        href="/placement/training"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
@@ -470,7 +470,7 @@ function LaptopHeader() {
                 <div className="laptopHeader-li-ContentDiv">
                   <h4>
                     <a
-                      href="/"
+                      href="/admissions"
                       className="laptopHeader-links laptopheader-mainLink"
                     >
                       Admissions
@@ -624,7 +624,7 @@ export function MobileNav() {
                   </div>
                   <div className="mobile-nav-link-content">
                     <div className="mobile-nav-linkDiv">
-                      <a className="mobile-nav-link" href="/">
+                      <a className="mobile-nav-link" href="/admissions">
                         Admissions
                       </a>
                     </div>
@@ -1080,7 +1080,7 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <a className="mobile-nav-link" href="/">
+                            <a className="mobile-nav-link" href="/library">
                               Library
                             </a>
                           </div>
@@ -1094,7 +1094,7 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <a className="mobile-nav-link" href="/">
+                            <a className="mobile-nav-link" href="/sports">
                               Sports
                             </a>
                           </div>
@@ -1108,7 +1108,7 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <a className="mobile-nav-link" href="/">
+                            <a className="mobile-nav-link" href="/hostel">
                               Hostel
                             </a>
                           </div>
@@ -1187,7 +1187,7 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <a className="mobile-nav-link" href="/">
+                            <a className="mobile-nav-link" href="/placement/placement_cell">
                               Placement Cell
                             </a>
                           </div>
@@ -1215,7 +1215,7 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <a className="mobile-nav-link" href="/">
+                            <a className="mobile-nav-link" href="/placement/training">
                               Training
                             </a>
                           </div>

@@ -1,0 +1,241 @@
+.pt-pcell {
+  width: 100%;
+}
+
+.pt-pcell-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pt-pcell-header {
+  margin: 0px 0px 7px;
+  padding: 16px 0px 0px 40px;
+  color: #ffa500;
+  text-align: left !important;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-size: 24px;
+}
+
+.pt-pcell-overview {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.pt-pcell-outer {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pt-pcell-inner {
+  width: 162px;
+  height: 162px;
+  /* padding: 4px; */
+  border-radius: 50%;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pt-pcell-inner > span {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.pt-pcell-inner > p {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  padding: 0px 18px;
+}
+
+#companies {
+  background-color: #492e6d;
+}
+
+#offers {
+  background-color: #8b3769;
+}
+
+#packages {
+  background-color: #b03849;
+}
+
+#org {
+  background-color: #124b65;
+}
+
+.pt-pcell-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.styled-slider {
+  width: 85vw;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.pt-pcell-outer-box {
+  padding: 24px;
+}
+
+.pt-pcell-container-box {
+  width: 85vw;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.pt-pcell-stat-outer {
+  width: 100%;
+  padding: 16px;
+}
+
+.pt-pcell-stat-graphs {
+  display: flex;
+  flex-wrap: nowrap;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.pt-pcell-stat-graphs > div {
+  flex: 1 1 auto;
+  max-width: 100%;
+}
+
+.pt-pcell-tab {
+  text-transform: uppercase;
+  padding: 18px 18px 12px 18px;
+  width: fit-content;
+  border-bottom: 2px solid #82b1ff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pt-pcell-mail {
+  display: flex;
+  align-items: center;
+}
+
+.pt-pcell-contact-content {
+  font-weight: 600;
+  font-size: 15px;
+  height: 61px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pt-pcell-mail-tag {
+  text-decoration: none;
+  color: black;
+}
+
+.pt-pcell-slider {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 500px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.pt-pcell-images {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  height: 500px;
+  width: 1000px;
+}
+
+.pt-pcell-image-box {
+  flex: 1 1 0;
+}
+
+.pt-pcell-image {
+  height: 100%;
+}
+
+@media only screen and (max-width: 960px) {
+  .pt-pcell-stat-graphs {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pt-pcell-graphs {
+    width: 95%;
+  }
+}
+
+.slider {
+  width: 100%;
+  height: 550px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slides {
+  white-space: nowrap;
+  transition: transform 0.3s;
+}
+
+.slide-img-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 550px;
+  width: 100%;
+}
+
+.slide-img-box > img {
+  height: 550px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.slider-arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(0, -50%);
+  fill: white;
+  padding: 12px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.slider-arrows:hover {
+  background-color: rgb(0, 0, 0, 0.15);
+  transition: 150ms ease-in-out;
+}
+
+@media only screen and (max-width: 1010px) {
+  .slider,
+  .slide-img-box,
+  .slide-img-box > img {
+    height: 250px;
+  }
+}

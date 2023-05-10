@@ -200,7 +200,7 @@ export default function MainHome() {
                   </a>
                 </div>
                 <div className="mainHome-runner1-admissionsDiv">
-                  <a href="/" className="mainHome-runner1-admissionsLink">
+                  <a href="/admissions" className="mainHome-runner1-admissionsLink">
                     <button className="mainHome-runner1-admissionsButton">
                       <h3>ADMISSIONS</h3>
                     </button>
