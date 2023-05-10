@@ -401,7 +401,7 @@ function LaptopHeader() {
                         </li>
                       </a>
                       <a
-                        href="/"
+                        href="/recruiters"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
@@ -717,7 +717,7 @@ export function MobileNav() {
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
                             <a className="mobile-nav-link" href="/exam/staff">
-                              CEO Office
+                              COE Office
                             </a>
                           </div>
                         </div>
@@ -1201,7 +1201,7 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <a className="mobile-nav-link" href="/">
+                            <a className="mobile-nav-link" href="/recruiters">
                               Recruiters
                             </a>
                           </div>

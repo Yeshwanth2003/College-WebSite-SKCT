@@ -527,7 +527,7 @@ const DataMapper = [
           },
           {
             name: "Best Outgoing Students",
-            url: "/departments/ECE/best_outgoing_students",
+            url: "/departments/ECE/bestoutgoingstudent",
             link: "/ECE/beststud",
           },
           {
@@ -725,7 +725,7 @@ const DataMapper = [
           },
           {
             name: "Best Outgoing Students",
-            url: "/departments/EEE/best_outgoing_students",
+            url: "/departments/EEE/bestoutgoingstudent",
             link: "/EEE/beststud",
           },
         ],
@@ -893,7 +893,7 @@ const DataMapper = [
           },
           {
             name: "Best Outgoing Students",
-            url: "/departments/ICE/best_outgoing_students",
+            url: "/departments/ICE/bestoutgoingstudent",
             link: "/ICE/beststud",
           },
         ],
@@ -1069,7 +1069,7 @@ const DataMapper = [
           },
           {
             name: "Best Outgoing Students",
-            url: "/departments/MECH/best_outgoing_students",
+            url: "/departments/MECH/bestoutgoingstudent",
             link: "/MECH/beststud",
           },
         ],
@@ -1246,7 +1246,7 @@ const DataMapper = [
           },
           {
             name: "Best Outgoing Students",
-            url: "/departments/IT/best_outgoing_students",
+            url: "/departments/IT/bestoutgoingstudent",
             link: "/IT/beststud",
           },
           {

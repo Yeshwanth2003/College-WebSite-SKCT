@@ -547,6 +547,16 @@ function MyRouter() {
       </>
     );
   }
+  else if (window.location.pathname === "/recruiters") {
+    let Component = lazy(() => import("./subComponents/SubRecuritiers"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  }
   else {
     let Component = lazy(() => import("./MainHome"));
     return (
