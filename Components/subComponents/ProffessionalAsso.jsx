@@ -6,12 +6,13 @@ export default function ProffAsso(){
      let [proffassoData,setProffassoData] = useState([]);
 
      useEffect(()=>{
-        fetch("https://data.skct.edu.in/proffesional/")
-        .then(res=>res.json())
-        .then(dats=>{
-          dats.sort((a,b)=>Number(b.year)-Number(a.year))
-          setProffassoData(dats)
-        })
+
+          import("../../DataCenter/subComponentsData/AcademicsData/proffessionalAsso")
+          .then(res=>res.default)
+          .then(dats=>{
+               dats.sort((a,b)=>Number(b.year)-Number(a.year))
+               setProffassoData(dats)
+          })
      },[])
 
      return(

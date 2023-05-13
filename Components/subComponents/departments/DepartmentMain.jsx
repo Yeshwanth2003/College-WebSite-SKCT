@@ -2066,92 +2066,92 @@ function DepartmentInternalRouter() {
         return <>{/* further event */}</>;
       }
     }
-    else if (window.location.pathname === "/departments/SOH/club") {
+    else if (window.location.pathname === "/departments/SOM/club") {
       let Component = lazy(() => import("./DeptFiles/DeptClub"));
       return (
         <>
           <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOH" />
+            <Component currentDepartment="SOM" />
           </Suspense>
         </>
       );
     }
-    else if (window.location.pathname === "/departments/SOH/lab") {
+    else if (window.location.pathname === "/departments/SOM/lab") {
       let Component = lazy(() => import("./DeptFiles/DeptLab"));
       return (
         <>
           <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOH" />
+            <Component currentDepartment="SOM" />
           </Suspense>
         </>
       );
     }
-    else if (window.location.pathname === "/departments/SOH/placements") {
+    else if (window.location.pathname === "/departments/SOM/placements") {
       let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
       return (
         <>
           <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOH" />
+            <Component currentDepartment="SOM" />
           </Suspense>
         </>
       );
     }
-    else if (window.location.pathname === "/departments/SOH/rankholder") {
+    else if (window.location.pathname === "/departments/SOM/rankholder") {
       let Component = lazy(() => import("./DeptFiles/DeptRH"));
       return (
         <>
           <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOH" />
+            <Component currentDepartment="SOM" />
           </Suspense>
         </>
       );
     }
-    else if (window.location.pathname === "/departments/SOH/association") {
+    else if (window.location.pathname === "/departments/SOM/association") {
       let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
       return (
         <>
           <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOH" />
+            <Component currentDepartment="SOM" />
           </Suspense>
         </>
       );
     }
-    else if (window.location.pathname === "/departments/SOH/bestoutgoingstudent") {
+    else if (window.location.pathname === "/departments/SOM/bestoutgoingstudent") {
       let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
       return (
         <>
           <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOH"/>
+            <Component currentDepartment="SOM"/>
           </Suspense>
         </>
       );
     }
-    else if (window.location.pathname === "/departments/SOH/Disguinshed_alumini") {
+    else if (window.location.pathname === "/departments/SOM/Disguinshed_alumini") {
       let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
       return (
         <>
           <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOH" />
+            <Component currentDepartment="SOM" />
           </Suspense>
         </>
       );
     }
-    else if (window.location.pathname === "/departments/SOH/testimonial") {
+    else if (window.location.pathname === "/departments/SOM/testimonial") {
       let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
       return (
         <>
           <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOH" />
+            <Component currentDepartment="SOM" />
           </Suspense>
         </>
       );
     }
-    else if (window.location.pathname === "/departments/SOH/gallery") {
+    else if (window.location.pathname === "/departments/SOM/gallery") {
       let Component = lazy(() => import("./DeptFiles/DeptGallery"));
       return (
         <>
           <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOH" />
+            <Component currentDepartment="SOM" />
           </Suspense>
         </>
       );

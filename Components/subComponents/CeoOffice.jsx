@@ -5,8 +5,8 @@ export default function CeoOffice(){
 
      let [staffData,setStaffData] = useState([]);
      useEffect(()=>{
-      fetch("https://data.skct.edu.in/staff/")
-      .then(res=>res.json())
+     import("../../DataCenter/subComponentsData/CoeDatas/coeStaff")
+      .then(res=>res.default)
       .then(dats=>{
          setStaffData(dats.sort((a,b)=>a.order-b.order))
       })

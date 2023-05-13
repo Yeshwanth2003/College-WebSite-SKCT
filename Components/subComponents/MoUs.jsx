@@ -7,8 +7,8 @@ export default function MoUs() {
      let [mousDataCopy,setMousDataCopy] = useState([]);
 
      useEffect(()=>{
-       fetch("https://data.skct.edu.in/homemous/")
-       .then(res=>res.json())
+      import("../../DataCenter/subComponentsData/IndustryConnectData/mousData")
+       .then(res=>res.default)
        .then(dats=>{
           setMousData(dats)
           setMousDataCopy(dats)

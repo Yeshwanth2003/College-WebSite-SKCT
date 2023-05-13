@@ -11,7 +11,7 @@ export default function SubRecuritiers(){
           .then(dats=>{
                setSRData(dats.rec)
           })
-     })
+     },[])
 
      return(
           <>

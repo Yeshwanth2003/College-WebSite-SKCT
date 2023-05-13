@@ -4,8 +4,8 @@ export default function ISL() {
   let [islData, setIslData] = useState([]);
 
   useEffect(() => {
-    fetch("https://data.skct.edu.in/isl/")
-      .then((res) => res.json())
+    import("../../DataCenter/subComponentsData/IndustryConnectData/ISLData")
+      .then((res) => res.default)
       .then((dats) => {
         setIslData(dats);
       });

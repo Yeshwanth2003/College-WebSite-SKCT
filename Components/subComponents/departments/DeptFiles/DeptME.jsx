@@ -6,10 +6,13 @@ export default function DeptME({currentDepartment}){
      let[meData,setMeData] = useState([]);
 
      useEffect(() => {
-          fetch(`https://data.skct.edu.in/${currentDepartment}/meprogram`)
-            .then((res) => res.json())
+          import(`../../../../DataCenter/DepartmentsData/${currentDepartment}/meData`)
+            .then((res) => res.default)
             .then((dats) => {
               setMeData(dats.meprogram.split("\r\n"));
+            })
+            .catch(()=>{
+              window.location.pathname=`/departments/${currentDepartment}/home`
             });
         }, [currentDepartment]);
 
