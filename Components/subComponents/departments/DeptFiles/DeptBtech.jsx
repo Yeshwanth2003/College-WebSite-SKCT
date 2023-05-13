@@ -5,10 +5,13 @@ export default function DeptBe({ currentDepartment }) {
   let [btechData, setBtechData] = useState([]);
 
   useEffect(() => {
-    fetch(`https://data.skct.edu.in/${currentDepartment}/btech`)
-      .then((res) => res.json())
+    import(`../../../../DataCenter/DepartmentsData/${currentDepartment}/btechData`)
+      .then((res) => res.default)
       .then((dats) => {
         setBtechData(dats.btech.split("\r\n"));
+      })
+      .catch(()=>{
+        window.location.pathname=`/departments/${currentDepartment}/home`
       });
   }, [currentDepartment]);
 
