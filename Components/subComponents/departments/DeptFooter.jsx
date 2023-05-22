@@ -9,8 +9,8 @@ export default function DeptFooter(){
 
      useEffect(() => {
           let currentDepartment = window.location.pathname.split("/")[2];
-          fetch(`https://data.skct.edu.in/${currentDepartment}/hod`)
-          .then(res=>res.json())
+          import(`../../../DataCenter/DepartmentsData/${currentDepartment}/hod/hodData`)
+          .then(res=>res.default)
           .then(dats=>{
                setHodName(dats.name)
                setHodEmail(dats.email)

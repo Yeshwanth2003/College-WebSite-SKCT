@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./Style/departmentHome.css"
+import "./Style/departmentHome.css";
 
 export default function DepartmentHome({ DataMapper, currentDepartment }) {
   let [homeSecData, setHomeSecData] = useState(null);
@@ -11,18 +11,13 @@ export default function DepartmentHome({ DataMapper, currentDepartment }) {
   let [pso, setPSO] = useState([]);
 
   useEffect(() => {
-    let thisDeptData = DataMapper.filter(
-      (elem) => elem.key.toLowerCase() === currentDepartment.toLowerCase()
-    );
-    let wanted = thisDeptData[0]["headers"].filter(
-      (elem) => elem.name.toLowerCase() === "home"
-    );
-    let linkOne = wanted[0]["links"][0].link;
-    fetch(`https://data.skct.edu.in${linkOne}`)
-      .then((res) => res.json())
+    import(
+      `../../../../DataCenter/DepartmentsData/${currentDepartment}/home/homedata`
+    )
+      .then((res) => res.default)
       .then((dats) => {
         setHomeSecData(dats);
-        setCoverImgLink(`https://data.skct.edu.in${dats.image}`);
+        setCoverImgLink(dats.image);
         setMission(dats.mission.split("\r\n"));
         let p_E_o = dats.academiics.filter(
           (elem) => elem.name.toLowerCase() === "peo"
@@ -30,7 +25,7 @@ export default function DepartmentHome({ DataMapper, currentDepartment }) {
         let p_o = dats.academiics.filter(
           (elem) => elem.name.toLowerCase() === "po"
         );
-        let p_s_o=dats.academiics.filter(
+        let p_s_o = dats.academiics.filter(
           (elem) => elem.name.toLowerCase() === "pso"
         );
         setPSO(p_s_o[0].details.split("\r\n"));
@@ -39,13 +34,15 @@ export default function DepartmentHome({ DataMapper, currentDepartment }) {
 
         // for hod
 
-        fetch(`https://data.skct.edu.in/${dats.name}/hod`)
-          .then((res) => res.json())
+        import(
+          `../../../../DataCenter/DepartmentsData/${currentDepartment}/hod/hodData`
+        )
+          .then((res) => res.default)
           .then((dats1) => {
             setHod(dats1);
           });
       });
-  }, []);
+  }, [DataMapper, currentDepartment]);
 
   return (
     <>
@@ -83,11 +80,7 @@ export default function DepartmentHome({ DataMapper, currentDepartment }) {
           <h2 className="deptHome-heading">HOD'S DESK</h2>
           <div className="deptHome-hodWrapper">
             <div className="deptHome-hodImgDiv">
-              <img
-                src={`https://data.skct.edu.in${hod.image}`}
-                alt=""
-                className="deptHome-hodImg"
-              />
+              <img src={hod.image} alt="" className="deptHome-hodImg" />
             </div>
             <div className="deptHome-hodContDiv">
               <p className="deptHome-hodCont">{hod.thought}</p>
@@ -105,38 +98,40 @@ export default function DepartmentHome({ DataMapper, currentDepartment }) {
           })}
         </div>
         <div className="deptHome-contentDiv">
-        <h2 className="deptHome-heading">PROGRAM OUTCOMES</h2>
-         <p className="deptHome-para">Graduates of this Engineering program of Sri Krishna College of Technology will have the ability to</p>
-         <ol className="deptHome-ol">
-             {
-              po.length>0 && 
-              po.map((elem,index)=>{
-                if(index===0)return <></>
-                return(
+          <h2 className="deptHome-heading">PROGRAM OUTCOMES</h2>
+          <p className="deptHome-para">
+            Graduates of this Engineering program of Sri Krishna College of
+            Technology will have the ability to
+          </p>
+          <ol className="deptHome-ol">
+            {po.length > 0 &&
+              po.map((elem, index) => {
+                if (index === 0) return <></>;
+                return (
                   <>
-                  <li className="deptHome-li">{elem}</li>
+                    <li className="deptHome-li">{elem}</li>
                   </>
-                )
-              })
-             }
-         </ol>
+                );
+              })}
+          </ol>
         </div>
         <div className="deptHome-contentDiv">
-        <h2 className="deptHome-heading">PROGRAM SPECIFIC OUTCOMES</h2>
-         <p className="deptHome-para">A graduate of this Engineering Program of Sri Krishna College of Technology will demonstrate:</p>
-         <ol className="deptHome-ol">
-             {
-              pso.length>0 && 
-              pso.map((elem,index)=>{
-                if(index===0)return <></>
-                return(
+          <h2 className="deptHome-heading">PROGRAM SPECIFIC OUTCOMES</h2>
+          <p className="deptHome-para">
+            A graduate of this Engineering Program of Sri Krishna College of
+            Technology will demonstrate:
+          </p>
+          <ol className="deptHome-ol">
+            {pso.length > 0 &&
+              pso.map((elem, index) => {
+                if (index === 0) return <></>;
+                return (
                   <>
-                  <li className="deptHome-li">{elem}</li>
+                    <li className="deptHome-li">{elem}</li>
                   </>
-                )
-              })
-             }
-         </ol>
+                );
+              })}
+          </ol>
         </div>
       </div>
     </>
