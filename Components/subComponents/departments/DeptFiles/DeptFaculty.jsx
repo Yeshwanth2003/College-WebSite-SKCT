@@ -5,8 +5,8 @@ export default function DeptFaculty({ currentDepartment }) {
   let [faculties, setFaculties] = useState([]);
 
   useEffect(() => {
-    fetch(`https://data.skct.edu.in/${currentDepartment}/faculty/`)
-      .then((res) => res.json())
+    import(`../../../../DataCenter/DepartmentsData/${currentDepartment}/Faculty/facultyData`)
+      .then((res) => res.default)
       .then((dats) => {
         setFaculties(
           dats.sort((a, b) => parseInt(a.order) - parseInt(b.order))

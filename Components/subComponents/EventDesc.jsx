@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Style/eventDese.css";
 
-export default function EventDesc() {
+export default function EventDesc({externalPageEID}) {
   let eventId =
     window.location.pathname.split("/")[
       window.location.pathname.split("/").length - 1
@@ -10,12 +10,12 @@ export default function EventDesc() {
   let [thisData, setThisData] = useState(null);
 
   useEffect(() => {
-    fetch(`https://data.skct.edu.in/events/${eventId}/`)
+    fetch(`https://data.skct.edu.in/events/${externalPageEID?externalPageEID:eventId}/`)
       .then((res) => res.json())
       .then((dats) => {
         setThisData(dats);
       });
-  }, [eventId]);
+  }, [eventId,externalPageEID]);
 
   return (
     <>

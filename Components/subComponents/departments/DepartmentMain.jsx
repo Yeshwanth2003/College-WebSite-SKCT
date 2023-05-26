@@ -6,7 +6,7 @@ import DataMapper from "./DepartmentDataMapper";
 import Loader from "../../Loading";
 import DepartmentHeader from "./DepartmentHeader";
 import DeptFooter from "./DeptFooter";
-import clgLogoImg from '../../asserts/collegeHeaderLogo.png'
+import clgLogoImg from "../../asserts/collegeHeaderLogo.png";
 
 export default function DepartmentMain() {
   if (window.location.pathname === "/departments") {
@@ -226,14 +226,13 @@ function DepartmentLister() {
 
 function DepartmentWebWrapper() {
   useEffect(() => {
-    window.addEventListener("scroll",
-    function () {
+    window.addEventListener("scroll", function () {
       if (window.scrollY >= 300) {
         document.querySelector("#scrollDiv").classList.add("showScroll-Div");
       } else {
         document.querySelector("#scrollDiv").classList.remove("showScroll-Div");
       }
-    })
+    });
   });
 
   function setNavDisplay() {
@@ -271,7 +270,11 @@ function DepartmentWebWrapper() {
             <div className="mobileNav-contentsHoldz">
               <div className="deptMobileNav-logoDiv">
                 <div className="deptMobileNav-logoDiv-imgDiv">
-                  <img src={clgLogoImg} alt="" className="deptMobileNav-logoDiv-img" />
+                  <img
+                    src={clgLogoImg}
+                    alt=""
+                    className="deptMobileNav-logoDiv-img"
+                  />
                 </div>
               </div>
               <DepartmentHeader DataMapper={DataMapper} />
@@ -543,17 +546,20 @@ function DepartmentInternalRouter() {
           </>
         );
       } else {
-        alert("eve civil");
-
+        let eventId =
+          window.location.pathname.split("/")[
+            window.location.pathname.split("/").length - 1
+          ];
+        let Component = lazy(() => import("../../subComponents/EventDesc"));
         return (
           <>
-            {"hello<br>there"}
-            {/* further event */}
+            <Suspense fallback={<Loader />}>
+              <Component externalPageEID={eventId} />
+            </Suspense>
           </>
         );
       }
-    }
-    else if (window.location.pathname === "/departments/CIVIL/club") {
+    } else if (window.location.pathname === "/departments/CIVIL/club") {
       let Component = lazy(() => import("./DeptFiles/DeptClub"));
       return (
         <>
@@ -562,8 +568,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CIVIL/lab") {
+    } else if (window.location.pathname === "/departments/CIVIL/lab") {
       let Component = lazy(() => import("./DeptFiles/DeptLab"));
       return (
         <>
@@ -572,8 +577,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CIVIL/placements") {
+    } else if (window.location.pathname === "/departments/CIVIL/placements") {
       let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
       return (
         <>
@@ -582,8 +586,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CIVIL/rankholder") {
+    } else if (window.location.pathname === "/departments/CIVIL/rankholder") {
       let Component = lazy(() => import("./DeptFiles/DeptRH"));
       return (
         <>
@@ -592,8 +595,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CIVIL/association") {
+    } else if (window.location.pathname === "/departments/CIVIL/association") {
       let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
       return (
         <>
@@ -602,8 +604,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CIVIL/bestoutgoingstudent") {
+    } else if (
+      window.location.pathname === "/departments/CIVIL/bestoutgoingstudent"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
       return (
         <>
@@ -612,8 +615,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CIVIL/Disguinshed_alumini") {
+    } else if (
+      window.location.pathname === "/departments/CIVIL/Disguinshed_alumini"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
       return (
         <>
@@ -622,8 +626,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CIVIL/testimonial") {
+    } else if (window.location.pathname === "/departments/CIVIL/testimonial") {
       let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
       return (
         <>
@@ -632,8 +635,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CIVIL/higher_studies") {
+    } else if (
+      window.location.pathname === "/departments/CIVIL/higher_studies"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptHS"));
       return (
         <>
@@ -642,8 +646,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CIVIL/gallery") {
+    } else if (window.location.pathname === "/departments/CIVIL/gallery") {
       let Component = lazy(() => import("./DeptFiles/DeptGallery"));
       return (
         <>
@@ -652,9 +655,8 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else{
-      window.location.pathname='/'
+    } else {
+      window.location.pathname = "/";
     }
   }
   // CSE router
@@ -747,11 +749,20 @@ function DepartmentInternalRouter() {
           </>
         );
       } else {
-        alert("eve cse");
-        return <>{/* further event */}</>;
+        let eventId =
+          window.location.pathname.split("/")[
+            window.location.pathname.split("/").length - 1
+          ];
+        let Component = lazy(() => import("../../subComponents/EventDesc"));
+        return (
+          <>
+            <Suspense fallback={<Loader />}>
+              <Component externalPageEID={eventId} />
+            </Suspense>
+          </>
+        );
       }
-    }
-    else if (window.location.pathname === "/departments/CSE/club") {
+    } else if (window.location.pathname === "/departments/CSE/club") {
       let Component = lazy(() => import("./DeptFiles/DeptClub"));
       return (
         <>
@@ -760,8 +771,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CSE/lab") {
+    } else if (window.location.pathname === "/departments/CSE/lab") {
       let Component = lazy(() => import("./DeptFiles/DeptLab"));
       return (
         <>
@@ -770,8 +780,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CSE/placements") {
+    } else if (window.location.pathname === "/departments/CSE/placements") {
       let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
       return (
         <>
@@ -780,8 +789,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CSE/rankholder") {
+    } else if (window.location.pathname === "/departments/CSE/rankholder") {
       let Component = lazy(() => import("./DeptFiles/DeptRH"));
       return (
         <>
@@ -790,8 +798,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CSE/association") {
+    } else if (window.location.pathname === "/departments/CSE/association") {
       let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
       return (
         <>
@@ -800,8 +807,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CSE/bestoutgoingstudent") {
+    } else if (
+      window.location.pathname === "/departments/CSE/bestoutgoingstudent"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
       return (
         <>
@@ -810,8 +818,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CSE/Disguinshed_alumini") {
+    } else if (
+      window.location.pathname === "/departments/CSE/Disguinshed_alumini"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
       return (
         <>
@@ -820,8 +829,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CSE/testimonial") {
+    } else if (window.location.pathname === "/departments/CSE/testimonial") {
       let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
       return (
         <>
@@ -830,8 +838,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/CSE/gallery") {
+    } else if (window.location.pathname === "/departments/CSE/gallery") {
       let Component = lazy(() => import("./DeptFiles/DeptGallery"));
       return (
         <>
@@ -840,9 +847,8 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else{
-      window.location.pathname='/'
+    } else {
+      window.location.pathname = "/";
     }
   }
   // ECE router
@@ -935,11 +941,20 @@ function DepartmentInternalRouter() {
           </>
         );
       } else {
-        alert("eve ECE");
-        return <>{/* further event */}</>;
+        let eventId =
+          window.location.pathname.split("/")[
+            window.location.pathname.split("/").length - 1
+          ];
+        let Component = lazy(() => import("../../subComponents/EventDesc"));
+        return (
+          <>
+            <Suspense fallback={<Loader />}>
+              <Component externalPageEID={eventId} />
+            </Suspense>
+          </>
+        );
       }
-    }
-    else if (window.location.pathname === "/departments/ECE/club") {
+    } else if (window.location.pathname === "/departments/ECE/club") {
       let Component = lazy(() => import("./DeptFiles/DeptClub"));
       return (
         <>
@@ -948,8 +963,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ECE/lab") {
+    } else if (window.location.pathname === "/departments/ECE/lab") {
       let Component = lazy(() => import("./DeptFiles/DeptLab"));
       return (
         <>
@@ -958,8 +972,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ECE/placements") {
+    } else if (window.location.pathname === "/departments/ECE/placements") {
       let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
       return (
         <>
@@ -968,8 +981,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ECE/rankholder") {
+    } else if (window.location.pathname === "/departments/ECE/rankholder") {
       let Component = lazy(() => import("./DeptFiles/DeptRH"));
       return (
         <>
@@ -978,8 +990,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ECE/association") {
+    } else if (window.location.pathname === "/departments/ECE/association") {
       let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
       return (
         <>
@@ -988,8 +999,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ECE/bestoutgoingstudent") {
+    } else if (
+      window.location.pathname === "/departments/ECE/bestoutgoingstudent"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
       return (
         <>
@@ -998,8 +1010,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ECE/Disguinshed_alumini") {
+    } else if (
+      window.location.pathname === "/departments/ECE/Disguinshed_alumini"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
       return (
         <>
@@ -1008,8 +1021,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ECE/testimonial") {
+    } else if (window.location.pathname === "/departments/ECE/testimonial") {
       let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
       return (
         <>
@@ -1018,8 +1030,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ECE/gallery") {
+    } else if (window.location.pathname === "/departments/ECE/gallery") {
       let Component = lazy(() => import("./DeptFiles/DeptGallery"));
       return (
         <>
@@ -1028,9 +1039,8 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else{
-      window.location.pathname='/'
+    } else {
+      window.location.pathname = "/";
     }
   }
   // EEE router
@@ -1123,11 +1133,20 @@ function DepartmentInternalRouter() {
           </>
         );
       } else {
-        alert("eve EEE");
-        return <>{/* further event */}</>;
+        let eventId =
+          window.location.pathname.split("/")[
+            window.location.pathname.split("/").length - 1
+          ];
+        let Component = lazy(() => import("../../subComponents/EventDesc"));
+        return (
+          <>
+            <Suspense fallback={<Loader />}>
+              <Component externalPageEID={eventId} />
+            </Suspense>
+          </>
+        );
       }
-    }
-    else if (window.location.pathname === "/departments/EEE/club") {
+    } else if (window.location.pathname === "/departments/EEE/club") {
       let Component = lazy(() => import("./DeptFiles/DeptClub"));
       return (
         <>
@@ -1136,8 +1155,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/EEE/lab") {
+    } else if (window.location.pathname === "/departments/EEE/lab") {
       let Component = lazy(() => import("./DeptFiles/DeptLab"));
       return (
         <>
@@ -1146,8 +1164,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/EEE/placements") {
+    } else if (window.location.pathname === "/departments/EEE/placements") {
       let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
       return (
         <>
@@ -1156,8 +1173,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/EEE/rankholder") {
+    } else if (window.location.pathname === "/departments/EEE/rankholder") {
       let Component = lazy(() => import("./DeptFiles/DeptRH"));
       return (
         <>
@@ -1166,8 +1182,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/EEE/association") {
+    } else if (window.location.pathname === "/departments/EEE/association") {
       let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
       return (
         <>
@@ -1176,8 +1191,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/EEE/bestoutgoingstudent") {
+    } else if (
+      window.location.pathname === "/departments/EEE/bestoutgoingstudent"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
       return (
         <>
@@ -1186,8 +1202,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/EEE/Disguinshed_alumini") {
+    } else if (
+      window.location.pathname === "/departments/EEE/Disguinshed_alumini"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
       return (
         <>
@@ -1196,8 +1213,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/EEE/testimonial") {
+    } else if (window.location.pathname === "/departments/EEE/testimonial") {
       let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
       return (
         <>
@@ -1206,8 +1222,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/EEE/gallery") {
+    } else if (window.location.pathname === "/departments/EEE/gallery") {
       let Component = lazy(() => import("./DeptFiles/DeptGallery"));
       return (
         <>
@@ -1216,9 +1231,8 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else{
-      window.location.pathname='/'
+    } else {
+      window.location.pathname = "/";
     }
   } // ICE router
   else if (window.location.pathname.startsWith("/departments/ICE", 0)) {
@@ -1310,11 +1324,20 @@ function DepartmentInternalRouter() {
           </>
         );
       } else {
-        alert("eve ICE");
-        return <>{/* further event */}</>;
+        let eventId =
+          window.location.pathname.split("/")[
+            window.location.pathname.split("/").length - 1
+          ];
+        let Component = lazy(() => import("../../subComponents/EventDesc"));
+        return (
+          <>
+            <Suspense fallback={<Loader />}>
+              <Component externalPageEID={eventId} />
+            </Suspense>
+          </>
+        );
       }
-    }
-    else if (window.location.pathname === "/departments/ICE/club") {
+    } else if (window.location.pathname === "/departments/ICE/club") {
       let Component = lazy(() => import("./DeptFiles/DeptClub"));
       return (
         <>
@@ -1323,8 +1346,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ICE/lab") {
+    } else if (window.location.pathname === "/departments/ICE/lab") {
       let Component = lazy(() => import("./DeptFiles/DeptLab"));
       return (
         <>
@@ -1333,8 +1355,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ICE/placements") {
+    } else if (window.location.pathname === "/departments/ICE/placements") {
       let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
       return (
         <>
@@ -1343,8 +1364,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ICE/rankholder") {
+    } else if (window.location.pathname === "/departments/ICE/rankholder") {
       let Component = lazy(() => import("./DeptFiles/DeptRH"));
       return (
         <>
@@ -1353,8 +1373,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ICE/association") {
+    } else if (window.location.pathname === "/departments/ICE/association") {
       let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
       return (
         <>
@@ -1363,8 +1382,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ICE/bestoutgoingstudent") {
+    } else if (
+      window.location.pathname === "/departments/ICE/bestoutgoingstudent"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
       return (
         <>
@@ -1373,8 +1393,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ICE/Disguinshed_alumini") {
+    } else if (
+      window.location.pathname === "/departments/ICE/Disguinshed_alumini"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
       return (
         <>
@@ -1383,8 +1404,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ICE/testimonial") {
+    } else if (window.location.pathname === "/departments/ICE/testimonial") {
       let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
       return (
         <>
@@ -1393,8 +1413,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/ICE/gallery") {
+    } else if (window.location.pathname === "/departments/ICE/gallery") {
       let Component = lazy(() => import("./DeptFiles/DeptGallery"));
       return (
         <>
@@ -1403,9 +1422,8 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else{
-      window.location.pathname='/'
+    } else {
+      window.location.pathname = "/";
     }
   }
   // MECH router
@@ -1498,11 +1516,20 @@ function DepartmentInternalRouter() {
           </>
         );
       } else {
-        alert("eve IT");
-        return <>{/* further event */}</>;
+        let eventId =
+          window.location.pathname.split("/")[
+            window.location.pathname.split("/").length - 1
+          ];
+        let Component = lazy(() => import("../../subComponents/EventDesc"));
+        return (
+          <>
+            <Suspense fallback={<Loader />}>
+              <Component externalPageEID={eventId} />
+            </Suspense>
+          </>
+        );
       }
-    }
-    else if (window.location.pathname === "/departments/MECH/club") {
+    } else if (window.location.pathname === "/departments/MECH/club") {
       let Component = lazy(() => import("./DeptFiles/DeptClub"));
       return (
         <>
@@ -1511,8 +1538,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/MECH/lab") {
+    } else if (window.location.pathname === "/departments/MECH/lab") {
       let Component = lazy(() => import("./DeptFiles/DeptLab"));
       return (
         <>
@@ -1521,8 +1547,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/MECH/placements") {
+    } else if (window.location.pathname === "/departments/MECH/placements") {
       let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
       return (
         <>
@@ -1531,8 +1556,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/MECH/rankholder") {
+    } else if (window.location.pathname === "/departments/MECH/rankholder") {
       let Component = lazy(() => import("./DeptFiles/DeptRH"));
       return (
         <>
@@ -1541,8 +1565,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/MECH/association") {
+    } else if (window.location.pathname === "/departments/MECH/association") {
       let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
       return (
         <>
@@ -1551,8 +1574,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/MECH/bestoutgoingstudent") {
+    } else if (
+      window.location.pathname === "/departments/MECH/bestoutgoingstudent"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
       return (
         <>
@@ -1561,8 +1585,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/MECH/Disguinshed_alumini") {
+    } else if (
+      window.location.pathname === "/departments/MECH/Disguinshed_alumini"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
       return (
         <>
@@ -1571,8 +1596,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/MECH/testimonial") {
+    } else if (window.location.pathname === "/departments/MECH/testimonial") {
       let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
       return (
         <>
@@ -1581,8 +1605,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/MECH/gallery") {
+    } else if (window.location.pathname === "/departments/MECH/gallery") {
       let Component = lazy(() => import("./DeptFiles/DeptGallery"));
       return (
         <>
@@ -1591,9 +1614,8 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else{
-      window.location.pathname='/'
+    } else {
+      window.location.pathname = "/";
     }
   }
   // IT router
@@ -1686,11 +1708,20 @@ function DepartmentInternalRouter() {
           </>
         );
       } else {
-        alert("eve IT");
-        return <>{/* further event */}</>;
+        let eventId =
+          window.location.pathname.split("/")[
+            window.location.pathname.split("/").length - 1
+          ];
+        let Component = lazy(() => import("../../subComponents/EventDesc"));
+        return (
+          <>
+            <Suspense fallback={<Loader />}>
+              <Component externalPageEID={eventId} />
+            </Suspense>
+          </>
+        );
       }
-    }
-    else if (window.location.pathname === "/departments/IT/club") {
+    } else if (window.location.pathname === "/departments/IT/club") {
       let Component = lazy(() => import("./DeptFiles/DeptClub"));
       return (
         <>
@@ -1699,8 +1730,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/IT/lab") {
+    } else if (window.location.pathname === "/departments/IT/lab") {
       let Component = lazy(() => import("./DeptFiles/DeptLab"));
       return (
         <>
@@ -1709,8 +1739,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/IT/placements") {
+    } else if (window.location.pathname === "/departments/IT/placements") {
       let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
       return (
         <>
@@ -1719,8 +1748,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/IT/rankholder") {
+    } else if (window.location.pathname === "/departments/IT/rankholder") {
       let Component = lazy(() => import("./DeptFiles/DeptRH"));
       return (
         <>
@@ -1729,8 +1757,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/IT/association") {
+    } else if (window.location.pathname === "/departments/IT/association") {
       let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
       return (
         <>
@@ -1739,8 +1766,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/IT/bestoutgoingstudent") {
+    } else if (
+      window.location.pathname === "/departments/IT/bestoutgoingstudent"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
       return (
         <>
@@ -1749,8 +1777,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/IT/Disguinshed_alumini") {
+    } else if (
+      window.location.pathname === "/departments/IT/Disguinshed_alumini"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
       return (
         <>
@@ -1759,8 +1788,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/IT/testimonial") {
+    } else if (window.location.pathname === "/departments/IT/testimonial") {
       let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
       return (
         <>
@@ -1769,8 +1797,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/IT/gallery") {
+    } else if (window.location.pathname === "/departments/IT/gallery") {
       let Component = lazy(() => import("./DeptFiles/DeptGallery"));
       return (
         <>
@@ -1779,9 +1806,8 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else{
-      window.location.pathname='/'
+    } else {
+      window.location.pathname = "/";
     }
   }
   // S&H router
@@ -1874,11 +1900,20 @@ function DepartmentInternalRouter() {
           </>
         );
       } else {
-        alert("eve IT");
-        return <>{/* further event */}</>;
+        let eventId =
+          window.location.pathname.split("/")[
+            window.location.pathname.split("/").length - 1
+          ];
+        let Component = lazy(() => import("../../subComponents/EventDesc"));
+        return (
+          <>
+            <Suspense fallback={<Loader />}>
+              <Component externalPageEID={eventId} />
+            </Suspense>
+          </>
+        );
       }
-    }
-    else if (window.location.pathname === "/departments/S&H/club") {
+    } else if (window.location.pathname === "/departments/S&H/club") {
       let Component = lazy(() => import("./DeptFiles/DeptClub"));
       return (
         <>
@@ -1887,8 +1922,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/S&H/lab") {
+    } else if (window.location.pathname === "/departments/S&H/lab") {
       let Component = lazy(() => import("./DeptFiles/DeptLab"));
       return (
         <>
@@ -1897,8 +1931,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/S&H/placements") {
+    } else if (window.location.pathname === "/departments/S&H/placements") {
       let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
       return (
         <>
@@ -1907,8 +1940,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/S&H/rankholder") {
+    } else if (window.location.pathname === "/departments/S&H/rankholder") {
       let Component = lazy(() => import("./DeptFiles/DeptRH"));
       return (
         <>
@@ -1917,8 +1949,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/S&H/association") {
+    } else if (window.location.pathname === "/departments/S&H/association") {
       let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
       return (
         <>
@@ -1927,8 +1958,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/S&H/bestoutgoingstudent") {
+    } else if (
+      window.location.pathname === "/departments/S&H/bestoutgoingstudent"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
       return (
         <>
@@ -1937,8 +1969,9 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/S&H/Disguinshed_alumini") {
+    } else if (
+      window.location.pathname === "/departments/S&H/Disguinshed_alumini"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
       return (
         <>
@@ -1947,8 +1980,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/S&H/testimonial") {
+    } else if (window.location.pathname === "/departments/S&H/testimonial") {
       let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
       return (
         <>
@@ -1957,8 +1989,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/S&H/gallery") {
+    } else if (window.location.pathname === "/departments/S&H/gallery") {
       let Component = lazy(() => import("./DeptFiles/DeptGallery"));
       return (
         <>
@@ -1967,9 +1998,8 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else{
-      window.location.pathname='/'
+    } else {
+      window.location.pathname = "/";
     }
   }
   // SOM router
@@ -2062,11 +2092,20 @@ function DepartmentInternalRouter() {
           </>
         );
       } else {
-        alert("eve IT");
-        return <>{/* further event */}</>;
+        let eventId =
+          window.location.pathname.split("/")[
+            window.location.pathname.split("/").length - 1
+          ];
+        let Component = lazy(() => import("../../subComponents/EventDesc"));
+        return (
+          <>
+            <Suspense fallback={<Loader />}>
+              <Component externalPageEID={eventId} />
+            </Suspense>
+          </>
+        );
       }
-    }
-    else if (window.location.pathname === "/departments/SOM/club") {
+    } else if (window.location.pathname === "/departments/SOM/club") {
       let Component = lazy(() => import("./DeptFiles/DeptClub"));
       return (
         <>
@@ -2075,8 +2114,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/SOM/lab") {
+    } else if (window.location.pathname === "/departments/SOM/lab") {
       let Component = lazy(() => import("./DeptFiles/DeptLab"));
       return (
         <>
@@ -2085,8 +2123,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/SOM/placements") {
+    } else if (window.location.pathname === "/departments/SOM/placements") {
       let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
       return (
         <>
@@ -2095,8 +2132,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/SOM/rankholder") {
+    } else if (window.location.pathname === "/departments/SOM/rankholder") {
       let Component = lazy(() => import("./DeptFiles/DeptRH"));
       return (
         <>
@@ -2105,8 +2141,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/SOM/association") {
+    } else if (window.location.pathname === "/departments/SOM/association") {
       let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
       return (
         <>
@@ -2115,18 +2150,20 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/SOM/bestoutgoingstudent") {
+    } else if (
+      window.location.pathname === "/departments/SOM/bestoutgoingstudent"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
       return (
         <>
           <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM"/>
+            <Component currentDepartment="SOM" />
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/SOM/Disguinshed_alumini") {
+    } else if (
+      window.location.pathname === "/departments/SOM/Disguinshed_alumini"
+    ) {
       let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
       return (
         <>
@@ -2135,8 +2172,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/SOM/testimonial") {
+    } else if (window.location.pathname === "/departments/SOM/testimonial") {
       let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
       return (
         <>
@@ -2145,8 +2181,7 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
-    }
-    else if (window.location.pathname === "/departments/SOM/gallery") {
+    } else if (window.location.pathname === "/departments/SOM/gallery") {
       let Component = lazy(() => import("./DeptFiles/DeptGallery"));
       return (
         <>
@@ -2155,11 +2190,10 @@ function DepartmentInternalRouter() {
           </Suspense>
         </>
       );
+    } else {
+      window.location.pathname = "/";
     }
-    else{
-      window.location.pathname='/'
-    }
-  } 
+  }
   // end route
   else {
     window.location.pathname = "/";

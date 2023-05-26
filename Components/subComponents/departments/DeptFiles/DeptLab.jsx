@@ -5,8 +5,8 @@ export default function DeptLab({ currentDepartment }) {
   let [labData, setLabData] = useState([]);
 
   useEffect(() => {
-    fetch(`https://data.skct.edu.in/${currentDepartment}/lab/`)
-      .then((res) => res.json())
+      import(`../../../../DataCenter/DepartmentsData/${currentDepartment}/Lab/labData`)
+      .then(res=>res.default)
       .then((dats) => {
         setLabData(dats);
       });

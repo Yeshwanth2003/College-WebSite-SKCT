@@ -7,11 +7,10 @@ export default function DeptLib({currentDepartment}){
      let [libData,setLibData] = useState("");
 
      useEffect(()=>{
-       fetch(`https://data.skct.edu.in/${currentDepartment}/library/`)
-       .then(res=>res.json())
+      import(`../../../../DataCenter/DepartmentsData/${currentDepartment}/Library/libData`)
+       .then(res=>res.default)
        .then(dats=>{
-          console.log(dats);
-          setLibCover(`https://data.skct.edu.in${dats[0].img}`);
+          setLibCover(`${dats[0].img}`);
           setLibData(dats[0].desc)
        })
      },[currentDepartment])
