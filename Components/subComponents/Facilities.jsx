@@ -6,8 +6,8 @@ export default function Facilities() {
   let [facilitiesData, setFacilitiesData] = useState([]);
 
   useEffect(() => {
-    fetch("https://data.skct.edu.in/facilities/")
-      .then((res) => res.json())
+    import("../../DataCenter/subComponentsData/CampusLife/Facilities/facilitiesData")
+      .then((res) => res.default)
       .then((dats) => {
         setFacilitiesData(dats);
         if (
@@ -74,7 +74,7 @@ export default function Facilities() {
                   facilitiesData.map((elem,index)=>{
                     return(
                       <>
-                      <FacilityCard DESE={elem.description} NAME={elem.title} IMG={`https://data.skct.edu.in${elem.img[0].image}`} key={index.toString()} val={index}/>
+                      <FacilityCard DESE={elem.description} NAME={elem.title} IMG={elem.img[0].image} key={index.toString()} val={index}/>
                       </>
                     )
                   })

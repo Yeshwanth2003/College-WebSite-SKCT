@@ -6,8 +6,8 @@ export default function DeptBOStudent({currentDepartment}){
      let[BOSData,setBOSData]=useState([]);
 
      useEffect(()=>{
-          fetch(`https://data.skct.edu.in/${currentDepartment}/beststud/`)
-          .then(res=>res.json())
+          import("../../../../DataCenter/DepartmentsData/CIVIL/bestOutGoingStudentData")
+          .then(res=>res.default)
           .then(dats=>{
                setBOSData(dats);
           })
