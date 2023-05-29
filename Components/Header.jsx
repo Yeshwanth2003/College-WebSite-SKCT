@@ -268,14 +268,14 @@ function LaptopHeader() {
                         </li>
                       </a>
                       <a
-                        href="/proffesionalAssociation"
+                        href="/exam/forms"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
                         <li className="laptopHeader-dropDown-li">Forms</li>
                       </a>
                       <a
-                        href="/"
+                        href="/regulations"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
@@ -431,12 +431,12 @@ function LaptopHeader() {
                   <div className="laptopHeader-dropDownDiv research-dropDown-Lap">
                     <ul className="laptopHeader-dropDown-ul">
                       <a
-                        href="/"
+                        href="/academicResearch"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
                         <li className="laptopHeader-dropDown-li">
-                          Center of R&D
+                          Academic Research
                         </li>
                       </a>
                       <a
@@ -447,12 +447,12 @@ function LaptopHeader() {
                         <li className="laptopHeader-dropDown-li">IPR Cell</li>
                       </a>
                       <a
-                        href="/"
+                        href="/researchCenter"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
                         <li className="laptopHeader-dropDown-li">
-                          Funded Project
+                          Research Centers
                         </li>
                       </a>
                       <a
@@ -460,7 +460,7 @@ function LaptopHeader() {
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
-                        <li className="laptopHeader-dropDown-li">IIC</li>
+                        <li className="laptopHeader-dropDown-li">Incubation Centers</li>
                       </a>
                     </ul>
                   </div>
@@ -744,7 +744,7 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <a className="mobile-nav-link" href="/approvals">
+                            <a className="mobile-nav-link" href="/exam/forms">
                               Forms
                             </a>
                           </div>
@@ -758,7 +758,7 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <a className="mobile-nav-link" href="/skctmedia">
+                            <a className="mobile-nav-link" href="/regulations">
                               Regulations
                             </a>
                           </div>
@@ -1265,8 +1265,8 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <a className="mobile-nav-link" href="/">
-                              Center of R&D
+                            <a className="mobile-nav-link" href="/academicResearch">
+                             Academic Research
                             </a>
                           </div>
                         </div>
@@ -1293,8 +1293,8 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <a className="mobile-nav-link" href="/">
-                              Funded Projects
+                            <a className="mobile-nav-link" href="/researchCenters">
+                              Research Centers
                             </a>
                           </div>
                         </div>
@@ -1307,8 +1307,8 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <a className="mobile-nav-link" href="/iic">
-                              IIC
+                            <a className="mobile-nav-link" href="/">
+                              Incubation Center
                             </a>
                           </div>
                         </div>

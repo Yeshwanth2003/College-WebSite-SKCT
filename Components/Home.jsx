@@ -404,7 +404,16 @@ function MyRouter() {
       </>
     );
   }
-  // exam Continue
+  else if (window.location.pathname === "/exam/forms") {
+    let Component = lazy(() => import("./subComponents/XmForms"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  }
   else if (window.location.pathname === "/facilities") {
     let Component = lazy(() => import("./subComponents/Facilities"));
     return (
@@ -549,6 +558,26 @@ function MyRouter() {
   }
   else if (window.location.pathname === "/recruiters") {
     let Component = lazy(() => import("./subComponents/SubRecuritiers"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  }
+  else if (window.location.pathname === "/regulations") {
+    let Component = lazy(() => import("./subComponents/Regulations"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  }
+  else if (window.location.pathname === "/academicResearch") {
+    let Component = lazy(() => import("./subComponents/AcademicResearch"));
     return (
       <>
         <Suspense fallback={<Loading />}>

@@ -1,0 +1,47 @@
+.xmf-wrapper{
+     width: 100%;
+     height: max-content;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.xmf-container{
+     width: 98%;
+     height: max-content;
+}
+.xmf-headingDiv{
+     height: 60px;
+     border-bottom: 1px solid gray;
+     display: flex;
+     align-items: center;
+     color: orange;
+}
+.xmf-body{
+     margin: 20px 0;
+     width: 100%;
+     height: max-content;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+}
+.f1-wrapper{
+     width: 100%;
+     height: max-content;
+     padding: 10px 20px;
+     display: flex;
+     align-items: center;
+     gap: 20px;
+     border-radius: 10px;
+}
+.f1-wrapper:hover{
+     background-color: rgb(246, 244, 244);
+}
+.f1-span{
+     display: inline-block;
+     flex: 1;
+     text-transform: uppercase;
+}
+.f1-link{
+     color: black;
+     text-decoration: none;
+}

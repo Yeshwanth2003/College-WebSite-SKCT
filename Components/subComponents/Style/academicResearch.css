@@ -1,0 +1,138 @@
+.ar-wrapper {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ar-container {
+  width: 98%;
+  height: max-content;
+}
+.ar-headingDiv {
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid grey;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: orange;
+  justify-content: space-between;
+}
+.ar-h-input {
+  display: none;
+}
+.ar-nav-triDotDiv {
+  width: max-content;
+  height: max-content;
+  cursor: pointer;
+  display: none;
+}
+.ar-nav {
+  position: absolute;
+  height: 40px;
+  width: max-content;
+  bottom: 0;
+  transform: translateY(110%);
+}
+.ar-nav-ul {
+  width: max-content;
+  height: 100%;
+  display: flex;
+  gap: 15px;
+}
+.ar-nav-ul::before {
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: rgb(240, 236, 247);
+  position: absolute;
+  left: 0;
+  border-radius: 10px;
+}
+.ar-nav-li {
+  list-style: none;
+  width: max-content;
+  position: relative;
+}
+.ar-nav-li-cur {
+  background-color: rgb(225, 230, 232);
+  border-radius: 10px;
+}
+.ar-nav-li-cur::after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: rgb(92, 92, 226);
+  position: absolute;
+  left: 0;
+  border-radius: 10px;
+}
+.ar-nav-button {
+  padding: 0 10px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border: none;
+  outline-color: transparent;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.ar-body {
+  width: 100%;
+  height: 600px;
+  margin: 60px 0;
+  background-color: aqua;
+}
+@media (max-device-width: 1100px), (width<1100px) {
+  .ar-nav-li-cur {
+    border-radius: 0;
+  }
+  .ar-nav {
+    display: none;
+    width: 100%;
+    height: max-content;
+    transform: translateY(100%);
+    justify-content: flex-end;
+  }
+  .ar-body {
+    margin: 20px 0;
+  }
+  .ar-headingDiv:has(.ar-h-input:checked) .ar-nav {
+    display: flex;
+  }
+  .ar-nav-ul {
+    box-shadow: 0 0 10px black;
+    flex-direction: column;
+    height: max-content;
+    background-color: white;
+    gap: 0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .ar-nav-ul::before {
+    width: 0;
+    height: 0;
+  }
+  .ar-nav-li {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    align-self: flex-end;
+  }
+  .ar-nav-button {
+    padding: 15px 10px;
+    text-align: left;
+  }
+  .ar-nav-li-cur::after {
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+  .ar-nav-triDotDiv{
+     display: block;
+  }
+}
+
