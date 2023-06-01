@@ -1,0 +1,22 @@
+.ar-aboutus-wrapper{
+     margin: 0 20px;
+}
+.skctsubhead{
+     color: royalblue;
+     font-size: larger;
+     font-weight: bolder;
+     margin: 10px 0;
+     font-size: 21px;
+}
+.ar-aboutus-wrapper p{
+     margin: 10px 0;
+}
+.ar-aboutus-wrapper ol,
+.ar-aboutus-wrapper ul
+{
+     margin: 10px 40px;
+}
+.ar-aboutus-wrapper ol li,
+.ar-aboutus-wrapper ul li{
+     margin: 10px 0;
+}

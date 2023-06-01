@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
+import Loading from '../Loading'
 import "./Style/academicResearch.css";
 
 const ARPAGESTATES = {
@@ -145,9 +146,27 @@ export default function AcademicResearch() {
               </label>
             </div>
           </div>
-          <div className="ar-body"></div>
+          <div className="ar-body">
+             <ARrouter pageState={inbuiltRS}/>
+          </div>
         </div>
       </div>
     </>
   );
+}
+
+function ARrouter(pageState){
+   if(false){
+
+   }
+   else{
+    let Component = lazy(()=>import("./AcademicResearchPages/AboutUs"));
+    return(
+      <>
+      <Suspense fallback={<Loading />}>
+           <Component />
+      </Suspense>
+      </>
+    )
+   }
 }

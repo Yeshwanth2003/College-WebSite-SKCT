@@ -1,8 +1,22 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import Loading from "./Loading";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+export function Img_Err_Solver(){
+  let allImages = [...document.images];
+    allImages.forEach(elem=>{
+      elem.addEventListener("error",(event)=>{
+        event.target.style.display = "none"
+      })
+    })
+}
+
 export default function WholeApp() {
+
+  useEffect(()=>{
+    Img_Err_Solver()
+  })
+
   return (
     <>
       <WholeAppRouter />

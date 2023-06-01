@@ -436,7 +436,7 @@ function LaptopHeader() {
                         </li>
                       </Link>
                       <Link
-                        to="/"
+                        to="/iprCell"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
@@ -1273,7 +1273,7 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <Link className="mobile-nav-link" to="/">
+                            <Link className="mobile-nav-link" to="/iprCell">
                               IPR Cell
                             </Link>
                           </div>

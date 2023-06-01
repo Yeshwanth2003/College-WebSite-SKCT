@@ -5,6 +5,7 @@ import ContextTag from "./ContextFile";
 import CampusVideos from "./CampusVideos";
 import Alumni from "./Alumni";
 import { Link } from "react-router-dom";
+import { Img_Err_Solver } from "./WholeApp";
 
 export default function MainHome() {
   // Home Events states
@@ -24,19 +25,25 @@ export default function MainHome() {
   // Alumni Data
   let [alumniData, setAlumniData] = useState([]);
 
-  // Check browser version
+  // // Check browser version
+  // useEffect(() => {
+  //   let version = parseInt(
+  //     window.navigator.userAgent
+  //       .split(" ")
+  //       .filter((elem) => elem.includes("Chrome"))[0]
+  //       .split("/")[1]
+  //       .split(".")[0]
+  //   );
+  //   if (version < 108) {
+  //     alert("Use Latest Browser version for better user experience");
+  //   }
+  // }, []);
+
+  // IMG Error
+
   useEffect(() => {
-    let version = parseInt(
-      window.navigator.userAgent
-        .split(" ")
-        .filter((elem) => elem.includes("Chrome"))[0]
-        .split("/")[1]
-        .split(".")[0]
-    );
-    if (version < 108) {
-      alert("Use Latest Browser version for better user experience");
-    }
-  }, []);
+    Img_Err_Solver();
+  });
 
   // home Events sideeffect
   useEffect(() => {
@@ -262,6 +269,34 @@ export default function MainHome() {
   }
 
   function IARunner() {
+    let [iaRunnerData, setIARunnerData] = useState([]);
+
+    useEffect(() => {
+      import("../DataCenter/InstutionAccomplishment/instutionAccomplishment")
+        .then((res) => res.default)
+        .then((dats) => {
+          setIARunnerData(dats);
+        });
+    }, []);
+
+    // IMG Error
+
+    useEffect(() => {
+      Img_Err_Solver();
+    });
+
+    function IARunnerTemp({ IMG }) {
+      return (
+        <>
+          <Link to="/" className="mainhome-ia-runner-link">
+            <div className="mainhome-ia-runner-imgwrapper-box">
+              <img src={IMG} alt="" className="mainhome-ia-runner-img" />
+            </div>
+          </Link>
+        </>
+      );
+    }
+
     return (
       <>
         <div className="mainHome-IArunner-wrapper">
@@ -270,7 +305,17 @@ export default function MainHome() {
               INSTITUTE ACCOMPLISHMENTS
             </h2>
           </div>
-          <div className="mainHome-IArunner-Box">{/* Runner */}</div>
+          <div className="mainHome-IArunner-Box">
+            <div className="mainHome-IArunner-runnerDiv">
+              {iaRunnerData.map((elem) => {
+                return (
+                  <>
+                    <IARunnerTemp IMG={elem.img} />
+                  </>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </>
     );
@@ -411,10 +456,7 @@ function UpcomingEventCard({ date, month, infoTitle, key, link }) {
           </div>
         </div>
         <div className="upcomingEvent-infoBox">
-          <Link
-            to={link}
-            className="upcomingEvent-linkku"
-          >
+          <Link to={link} className="upcomingEvent-linkku">
             <p className="upcomingEvent-infoP">{infoTitle}</p>
           </Link>
         </div>

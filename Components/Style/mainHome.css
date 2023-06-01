@@ -138,7 +138,7 @@
   align-items: center;
 }
 .mainHome-runner1-upEv-boxWrapper {
-  width: 90%;
+  width: 80%;
   height: 100%;
   /* background-color: azure; */
 }
@@ -324,8 +324,8 @@
 /* IA Runner */
 .mainHome-IArunner-wrapper{
   width: 100%;
-  height: 35vh;
-  background-color: red;
+  height: 30vh;
+  /* background-color: red; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -334,14 +334,59 @@
 .mainHome-IArunner-Box{
   width: 95%;
   height:80%;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
   overflow: hidden;
+}
+.mainHome-IArunner-runnerDiv{
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+.mainHome-IArunner-runnerDiv::-webkit-scrollbar{
+  display: none;
+}
+.mainhome-ia-runner-imgwrapper-box{
+  width: 200px;
+  height: 100%;
+  /* background-color: yellow; */
+  border: 1px solid black;
+  position: relative;
+}
+.mainhome-ia-runner-link{
+  height: 100%;
+  width: max-content;
+}
+.mainhome-ia-runner-imgwrapper::after{
+position: absolute;
+content: '';
+width: 30px;
+height: 30px;
+border: #e67e22 5px solid;
+border-bottom-color:transparent ;
+inset: 0;
+margin: auto;
+border-radius: 100px;
+animation: iarunnerani 2s infinite;
+z-index: -1;
+}
+@keyframes iarunnerani {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.mainhome-ia-runner-img{
+  width: 100%;
+  height: 100%;
 }
 .mainHome-IArunner-headingBox{
   width: 95%;
   height: 20%;
   text-align: center;
-  background-color: cornflowerblue;
+  /* background-color: cornflowerblue; */
 }
 .mainHome-IArunner-headingBox h2,
 .newCard-theory h2,
