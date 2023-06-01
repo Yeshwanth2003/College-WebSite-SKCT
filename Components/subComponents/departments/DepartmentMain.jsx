@@ -7,9 +7,10 @@ import Loader from "../../Loading";
 import DepartmentHeader from "./DepartmentHeader";
 import DeptFooter from "./DeptFooter";
 import clgLogoImg from "../../asserts/collegeHeaderLogo.png";
+import { Link, Route, Routes } from "react-router-dom";
 
 export default function DepartmentMain() {
-  if (window.location.pathname === "/departments") {
+  if (window.location.pathname === "/department") {
     return <DepartmentLister />;
   } else {
     return <DepartmentWebWrapper />;
@@ -30,12 +31,12 @@ function DepartmentLister() {
                 <details open className="departmentHome-detalis">
                   <summary className="departmentHome-Summery">
                     <div className="departmentHome-summeryDiv">
-                      <a
-                        href="/departments/CIVIL/home"
+                      <Link
+                        to="/departments/CIVIL/home"
                         className="departmentHome-summeryLink"
                       >
                         CIVIL ENGINEERING
-                      </a>
+                      </Link>
                     </div>
                   </summary>
                   <ul className="departmentHome-detailsUl">
@@ -52,12 +53,12 @@ function DepartmentLister() {
                 <details open className="departmentHome-detalis">
                   <summary className="departmentHome-Summery">
                     <div className="departmentHome-summeryDiv">
-                      <a
-                        href="/departments/CSE/home"
+                      <Link
+                        to="/departments/CSE/home"
                         className="departmentHome-summeryLink"
                       >
                         COMPUTER SCIENCE AND ENGINEERING
-                      </a>
+                      </Link>
                     </div>
                   </summary>
                   <ul className="departmentHome-detailsUl">
@@ -87,13 +88,13 @@ function DepartmentLister() {
               <li className="departmentHome-li">
                 <details open className="departmentHome-detalis">
                   <summary className="departmentHome-Summery">
-                    <div className="departmentHome-summeryDiv">
-                      <a
-                        href="/departments/ECE/home"
+                    <div className="departmentHome-summeryDiv"> 
+                      <Link
+                        to="/departments/ECE/home"
                         className="departmentHome-summeryLink"
                       >
                         ELECTRONIS AND COMMUNICATION ENGINEERING
-                      </a>
+                      </Link>
                     </div>
                   </summary>
                   <ul className="departmentHome-detailsUl">
@@ -110,12 +111,12 @@ function DepartmentLister() {
                 <details open className="departmentHome-detalis">
                   <summary className="departmentHome-Summery">
                     <div className="departmentHome-summeryDiv">
-                      <a
-                        href="/departments/EEE/home"
+                      <Link
+                        to="/departments/EEE/home"
                         className="departmentHome-summeryLink"
                       >
                         ELECTRICAL AND ELECTRONICS ENGINEERING
-                      </a>
+                      </Link>
                     </div>
                   </summary>
                   <ul className="departmentHome-detailsUl">
@@ -132,12 +133,12 @@ function DepartmentLister() {
                 <details open className="departmentHome-detalis">
                   <summary className="departmentHome-Summery">
                     <div className="departmentHome-summeryDiv">
-                      <a
-                        href="/departments/ICE/home"
+                      <Link
+                        to="/departments/ICE/home"
                         className="departmentHome-summeryLink"
                       >
                         INSTRUMENTATION AND CONTROL ENGINEERING
-                      </a>
+                      </Link>
                     </div>
                   </summary>
                   <ul className="departmentHome-detailsUl">
@@ -151,12 +152,12 @@ function DepartmentLister() {
                 <details open className="departmentHome-detalis">
                   <summary className="departmentHome-Summery">
                     <div className="departmentHome-summeryDiv">
-                      <a
-                        href="/departments/MECH/home"
+                      <Link
+                        to="/departments/MECH/home"
                         className="departmentHome-summeryLink"
                       >
                         MECHANICAL ENGINEERING
-                      </a>
+                      </Link>
                     </div>
                   </summary>
                   <ul className="departmentHome-detailsUl">
@@ -173,12 +174,12 @@ function DepartmentLister() {
                 <details open className="departmentHome-detalis">
                   <summary className="departmentHome-Summery">
                     <div className="departmentHome-summeryDiv">
-                      <a
-                        href="/departments/IT/home"
+                      <Link
+                        to="/departments/IT/home"
                         className="departmentHome-summeryLink"
                       >
                         INFORMATION TECHNOLOGY
-                      </a>
+                      </Link>
                     </div>
                   </summary>
                   <ul className="departmentHome-detailsUl">
@@ -192,12 +193,12 @@ function DepartmentLister() {
                 <details open className="departmentHome-detalis">
                   <summary className="departmentHome-Summery">
                     <div className="departmentHome-summeryDiv">
-                      <a
-                        href="/departments/S&H/home"
+                      <Link
+                        to="/departments/S&H/home"
                         className="departmentHome-summeryLink"
                       >
                         SCIENCE AND HUMANITIES
-                      </a>
+                      </Link>
                     </div>
                   </summary>
                 </details>
@@ -206,12 +207,12 @@ function DepartmentLister() {
                 <details open className="departmentHome-detalis">
                   <summary className="departmentHome-Summery">
                     <div className="departmentHome-summeryDiv">
-                      <a
-                        href="/departments/SOM/home"
+                      <Link
+                        to="/departments/SOM/home"
                         className="departmentHome-summeryLink"
                       >
                         MASTER OF BUSINESS ADMINISTRATION
-                      </a>
+                      </Link>
                     </div>
                   </summary>
                 </details>
@@ -465,1740 +466,2869 @@ function DepartmentWebWrapper() {
 }
 
 function DepartmentInternalRouter() {
-  // civil Routers
-  if (window.location.pathname.startsWith("/departments/CIVIL", 0)) {
-    if (window.location.pathname === "/departments/CIVIL/home") {
-      let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component DataMapper={DataMapper} currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CIVIL/faculty") {
-      let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/CIVIL/AcademicsCalender"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CIVIL/BE_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBE"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CIVIL/ME_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptME"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CIVIL/PhD_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptPhD"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CIVIL/library") {
-      let Component = lazy(() => import("./DeptFiles/DeptLib"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname.startsWith("/departments/CIVIL/events", 0)
-    ) {
-      console.log(window.location.pathname);
-      if (window.location.pathname === "/departments/CIVIL/events") {
-        let Component = lazy(() => import("./DeptFiles/DeptEvents"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component currentDepartment="CIVIL" />
-            </Suspense>
-          </>
-        );
-      } else {
-        let eventId =
-          window.location.pathname.split("/")[
-            window.location.pathname.split("/").length - 1
-          ];
-        let Component = lazy(() => import("../../subComponents/EventDesc"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component externalPageEID={eventId} />
-            </Suspense>
-          </>
-        );
-      }
-    } else if (window.location.pathname === "/departments/CIVIL/club") {
-      let Component = lazy(() => import("./DeptFiles/DeptClub"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CIVIL/lab") {
-      let Component = lazy(() => import("./DeptFiles/DeptLab"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CIVIL/placements") {
-      let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CIVIL/rankholder") {
-      let Component = lazy(() => import("./DeptFiles/DeptRH"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CIVIL/association") {
-      let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/CIVIL/bestoutgoingstudent"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/CIVIL/Disguinshed_alumini"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CIVIL/testimonial") {
-      let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/CIVIL/higher_studies"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptHS"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CIVIL/gallery") {
-      let Component = lazy(() => import("./DeptFiles/DeptGallery"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CIVIL" />
-          </Suspense>
-        </>
-      );
-    } else {
-      window.location.pathname = "/";
-    }
-  }
-  // CSE router
-  else if (window.location.pathname.startsWith("/departments/CSE", 0)) {
-    if (window.location.pathname === "/departments/CSE/home") {
-      let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component DataMapper={DataMapper} currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CSE/faculty") {
-      let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/CSE/AcademicsCalender"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CSE/BE_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBE"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CSE/ME_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptME"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CSE/PhD_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptPhD"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CSE/Btech_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBtech"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CSE/library") {
-      let Component = lazy(() => import("./DeptFiles/DeptLib"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname.startsWith("/departments/CSE/events", 0)
-    ) {
-      console.log(window.location.pathname);
-      if (window.location.pathname === "/departments/CSE/events") {
-        let Component = lazy(() => import("./DeptFiles/DeptEvents"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component currentDepartment="CSE" />
-            </Suspense>
-          </>
-        );
-      } else {
-        let eventId =
-          window.location.pathname.split("/")[
-            window.location.pathname.split("/").length - 1
-          ];
-        let Component = lazy(() => import("../../subComponents/EventDesc"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component externalPageEID={eventId} />
-            </Suspense>
-          </>
-        );
-      }
-    } else if (window.location.pathname === "/departments/CSE/club") {
-      let Component = lazy(() => import("./DeptFiles/DeptClub"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CSE/lab") {
-      let Component = lazy(() => import("./DeptFiles/DeptLab"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CSE/placements") {
-      let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CSE/rankholder") {
-      let Component = lazy(() => import("./DeptFiles/DeptRH"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CSE/association") {
-      let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/CSE/bestoutgoingstudent"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/CSE/Disguinshed_alumini"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CSE/testimonial") {
-      let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/CSE/gallery") {
-      let Component = lazy(() => import("./DeptFiles/DeptGallery"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="CSE" />
-          </Suspense>
-        </>
-      );
-    } else {
-      window.location.pathname = "/";
-    }
-  }
-  // ECE router
-  else if (window.location.pathname.startsWith("/departments/ECE", 0)) {
-    if (window.location.pathname === "/departments/ECE/home") {
-      let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component DataMapper={DataMapper} currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ECE/faculty") {
-      let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/ECE/AcademicsCalender"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ECE/BE_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBE"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ECE/ME_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptME"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ECE/PhD_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptPhD"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ECE/Btech_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBtech"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ECE/library") {
-      let Component = lazy(() => import("./DeptFiles/DeptLib"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname.startsWith("/departments/ECE/events", 0)
-    ) {
-      console.log(window.location.pathname);
-      if (window.location.pathname === "/departments/ECE/events") {
-        let Component = lazy(() => import("./DeptFiles/DeptEvents"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component currentDepartment="ECE" />
-            </Suspense>
-          </>
-        );
-      } else {
-        let eventId =
-          window.location.pathname.split("/")[
-            window.location.pathname.split("/").length - 1
-          ];
-        let Component = lazy(() => import("../../subComponents/EventDesc"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component externalPageEID={eventId} />
-            </Suspense>
-          </>
-        );
-      }
-    } else if (window.location.pathname === "/departments/ECE/club") {
-      let Component = lazy(() => import("./DeptFiles/DeptClub"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ECE/lab") {
-      let Component = lazy(() => import("./DeptFiles/DeptLab"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ECE/placements") {
-      let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ECE/rankholder") {
-      let Component = lazy(() => import("./DeptFiles/DeptRH"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ECE/association") {
-      let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/ECE/bestoutgoingstudent"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/ECE/Disguinshed_alumini"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ECE/testimonial") {
-      let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ECE/gallery") {
-      let Component = lazy(() => import("./DeptFiles/DeptGallery"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ECE" />
-          </Suspense>
-        </>
-      );
-    } else {
-      window.location.pathname = "/";
-    }
-  }
-  // EEE router
-  else if (window.location.pathname.startsWith("/departments/EEE", 0)) {
-    if (window.location.pathname === "/departments/EEE/home") {
-      let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component DataMapper={DataMapper} currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/EEE/faculty") {
-      let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/EEE/AcademicsCalender"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/EEE/BE_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBE"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/EEE/ME_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptME"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/EEE/PhD_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptPhD"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/EEE/Btech_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBtech"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/EEE/library") {
-      let Component = lazy(() => import("./DeptFiles/DeptLib"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname.startsWith("/departments/EEE/events", 0)
-    ) {
-      console.log(window.location.pathname);
-      if (window.location.pathname === "/departments/EEE/events") {
-        let Component = lazy(() => import("./DeptFiles/DeptEvents"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component currentDepartment="EEE" />
-            </Suspense>
-          </>
-        );
-      } else {
-        let eventId =
-          window.location.pathname.split("/")[
-            window.location.pathname.split("/").length - 1
-          ];
-        let Component = lazy(() => import("../../subComponents/EventDesc"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component externalPageEID={eventId} />
-            </Suspense>
-          </>
-        );
-      }
-    } else if (window.location.pathname === "/departments/EEE/club") {
-      let Component = lazy(() => import("./DeptFiles/DeptClub"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/EEE/lab") {
-      let Component = lazy(() => import("./DeptFiles/DeptLab"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/EEE/placements") {
-      let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/EEE/rankholder") {
-      let Component = lazy(() => import("./DeptFiles/DeptRH"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/EEE/association") {
-      let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/EEE/bestoutgoingstudent"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/EEE/Disguinshed_alumini"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/EEE/testimonial") {
-      let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/EEE/gallery") {
-      let Component = lazy(() => import("./DeptFiles/DeptGallery"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="EEE" />
-          </Suspense>
-        </>
-      );
-    } else {
-      window.location.pathname = "/";
-    }
-  } // ICE router
-  else if (window.location.pathname.startsWith("/departments/ICE", 0)) {
-    if (window.location.pathname === "/departments/ICE/home") {
-      let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component DataMapper={DataMapper} currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ICE/faculty") {
-      let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/ICE/AcademicsCalender"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ICE/BE_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBE"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ICE/ME_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptME"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ICE/PhD_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptPhD"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ICE/Btech_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBtech"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ICE/library") {
-      let Component = lazy(() => import("./DeptFiles/DeptLib"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname.startsWith("/departments/ICE/events", 0)
-    ) {
-      console.log(window.location.pathname);
-      if (window.location.pathname === "/departments/ICE/events") {
-        let Component = lazy(() => import("./DeptFiles/DeptEvents"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component currentDepartment="ICE" />
-            </Suspense>
-          </>
-        );
-      } else {
-        let eventId =
-          window.location.pathname.split("/")[
-            window.location.pathname.split("/").length - 1
-          ];
-        let Component = lazy(() => import("../../subComponents/EventDesc"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component externalPageEID={eventId} />
-            </Suspense>
-          </>
-        );
-      }
-    } else if (window.location.pathname === "/departments/ICE/club") {
-      let Component = lazy(() => import("./DeptFiles/DeptClub"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ICE/lab") {
-      let Component = lazy(() => import("./DeptFiles/DeptLab"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ICE/placements") {
-      let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ICE/rankholder") {
-      let Component = lazy(() => import("./DeptFiles/DeptRH"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ICE/association") {
-      let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/ICE/bestoutgoingstudent"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/ICE/Disguinshed_alumini"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ICE/testimonial") {
-      let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/ICE/gallery") {
-      let Component = lazy(() => import("./DeptFiles/DeptGallery"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="ICE" />
-          </Suspense>
-        </>
-      );
-    } else {
-      window.location.pathname = "/";
-    }
-  }
-  // MECH router
-  else if (window.location.pathname.startsWith("/departments/MECH", 0)) {
-    if (window.location.pathname === "/departments/MECH/home") {
-      let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component DataMapper={DataMapper} currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/MECH/faculty") {
-      let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/MECH/AcademicsCalender"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/MECH/BE_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBE"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/MECH/ME_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptME"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/MECH/PhD_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptPhD"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/MECH/Btech_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBtech"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/MECH/library") {
-      let Component = lazy(() => import("./DeptFiles/DeptLib"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname.startsWith("/departments/MECH/events", 0)
-    ) {
-      console.log(window.location.pathname);
-      if (window.location.pathname === "/departments/MECH/events") {
-        let Component = lazy(() => import("./DeptFiles/DeptEvents"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component currentDepartment="MECH" />
-            </Suspense>
-          </>
-        );
-      } else {
-        let eventId =
-          window.location.pathname.split("/")[
-            window.location.pathname.split("/").length - 1
-          ];
-        let Component = lazy(() => import("../../subComponents/EventDesc"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component externalPageEID={eventId} />
-            </Suspense>
-          </>
-        );
-      }
-    } else if (window.location.pathname === "/departments/MECH/club") {
-      let Component = lazy(() => import("./DeptFiles/DeptClub"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/MECH/lab") {
-      let Component = lazy(() => import("./DeptFiles/DeptLab"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/MECH/placements") {
-      let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/MECH/rankholder") {
-      let Component = lazy(() => import("./DeptFiles/DeptRH"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/MECH/association") {
-      let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/MECH/bestoutgoingstudent"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/MECH/Disguinshed_alumini"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/MECH/testimonial") {
-      let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/MECH/gallery") {
-      let Component = lazy(() => import("./DeptFiles/DeptGallery"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="MECH" />
-          </Suspense>
-        </>
-      );
-    } else {
-      window.location.pathname = "/";
-    }
-  }
-  // IT router
-  else if (window.location.pathname.startsWith("/departments/IT", 0)) {
-    if (window.location.pathname === "/departments/IT/home") {
-      let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component DataMapper={DataMapper} currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/IT/faculty") {
-      let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/IT/AcademicsCalender"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/IT/BE_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBE"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/IT/ME_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptME"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/IT/PhD_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptPhD"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/IT/Btech_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBtech"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/IT/library") {
-      let Component = lazy(() => import("./DeptFiles/DeptLib"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname.startsWith("/departments/IT/events", 0)
-    ) {
-      console.log(window.location.pathname);
-      if (window.location.pathname === "/departments/IT/events") {
-        let Component = lazy(() => import("./DeptFiles/DeptEvents"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component currentDepartment="IT" />
-            </Suspense>
-          </>
-        );
-      } else {
-        let eventId =
-          window.location.pathname.split("/")[
-            window.location.pathname.split("/").length - 1
-          ];
-        let Component = lazy(() => import("../../subComponents/EventDesc"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component externalPageEID={eventId} />
-            </Suspense>
-          </>
-        );
-      }
-    } else if (window.location.pathname === "/departments/IT/club") {
-      let Component = lazy(() => import("./DeptFiles/DeptClub"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/IT/lab") {
-      let Component = lazy(() => import("./DeptFiles/DeptLab"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/IT/placements") {
-      let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/IT/rankholder") {
-      let Component = lazy(() => import("./DeptFiles/DeptRH"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/IT/association") {
-      let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/IT/bestoutgoingstudent"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/IT/Disguinshed_alumini"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/IT/testimonial") {
-      let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/IT/gallery") {
-      let Component = lazy(() => import("./DeptFiles/DeptGallery"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="IT" />
-          </Suspense>
-        </>
-      );
-    } else {
-      window.location.pathname = "/";
-    }
-  }
-  // S&H router
-  else if (window.location.pathname.startsWith("/departments/S&H", 0)) {
-    if (window.location.pathname === "/departments/S&H/home") {
-      let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component DataMapper={DataMapper} currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/S&H/faculty") {
-      let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/S&H/AcademicsCalender"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/S&H/BE_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBE"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/S&H/ME_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptME"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/S&H/PhD_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptPhD"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/S&H/Btech_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBtech"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/S&H/library") {
-      let Component = lazy(() => import("./DeptFiles/DeptLib"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname.startsWith("/departments/S&H/events", 0)
-    ) {
-      console.log(window.location.pathname);
-      if (window.location.pathname === "/departments/S&H/events") {
-        let Component = lazy(() => import("./DeptFiles/DeptEvents"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component currentDepartment="S&H" />
-            </Suspense>
-          </>
-        );
-      } else {
-        let eventId =
-          window.location.pathname.split("/")[
-            window.location.pathname.split("/").length - 1
-          ];
-        let Component = lazy(() => import("../../subComponents/EventDesc"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component externalPageEID={eventId} />
-            </Suspense>
-          </>
-        );
-      }
-    } else if (window.location.pathname === "/departments/S&H/club") {
-      let Component = lazy(() => import("./DeptFiles/DeptClub"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/S&H/lab") {
-      let Component = lazy(() => import("./DeptFiles/DeptLab"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/S&H/placements") {
-      let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/S&H/rankholder") {
-      let Component = lazy(() => import("./DeptFiles/DeptRH"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/S&H/association") {
-      let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/S&H/bestoutgoingstudent"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/S&H/Disguinshed_alumini"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/S&H/testimonial") {
-      let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/S&H/gallery") {
-      let Component = lazy(() => import("./DeptFiles/DeptGallery"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="S&H" />
-          </Suspense>
-        </>
-      );
-    } else {
-      window.location.pathname = "/";
-    }
-  }
-  // SOM router
-  else if (window.location.pathname.startsWith("/departments/SOM", 0)) {
-    if (window.location.pathname === "/departments/SOM/home") {
-      let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component DataMapper={DataMapper} currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/SOM/faculty") {
-      let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/SOM/AcademicsCalender"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/SOM/BE_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBE"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/SOM/ME_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptME"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/SOM/PhD_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptPhD"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/SOM/Btech_program") {
-      let Component = lazy(() => import("./DeptFiles/DeptBtech"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/SOM/library") {
-      let Component = lazy(() => import("./DeptFiles/DeptLib"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname.startsWith("/departments/SOM/events", 0)
-    ) {
-      console.log(window.location.pathname);
-      if (window.location.pathname === "/departments/SOM/events") {
-        let Component = lazy(() => import("./DeptFiles/DeptEvents"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component currentDepartment="SOM" />
-            </Suspense>
-          </>
-        );
-      } else {
-        let eventId =
-          window.location.pathname.split("/")[
-            window.location.pathname.split("/").length - 1
-          ];
-        let Component = lazy(() => import("../../subComponents/EventDesc"));
-        return (
-          <>
-            <Suspense fallback={<Loader />}>
-              <Component externalPageEID={eventId} />
-            </Suspense>
-          </>
-        );
-      }
-    } else if (window.location.pathname === "/departments/SOM/club") {
-      let Component = lazy(() => import("./DeptFiles/DeptClub"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/SOM/lab") {
-      let Component = lazy(() => import("./DeptFiles/DeptLab"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/SOM/placements") {
-      let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/SOM/rankholder") {
-      let Component = lazy(() => import("./DeptFiles/DeptRH"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/SOM/association") {
-      let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/SOM/bestoutgoingstudent"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (
-      window.location.pathname === "/departments/SOM/Disguinshed_alumini"
-    ) {
-      let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/SOM/testimonial") {
-      let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else if (window.location.pathname === "/departments/SOM/gallery") {
-      let Component = lazy(() => import("./DeptFiles/DeptGallery"));
-      return (
-        <>
-          <Suspense fallback={<Loader />}>
-            <Component currentDepartment="SOM" />
-          </Suspense>
-        </>
-      );
-    } else {
-      window.location.pathname = "/";
-    }
-  }
-  // end route
-  else {
-    window.location.pathname = "/";
-  }
+  return (
+    <>
+      <Routes>
+        {/* Civil */}
+        <Route path="/CIVIL">
+          <Route
+            path="home"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="BE_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBE"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="ME_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptME"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="PhD_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPhD"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="AcademicsCalender"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="lab"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLab"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="library"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLib"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="faculty"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="events"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptEvents"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="club"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptClub"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="association"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="placements"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="rankholder"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptRH"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="bestoutgoingstudent"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Disguinshed_alumini"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="higher_studies"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptHS"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="testimonial"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="gallery"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptGallery"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Btech_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBtech"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="*"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CIVIL"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+        </Route>
+        {/* CSE */}
+        <Route path="/CSE">
+          <Route
+            path="home"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="BE_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBE"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="ME_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptME"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="PhD_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPhD"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="AcademicsCalender"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="lab"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLab"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="library"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLib"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="faculty"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="events"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptEvents"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="club"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptClub"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="association"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="placements"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="rankholder"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptRH"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="bestoutgoingstudent"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Disguinshed_alumini"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="higher_studies"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptHS"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="testimonial"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="gallery"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptGallery"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Btech_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBtech"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="*"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="CSE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+        </Route>
+        {/* ECE */}
+        <Route path="/ECE">
+          <Route
+            path="home"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="BE_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBE"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="ME_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptME"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="PhD_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPhD"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="AcademicsCalender"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="lab"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLab"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="library"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLib"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="faculty"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="events"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptEvents"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="club"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptClub"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="association"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="placements"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="rankholder"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptRH"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="bestoutgoingstudent"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Disguinshed_alumini"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="higher_studies"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptHS"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="testimonial"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="gallery"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptGallery"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Btech_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBtech"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="*"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ECE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+        </Route>
+        {/* EEE */}
+        <Route path="/EEE">
+          <Route
+            path="home"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="BE_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBE"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="ME_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptME"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="PhD_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPhD"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="AcademicsCalender"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="lab"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLab"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="library"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLib"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="faculty"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="events"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptEvents"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="club"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptClub"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="association"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="placements"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="rankholder"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptRH"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="bestoutgoingstudent"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Disguinshed_alumini"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="higher_studies"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptHS"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="testimonial"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="gallery"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptGallery"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Btech_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBtech"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="*"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="EEE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+        </Route>
+        {/* ICE */}
+        <Route path="/ICE">
+          <Route
+            path="home"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="BE_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBE"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="ME_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptME"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="PhD_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPhD"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="AcademicsCalender"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="lab"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLab"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="library"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLib"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="faculty"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="events"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptEvents"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="club"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptClub"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="association"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="placements"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="rankholder"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptRH"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="bestoutgoingstudent"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Disguinshed_alumini"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="higher_studies"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptHS"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="testimonial"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="gallery"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptGallery"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Btech_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBtech"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="*"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="ICE"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+        </Route>
+        {/* MECH */}
+        <Route path="/MECH">
+          <Route
+            path="home"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="BE_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBE"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="ME_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptME"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="PhD_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPhD"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="AcademicsCalender"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="lab"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLab"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="library"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLib"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="faculty"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="events"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptEvents"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="club"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptClub"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="association"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="placements"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="rankholder"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptRH"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="bestoutgoingstudent"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Disguinshed_alumini"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="higher_studies"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptHS"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="testimonial"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="gallery"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptGallery"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Btech_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBtech"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="*"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="MECH"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+        </Route>
+        {/* IT */}
+        <Route path="/IT">
+          <Route
+            path="home"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="BE_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBE"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="ME_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptME"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="PhD_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPhD"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="AcademicsCalender"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="lab"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLab"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="library"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLib"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="faculty"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="events"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptEvents"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="club"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptClub"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="association"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="placements"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="rankholder"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptRH"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="bestoutgoingstudent"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Disguinshed_alumini"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="higher_studies"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptHS"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="testimonial"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="gallery"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptGallery"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component DataMapper={DataMapper} currentDepartment="IT" />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Btech_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBtech"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="IT"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="*"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="IT"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+        </Route>
+        {/* S&H */}
+        <Route path="/S&H">
+          <Route
+            path="home"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="BE_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBE"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="ME_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptME"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="PhD_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPhD"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="AcademicsCalender"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="lab"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLab"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="library"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLib"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="faculty"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="events"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptEvents"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="club"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptClub"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="association"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="placements"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="rankholder"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptRH"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="bestoutgoingstudent"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Disguinshed_alumini"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="higher_studies"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptHS"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="testimonial"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="gallery"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptGallery"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Btech_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBtech"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="*"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="S&H"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+        </Route>
+        {/* SOM */}
+        <Route path="/SOM">
+          <Route
+            path="home"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="BE_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBE"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="ME_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptME"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="PhD_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPhD"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="AcademicsCalender"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAccCalander"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="lab"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLab"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="library"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptLib"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="faculty"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptFaculty"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="events"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptEvents"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="club"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptClub"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="association"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAssociation"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="placements"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptPlacement"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="rankholder"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptRH"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="bestoutgoingstudent"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBOStudent"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Disguinshed_alumini"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptDisAlumni"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="higher_studies"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptHS"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="testimonial"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptAlumTest"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="gallery"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptGallery"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="Btech_program"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DeptBtech"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="*"
+            element={(() => {
+              let Component = lazy(() => import("./DeptFiles/DepartmentHome"));
+              return (
+                <>
+                  <Suspense fallback={<Loader />}>
+                    <Component
+                      DataMapper={DataMapper}
+                      currentDepartment="SOM"
+                    />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+        </Route>
+      </Routes>
+    </>
+  );
 }
+
+// old router
+// old router
 function ScrollTop() {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 }

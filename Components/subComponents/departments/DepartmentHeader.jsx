@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Style/departmentHeader.css";
 
 export default function DepartmentHeader({ DataMapper }) {
@@ -7,6 +8,10 @@ export default function DepartmentHeader({ DataMapper }) {
 
   useEffect(() => {
     let currentDepartment = window.location.pathname.split("/")[2];
+    if(!currentDepartment){
+      window.location.pathname="/"
+      return;
+    }
     let currentDepartmentData = DataMapper.filter((elem) => {
       return elem.key.toLowerCase() === currentDepartment.toLowerCase();
     });
@@ -59,7 +64,7 @@ function DepartmentHeaderCardGenerator({ curLst }) {
 function DepartmentHeaderC1({ obj }) {
   return (
     <>
-      <a href={obj.url} className="deptHeaderc1-link">
+      <Link to={`${obj.url}`} className="deptHeaderc1-link">
         <div className="deptHeaderc1-linkWrapper">
           <div className="deptHeaderc1-iconDiv">
             <i className="material-icons deptHeaderc1-icon">{obj.icon}</i>
@@ -68,7 +73,7 @@ function DepartmentHeaderC1({ obj }) {
             <p className="deptHeaderc1-pz">{obj.name}</p>
           </div>
         </div>
-      </a>
+      </Link>
     </>
   );
 }

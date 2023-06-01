@@ -9,6 +9,10 @@ export default function DeptFooter(){
 
      useEffect(() => {
           let currentDepartment = window.location.pathname.split("/")[2];
+          if(!currentDepartment){
+               window.location.pathname="/"
+               return;
+             }
           import(`../../../DataCenter/DepartmentsData/${currentDepartment}/hod/hodData`)
           .then(res=>res.default)
           .then(dats=>{

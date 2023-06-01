@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Style/dailynews.css";
 
 // Under Use For All Event too
 
-export default function DailyNews({title, link, p1, p2 }) {
+export default function DailyNews({ title, link, p1, p2, inpage }) {
   let [newsData, setNewsData] = useState([]);
   let [searchNewsData, setSearchNewsData] = useState([]);
 
@@ -14,7 +15,7 @@ export default function DailyNews({title, link, p1, p2 }) {
         setNewsData(dats);
         setSearchNewsData(dats);
       });
-  }, []);
+  }, [link]);
 
   function FilterResults(eve) {
     let sValue = eve.target.value.trim();
@@ -46,7 +47,9 @@ export default function DailyNews({title, link, p1, p2 }) {
         <div className="dailyNews-content">
           <div className="dailyNews-headerDiv">
             <div className="dailyNews-headerDiv1">
-              <h2 className="dailyNews-heading">{title!==undefined?title:"DAILY NEWSLETTER"}</h2>
+              <h2 className="dailyNews-heading">
+                {title !== undefined ? title : "DAILY NEWSLETTER"}
+              </h2>
             </div>
             <div className="dailyNews-headerDiv2">
               <div className="dailyNews-searchDiv">
@@ -98,8 +101,16 @@ export default function DailyNews({title, link, p1, p2 }) {
                       return (
                         <>
                           <NewsRowCard
-                            DATE={p2 !== undefined ? elem.name : new Date(elem.date).toLocaleDateString()}
-                            DIGEST={p2 !== undefined ? new Date(elem.date).toLocaleDateString() : elem.digest}
+                            DATE={
+                              p2 !== undefined
+                                ? elem.name
+                                : new Date(elem.date).toLocaleDateString()
+                            }
+                            DIGEST={
+                              p2 !== undefined
+                                ? new Date(elem.date).toLocaleDateString()
+                                : elem.digest
+                            }
                             NewsDataLink={
                               link !== undefined
                                 ? `/allevents/${elem.pk}`
@@ -107,6 +118,7 @@ export default function DailyNews({title, link, p1, p2 }) {
                             }
                             SNO={index + 1}
                             key={index.toString()}
+                            inpage={inpage}
                           />
                         </>
                       );
@@ -121,7 +133,7 @@ export default function DailyNews({title, link, p1, p2 }) {
   );
 }
 
-function NewsRowCard({ SNO, DATE, DIGEST, NewsDataLink }) {
+function NewsRowCard({ SNO, DATE, DIGEST, NewsDataLink, inpage }) {
   return (
     <>
       <tr className="dailyNews-bodyRow">
@@ -130,14 +142,23 @@ function NewsRowCard({ SNO, DATE, DIGEST, NewsDataLink }) {
         </td>
         <td className="dailyNews-bodyRowData">{DATE}</td>
         <td className="dailyNews-bodyRowData">
-          <a
-            target={"_blank"}
-            href={NewsDataLink}
-            className="dailyNews-dataLink"
-            rel="noreferrer"
-          >
-            {DIGEST}
-          </a>
+          {inpage === true ? (
+            <Link
+              to={NewsDataLink}
+              className="dailyNews-dataLink"
+            >
+              {DIGEST}
+            </Link>
+          ) : (
+            <a
+              target={"_blank"}
+              href={NewsDataLink}
+              className="dailyNews-dataLink"
+              rel="noreferrer"
+            >
+              {DIGEST}
+            </a>
+          )}
         </td>
       </tr>
     </>

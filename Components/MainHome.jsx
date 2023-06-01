@@ -4,6 +4,7 @@ import Recruiters from "./Recruiters";
 import ContextTag from "./ContextFile";
 import CampusVideos from "./CampusVideos";
 import Alumni from "./Alumni";
+import { Link } from "react-router-dom";
 
 export default function MainHome() {
   // Home Events states
@@ -188,23 +189,25 @@ export default function MainHome() {
               </div>
               <div className="mainHome-runner1-utilityBox">
                 <div className="mainHome-runner1-feesPayDiv">
-                  <a
-                    href="/feepayment"
+                  <Link
+                    to="/feepayment"
                     className="mainHome-runner1-feespayLink"
-                    target={"_blank"}
                   >
                     <button className="mainHome-runner1-feespayButton">
                       <h2>ONLINE FEES</h2>
                       <h2>PAYMENT</h2>
                     </button>
-                  </a>
+                  </Link>
                 </div>
                 <div className="mainHome-runner1-admissionsDiv">
-                  <a href="/admissions" className="mainHome-runner1-admissionsLink">
+                  <Link
+                    to="/admissions"
+                    className="mainHome-runner1-admissionsLink"
+                  >
                     <button className="mainHome-runner1-admissionsButton">
                       <h3>ADMISSIONS</h3>
                     </button>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -238,14 +241,14 @@ export default function MainHome() {
                     </div>
                     <div className="mainHome-runner1-upEv-moreEv-div">
                       <div className="mainHome-runner1-upEv-buttonWrapper">
-                        <a
-                          href="/allevents"
+                        <Link
+                          to="/allevents"
                           className="mainHome-runner1-eventBtn-link"
                         >
                           <button className="mainHome-runner1-eventBtn">
                             <h3>All Events</h3>
                           </button>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -408,14 +411,12 @@ function UpcomingEventCard({ date, month, infoTitle, key, link }) {
           </div>
         </div>
         <div className="upcomingEvent-infoBox">
-          <a
-            href={link}
+          <Link
+            to={link}
             className="upcomingEvent-linkku"
-            target={"_blank"}
-            rel="noreferrer"
           >
             <p className="upcomingEvent-infoP">{infoTitle}</p>
-          </a>
+          </Link>
         </div>
       </div>
     </>

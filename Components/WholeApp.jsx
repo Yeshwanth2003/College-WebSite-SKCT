@@ -31,6 +31,7 @@ function WholeAppRouter() {
           <Route
             path="/departments/*"
             element={(() => {
+              console.log("in whole");
               let Component = lazy(() =>
                 import("./subComponents/departments/DepartmentMain")
               );

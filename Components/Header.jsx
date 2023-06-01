@@ -47,7 +47,6 @@ function LaptopHeader() {
                       to={"/IQAC"}
                       className="laptopHeader-addLink"
                       style={{ color: "gold" }}
-                      target={"_blank"}
                     >
                       IQAC
                     </Link>
@@ -195,7 +194,7 @@ function LaptopHeader() {
                   <div className="laptopHeader-dropDownDiv academics-dropDown-Lap">
                     <ul className="laptopHeader-dropDown-ul">
                       <Link
-                        to="/departments"
+                        to="/department"
                         className="laptopHeader-links"
                         style={{ fontSize: "1em" }}
                       >
@@ -968,7 +967,7 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <Link className="mobile-nav-link" to="/departments">
+                            <Link className="mobile-nav-link" to="/department">
                               Department
                             </Link>
                           </div>

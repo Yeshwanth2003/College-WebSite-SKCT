@@ -284,6 +284,34 @@ function MyRouter() {
             );
           })()}
         />
+        <Route path="/allevents">
+        <Route
+          index
+          element={(() => {
+            let Component = lazy(() => import("./subComponents/AllEvents"));
+            return (
+              <>
+                <Suspense fallback={<Loading />}>
+                  <Component />
+                </Suspense>
+              </>
+            );
+          })()}
+        />
+        <Route
+          path=":val"
+          element={(() => {
+            let Component = lazy(() => import("./subComponents/EventDesc"));
+            return (
+              <>
+                <Suspense fallback={<Loading />}>
+                  <Component />
+                </Suspense>
+              </>
+            );
+          })()}
+        />
+        </Route>
         {/* About Us */}
         <Route
           path="/overView"
@@ -353,6 +381,19 @@ function MyRouter() {
           })()}
         />
         {/* Academics */}
+        <Route
+          path="/department"
+          element={(() => {
+            let Component = lazy(() => import("./subComponents/departments/DepartmentMain"));
+            return (
+              <>
+                <Suspense fallback={<Loading />}>
+                  <Component />
+                </Suspense>
+              </>
+            );
+          })()}
+        />
         <Route
           path="/academicsCalender"
           element={(() => {
@@ -714,327 +755,4 @@ function MyRouter() {
       </Routes>
     </>
   );
-}
-
-function MyRouterz() {
-  if (window.location.pathname.startsWith("/departments", 0)) {
-    let Component = lazy(() =>
-      import("./subComponents/departments/DepartmentMain")
-    );
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/overView") {
-    let Component = lazy(() => import("./subComponents/VisionAndMission"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/approvals") {
-    let Component = lazy(() => import("./subComponents/Approval"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/skctmedia") {
-    let Component = lazy(() => import("./subComponents/SKCTMedia"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/management") {
-    let Component = lazy(() => import("./subComponents/Management"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/skctdigest") {
-    let Component = lazy(() => import("./subComponents/DailyNews"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/academicsCalender") {
-    let Component = lazy(() => import("./subComponents/AcaCalander"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/proffesionalAssociation") {
-    let Component = lazy(() => import("./subComponents/ProffessionalAsso"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/contact") {
-    let Component = lazy(() => import("./subComponents/UpperHead/Contact"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/nss_yrc") {
-    let Component = lazy(() => import("./subComponents/CampusNssYRC"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/coreValues") {
-    let Component = lazy(() => import("./subComponents/UpperHead/CoreValues"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/coe") {
-    let Component = lazy(() => import("./subComponents/COE"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/exam/staff") {
-    let Component = lazy(() => import("./subComponents/CeoOffice"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/exam/results") {
-    let Component = lazy(() => import("./subComponents/XmResults"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/exam/notify") {
-    let Component = lazy(() => import("./subComponents/XmNotification"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/exam/forms") {
-    let Component = lazy(() => import("./subComponents/XmForms"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/facilities") {
-    let Component = lazy(() => import("./subComponents/Facilities"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname.startsWith("/allevents", 0)) {
-    if (window.location.pathname.startsWith("/allevents/")) {
-      let Component = lazy(() => import("./subComponents/EventDesc"));
-      return (
-        <>
-          <Suspense fallback={<Loading />}>
-            <Component />
-          </Suspense>
-        </>
-      );
-    } else {
-      let Component = lazy(() => import("./subComponents/AllEvents"));
-      return (
-        <>
-          <Suspense fallback={<Loading />}>
-            <Component />
-          </Suspense>
-        </>
-      );
-    }
-  } else if (window.location.pathname === "/gallery") {
-    let Component = lazy(() => import("./subComponents/CGallery"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/social") {
-    let Component = lazy(() => import("./subComponents/Social"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/mous") {
-    let Component = lazy(() => import("./subComponents/MoUs"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/industry_supported_lab") {
-    let Component = lazy(() => import("./subComponents/IndustrySupportedLab"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/nisp") {
-    let Component = lazy(() => import("./subComponents/UpperHead/NISP"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/iic") {
-    let Component = lazy(() => import("./subComponents/UpperHead/IIC"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/placement/training") {
-    let Component = lazy(() => import("./subComponents/PTraining"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/hostel") {
-    let Component = lazy(() => import("./subComponents/Hostel"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/sports") {
-    let Component = lazy(() => import("./subComponents/Sports"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/library") {
-    let Component = lazy(() => import("./subComponents/Library"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/placement/placement_cell") {
-    let Component = lazy(() => import("./subComponents/PlacementCell"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/admissions") {
-    let Component = lazy(() => import("./subComponents/Admission"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/recruiters") {
-    let Component = lazy(() => import("./subComponents/SubRecuritiers"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/regulations") {
-    let Component = lazy(() => import("./subComponents/Regulations"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else if (window.location.pathname === "/academicResearch") {
-    let Component = lazy(() => import("./subComponents/AcademicResearch"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  } else {
-    let Component = lazy(() => import("./MainHome"));
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Component />
-        </Suspense>
-      </>
-    );
-  }
 }
