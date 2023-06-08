@@ -813,7 +813,7 @@ export function MobileNav() {
                     <svg
                       className="mobile-nav-icon"
                       xmlns="http://www.w3.org/2000/svg"
-                      enable-background="new 0 0 25 25"
+                      enableBackground="new 0 0 25 25"
                       height="25"
                       viewBox="0 0 24 24"
                       width="25"
@@ -943,7 +943,7 @@ export function MobileNav() {
                       width="24"
                     >
                       <path d="M45.4 37.9L27.1 19.6c1.8-4.6.8-10.1-2.9-13.8-4-4-10-4.8-14.8-2.5l8.7 8.7-6.1 6.1-8.7-8.7C1 14.2 1.8 20.2 5.8 24.2c3.7 3.7 9.2 4.7 13.8 2.9l18.3 18.3c.8.8 2.1.8 2.8 0l4.7-4.7c.8-.7.8-2 0-2.8z" />
-                      <path clip-rule="evenodd" d="M0 0h48v48H0z" fill="none" />
+                      <path clipRule="evenodd" d="M0 0h48v48H0z" fill="none" />
                     </svg>
                   </div>
                   <div className="mobile-nav-link-content">
@@ -1142,7 +1142,7 @@ export function MobileNav() {
                     <svg
                       className="mobile-nav-icon"
                       xmlns="http://www.w3.org/2000/svg"
-                      enable-background="new 0 0 24 24"
+                      enableBackground="new 0 0 24 24"
                       height="24"
                       viewBox="0 0 24 24"
                       width="24"
@@ -1325,7 +1325,7 @@ export function MobileNav() {
                     <svg
                       className="mobile-nav-icon"
                       xmlns="http://www.w3.org/2000/svg"
-                      enable-background="new 0 0 24 24"
+                      enableBackground="new 0 0 24 24"
                       height="24"
                       viewBox="0 0 24 24"
                       width="24"

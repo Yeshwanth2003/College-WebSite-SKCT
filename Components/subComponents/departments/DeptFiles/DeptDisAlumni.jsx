@@ -7,7 +7,7 @@ export default function DeptDisAlumni({ currentDepartment,p1,p2 }) {
 
   useEffect(() => {
     // fetch((p1!==undefined?p1:`https://data.skct.edu.in/${currentDepartment}/ds/`))
-    import(`../../../../DataCenter/DepartmentsData/${currentDepartment}/distinguishedAluminiData`)
+    import(`../../../../DataCenter/DepartmentsData/${currentDepartment}/${p1!==undefined ?p1:"distinguishedAluminiData"}`)
       .then((res) => res.default)
       .then((dats) => {
         setDeptDisAlumD1(dats);

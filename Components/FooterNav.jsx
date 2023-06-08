@@ -139,7 +139,7 @@ export default function FooterNav() {
               © All Rights Reserved 2021 - 2022. SKCT
             </h4>
             <h4 className="footerNav-footerh42">
-              @Web development Team - AI&DS
+              @Web development Team - SKCT
             </h4>
           </div>
         </div>

@@ -632,6 +632,19 @@ function MyRouter() {
             );
           })()}
         />
+        <Route
+          path="/iprCell"
+          element={(() => {
+            let Component = lazy(() => import("./subComponents/IPRcell"));
+            return (
+              <>
+                <Suspense fallback={<Loading />}>
+                  <Component />
+                </Suspense>
+              </>
+            );
+          })()}
+        />
         {/* admissions */}
         <Route
           path="/admissions"

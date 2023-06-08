@@ -45,7 +45,6 @@ function WholeAppRouter() {
           <Route
             path="/departments/*"
             element={(() => {
-              console.log("in whole");
               let Component = lazy(() =>
                 import("./subComponents/departments/DepartmentMain")
               );
@@ -83,6 +82,21 @@ function WholeAppRouter() {
                 <>
                   <Suspense fallback={<Loading />}>
                     <Component />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path="/researchPolicy"
+            element={(() => {
+              let Component = lazy(() =>
+                import("./PDFViewer")
+              );
+              return (
+                <>
+                  <Suspense fallback={<Loading />}>
+                    <Component link={"ResearchPolicySKCT.pdf"}/>
                   </Suspense>
                 </>
               );

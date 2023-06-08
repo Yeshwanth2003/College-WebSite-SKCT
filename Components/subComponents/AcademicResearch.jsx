@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react";
-import Loading from '../Loading'
+import { Link } from "react-router-dom";
+import Loading from "../Loading";
 import "./Style/academicResearch.css";
 
 const ARPAGESTATES = {
@@ -51,14 +52,18 @@ export default function AcademicResearch() {
                   className="ar-nav-li"
                   pagename={ARPAGESTATES.POLICY}
                 >
-                  <button
-                    className="ar-nav-button"
-                    onClick={() => {
-                      setIRS(ARPAGESTATES.POLICY);
-                    }}
+                  <Link
+                    to="/researchPolicy"
                   >
-                    Policy
-                  </button>
+                    <button
+                      className="ar-nav-button"
+                      onClick={() => {
+                        setIRS(ARPAGESTATES.POLICY);
+                      }}
+                    >
+                      Policy
+                    </button>
+                  </Link>
                 </li>
                 <li
                   id="ArNavList"
@@ -134,7 +139,7 @@ export default function AcademicResearch() {
             </div>
             <div className="ar-nav-triDotDiv">
               <input className="ar-h-input" type="checkbox" id="arradio" />
-             <label htmlFor="arradio">
+              <label htmlFor="arradio">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="30"
@@ -147,7 +152,7 @@ export default function AcademicResearch() {
             </div>
           </div>
           <div className="ar-body">
-             <ARrouter pageState={inbuiltRS}/>
+            <ARrouter pageState={inbuiltRS} />
           </div>
         </div>
       </div>
@@ -155,18 +160,51 @@ export default function AcademicResearch() {
   );
 }
 
-function ARrouter(pageState){
-   if(false){
-
-   }
-   else{
-    let Component = lazy(()=>import("./AcademicResearchPages/AboutUs"));
-    return(
+function ARrouter({ pageState }) {
+  if (pageState === ARPAGESTATES.BP) {
+    let Component = lazy(() =>
+      import("./AcademicResearchPages/BooksPublished")
+    );
+    return (
       <>
-      <Suspense fallback={<Loading />}>
-           <Component />
-      </Suspense>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
       </>
-    )
-   }
+    );
+  } 
+  else if(pageState === ARPAGESTATES.JP){
+    let Component = lazy(() =>
+      import("./AcademicResearchPages/Journals")
+    );
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  }
+  else if(pageState === ARPAGESTATES.CP){
+    let Component = lazy(() =>
+      import("./AcademicResearchPages/Conference")
+    );
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  }
+  else {
+    let Component = lazy(() => import("./AcademicResearchPages/AboutUs"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
+    );
+  }
 }

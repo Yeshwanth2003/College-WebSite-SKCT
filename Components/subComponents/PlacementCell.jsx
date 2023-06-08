@@ -67,7 +67,7 @@ function Imageslider({ slides, fit = "cover", fill = "white" }) {
             <div key={id} className="slide-img-box">
               <img
                 key={id}
-                src={`https://data.skct.edu.in${slide?.img}`}
+                src={`${slide?.img}`}
                 alt={`${slide?.name}`}
                 style={{
                   objectFit: fit,
@@ -82,10 +82,10 @@ function Imageslider({ slides, fit = "cover", fill = "white" }) {
 }
 
 export default function Placementcell(props) {
-  const [phv, setPhv] = useState({});
+  const [phv, setPhv] = useState([]);
   useEffect(() => {
-    fetch("https://data.skct.edu.in/phv/?format=json")
-      .then((response) => response.json())
+    import("../../DataCenter/subComponentsData/Placements/placementCell/placementCellData")
+      .then((response) => response.default)
       .then((data) => setPhv(data));
   }, []);
 
@@ -163,7 +163,7 @@ export default function Placementcell(props) {
                       <div>
                         <img
                           className="pt-pcell-graphs"
-                          src={`https://data.skct.edu.in${stat?.img1}`}
+                          src={`${stat?.img1}`}
                           alt="Frame_379_1.png"
                           width="85%"
                         />
@@ -171,7 +171,7 @@ export default function Placementcell(props) {
                       <div>
                         <img
                           className="pt-pcell-graphs"
-                          src={`https://data.skct.edu.in${stat?.img2}`}
+                          src={`${stat?.img2}`}
                           alt="IMG-20230206-WA0005.jpg"
                           width="85%"
                         />

@@ -3,7 +3,7 @@ import './styles/aboutus.css'
 
 export default function AboutUs(){
      useEffect(()=>{
-       import("../../../DataCenter/AcademicResearch/aboutus")
+       import("../../../DataCenter/subComponentsData/Research/AcademicResearch/aboutus")
        .then(res=>res.default)
        .then((dats)=>{
           let wrapper = document.getElementById("arAboutWrapper");

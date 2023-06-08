@@ -21,55 +21,85 @@
   align-items: center;
   border-bottom: 1px solid gray;
 }
-.approval-body{
-     /* background-color: hotpink; */
-     margin: 20px 0;
-     padding: 10px 0;
-     box-shadow: 0 0 1px black;
+.approval-body {
+  /* background-color: hotpink; */
+  margin: 20px 0;
+  padding: 10px 0;
 }
-.approval-ul{
-     width: 99%;
-     height: 99%;
-     margin: 0 0.5%;
-     /* background-color: silver; */
+.approval-ul {
+  width: 99%;
+  height: 99%;
+  margin: 0 0.5%;
 }
-.approval-li{
-     list-style: none;
-     margin: 8px 0;
+.apcard-img {
+  width: 80px;
+  height: 70px;
 }
-.approval-li:hover{
-     background-color: rgb(224, 228, 237);
+.apcard-li {
+  list-style: none;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 black, 0.5px 0.5px 3px inset black;
+  margin: 10px 0;
+  padding: 10px 0;
+  position: relative;
+  cursor: pointer;
 }
-.approval-linkDiv{
-     width: 100%;
-     height: fit-content;
-     display: flex;
-     /* background-color: chartreuse; */
+.apcard-li:hover{
+     background-color: rgba(47, 19, 205, 0.05);
 }
-.approval-links{
-     text-decoration: none;
-     color: rgb(41, 40, 40);
-     font-family: sans-serif;
-     text-transform: uppercase;
+.apcard-info-div::after {
+  position: absolute;
+  content: "\27A4";
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 20px;
+  font-size: 20px;
+  transition: 0.5s;
 }
-.approvalLink-img{
-     width: 100%;
-     height: auto;
-     position: absolute;
-     inset: 0;
-     margin: auto;
+.apcard-heading {
+  color: royalblue;
 }
-.approval-linkImg-div{
-     width: 50px;
-     height: 50px;
-     position: relative;
-     /* background-color: salmon; */
-     /* border: 1px solid black; */
+.apcard-info-div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
 }
-.approval-linkText-div{
-     flex: 1;
-     /* background-color: slateblue; */
-     display: flex;
-     align-items: center;
-    padding: 0 20px;
+.apcard-list-div,
+.apcard-list-ul {
+  width: 100%;
+  height: max-content;
+}
+.apcard-list-div {
+  position: relative;
+  overflow: hidden;
+}
+.apcard-list-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 20px;
+  margin: 0 5%;
+  transform: translateY(-100%);
+  position: absolute;
+  transition: 0.5s;
+}
+.apcard-input {
+  display: none;
+  visibility: hidden;
+}
+.apcard-list-li {
+  list-style: disc;
+  font-style: oblique;
+  font-weight: bold;
+}
+.apcard-lable:has(.apcard-input:checked) .apcard-list-ul {
+  transform: translateY(0%);
+  position: relative;
+  transition: 1s;
+}
+.apcard-lable:has(.apcard-input:checked) .apcard-info-div::after {
+  transform: rotate(90deg) translateX(-120%);
 }

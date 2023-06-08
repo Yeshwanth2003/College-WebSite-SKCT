@@ -1,0 +1,91 @@
+.iprcell-wrapper{
+     width: 100%;
+     height: max-content;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 17px;
+}
+.iprcell-container{
+     width: 98%;
+     height: max-content;
+}
+.iprcell-headingDiv{
+     width: 100%;
+     height: 60px;
+     border-bottom: 1px solid gray;
+     display: flex;
+     align-items: center;
+}
+.iprcell-heading{
+     color: orange;
+     white-space: normal;
+}
+.iprcell-body{
+     width: 100%;
+     height: max-content;
+     margin: 20px 0;
+}
+.iprc-innerHeads{
+     color: royalblue;
+     margin: 10px 0;
+}
+.iprc-about-bodyDiv{
+     padding: 5px 10px;
+     text-align: justify;
+}
+.iprc-about-bodyDiv ul,
+.iprc-staff-ol{
+     margin: 10px 20px;
+}
+.iprc-about-bodyDiv ul li{
+     margin: 10px 0;
+}
+.iprc-staff-body{
+     margin: 20px 10px;
+}
+.iprc-staff-li{
+     margin: 10px 0;
+}
+.iprc-policy-body{
+     width: 100%;
+}
+.iprc-policy-link{
+     display: flex;
+     gap: 20px;
+     align-items: center;
+     width: 100%;
+     height: 30px;
+     padding: 20px 20px;
+}
+.iprc-policy-link:hover{
+     background-color: rgb(230, 235, 237);
+}
+.iprc-link-p{
+     text-decoration: none;
+     color: black;
+}
+.iprc-file-body{
+     width: 100%;
+     height: max-content;
+     overflow-x: scroll;
+}
+.iprc-file-body::-webkit-scrollbar{
+     display: none;
+}
+.iprc-file-table{
+     width: max-content;
+     height: max-content;
+     background-color: rgb(198, 194, 194);
+}
+.iprc-fiel-td{
+     background-color: rgb(242, 143, 143);
+     padding: 30px 70px;
+}
+.iprcclm-td{
+     max-width: 100px;
+     background-color: white;
+     padding: 10px 10px;
+     box-sizing: content-box;
+     font-size: 14px;
+}
