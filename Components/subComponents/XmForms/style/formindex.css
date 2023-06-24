@@ -1,0 +1,84 @@
+.formindex-wrapper {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1em;
+}
+.formin-container {
+  width: 98%;
+  height: max-content;
+}
+.formin-header {
+  margin: 20px 0;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgb(168, 167, 167);
+}
+.formin-back {
+  border: none;
+  background-color: inherit;
+  outline-color: transparent;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  margin: 0;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.formin-body {
+  width: 100%;
+  height: max-content;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formin-h2 {
+  text-align: center;
+  color: orange;
+}
+.fdpts-li {
+  margin: 10px 0;
+  list-style: none;
+  position: relative;
+  text-align: justify;
+}
+.fdpts-li::before {
+  position: absolute;
+  content: "\261B";
+  font-size: 25px;
+  transform: translate(-120%, -30%);
+}
+.formz-highlight{
+  font-weight: bolder;
+}
+.fi-link-wrapper{
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fi-link-ul{
+  width: 95%;
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.fi-link-li{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+}
+.fi-li-a{
+  text-decoration: none;
+}
+.fi-link-h4{
+  white-space: normal;
+}

@@ -435,7 +435,7 @@ function MyRouter() {
           })()}
         />
         <Route
-          path="/exam/forms"
+          path="/exam/forms/*"
           element={(() => {
             let Component = lazy(() => import("./subComponents/XmForms"));
             return (

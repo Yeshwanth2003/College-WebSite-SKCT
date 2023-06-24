@@ -1,0 +1,20 @@
+.ftempb-wrapper{
+     width: 100%;
+     height: max-content;
+     padding: 0 10px;
+}
+.ftempb-h3 {
+     color: royalblue;
+     white-space: normal;
+}
+.ftemp-elem{
+     margin: 25px 0;
+}
+.ftempb-ul{
+  padding: 0 25px;
+}
+.ftempb-b{
+     display: block;
+     text-align: center;
+     padding: 10px 0;
+}

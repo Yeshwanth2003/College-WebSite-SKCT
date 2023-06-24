@@ -1,0 +1,20 @@
+.fwdraw-wrapper{
+     width: 100%;
+     height: max-content;
+     padding: 10px 10px ;
+}
+.fwd-h3{
+     color: royalblue;
+     white-space: normal;
+}
+.fwd-elem{
+     margin: 20px 0;
+}
+.fwd-ul{
+     padding: 0 25px;
+}
+.fwd-b {
+     display: block;
+     text-align: center;
+     width: 100%;
+}

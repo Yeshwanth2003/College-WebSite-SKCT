@@ -1,0 +1,14 @@
+.ftrans-wrapper{
+     width: 100%;
+     height: max-content;
+}
+.ftrans-elem{
+     margin: 10px 0;
+}
+.ftrans-h3{
+     white-space: normal;
+     color: royalblue;
+}
+.ftrans-ul{
+     padding: 0 30px;
+}

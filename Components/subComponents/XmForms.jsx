@@ -1,17 +1,42 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import "./Style/xmForm.css";
+import {Link, Route, Routes} from 'react-router-dom'
+import Loading from "../Loading";
 
 export default function XmForm() {
+  return <XmFormRouter />;
+}
+
+function XmFormRouter(){
+  return(
+    <>
+    <Routes>
+      <Route path="*" element={<XmFormDefault />} />
+      <Route path="/info/*" element={(()=>{
+        let Component = lazy(()=>import("./XmForms/FormIndex"))
+        return(
+          <>
+          <Suspense fallback={<Loading />}>
+                <Component />
+          </Suspense>
+          </>
+        )
+      })()} />
+    </Routes>
+    </>
+  )
+}
+
+function XmFormDefault() {
   let [fD, setFd] = useState([]);
 
   useEffect(() => {
-    import("../../DataCenter/subComponentsData/XamDatas/xmForm")
-      .then((res) => res.default)
+    fetch("https://data.skct.edu.in/form/")
+      .then((res) => res.json())
       .then((dats) => {
         setFd(dats);
       });
   }, []);
-
   return (
     <>
       <div className="xmf-wrapper">
@@ -48,7 +73,7 @@ export default function XmForm() {
 function F2({ LINK, NAME }) {
   return (
     <>
-      <a href={LINK} className="f1-link" target={"_blank"} rel="noreferrer">
+      <Link to={LINK} className="f1-link">
         <div className="f1-wrapper">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +87,7 @@ function F2({ LINK, NAME }) {
           </svg>
           <span className="f1-span">{NAME}</span>
         </div>
-      </a>
+      </Link>
     </>
   );
 }
@@ -99,26 +124,26 @@ function F1({ LINK, NAME }) {
 const FormInnerLink = [
   {
     name: "APPLICATION FOR ISSUE OF NEW / DUPLICATE CERTIFICATE",
-    link: "/",
+    link: "/exam/forms/info/duplicateInstruct",
   },
   {
     name: "APPLICATION FOR NAME CHANGE",
-    link: "/",
+    link: "/exam/forms/info/namechange",
   },
   {
     name: "APPLICATION FOR TRANSCRIPTION",
-    link: "/",
+    link: "/exam/forms/info/transcripts",
   },
   {
     name: "APPLICATION FOR WITHDRAWAL FROM END SEMESTER EXAMINATION",
-    link: "/",
+    link: "/exam/forms/info/withdraw",
   },
   {
     name: "APPLICATION FOR TEMPRORARY BREAK OF STUDY",
-    link: "/",
+    link: "/exam/forms/info/tempBreak",
   },
   {
     name: "APPLICATION FOR PAYMENT OF CONDONATION FEE",
-    link: "/",
+    link: "/exam/forms/info/condonationfee",
   },
 ];

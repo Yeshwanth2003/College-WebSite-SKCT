@@ -1,0 +1,15 @@
+.formconfee-wrapper{
+     width: 100%;
+     height: max-content;
+     padding: 0 10px;
+}
+.formconfee-h3 {
+     color: royalblue;
+     white-space: normal;
+}
+.formconfee-elem{
+     margin: 20px 0;
+}
+.formconfee-ul{
+  padding: 0 25px ;
+}

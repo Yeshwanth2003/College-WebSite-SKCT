@@ -1,0 +1,21 @@
+.fnamechange-wrapper{
+     width: 100%;
+     height: max-content;
+     padding: 10px 30px;
+}
+.fnamec-elem{
+     margin: 10px 0;
+}
+.fnamec-heading {
+     color: royalblue;
+     white-space: normal;
+}
+.fnamec-ul{
+     width: 100%;
+     padding: 0 30px;
+}
+@media (max-device-width: 1100px),(width<1100px){
+     .fnamechange-wrapper{
+          padding: 10px 10px;
+     }
+}
