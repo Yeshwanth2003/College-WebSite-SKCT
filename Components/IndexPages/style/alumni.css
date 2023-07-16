@@ -13,33 +13,27 @@
 .alumni-runnerDiv {
   width: 100%;
   height: 300px;
-  background-image: url("../asserts/certainBackDrop.png");
+  background-image: url("../../asserts/certainBackDrop.png");
   background-size: cover;
   background-position: center;
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
-}
-.alumni-runnerDiv::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
   background-color: rgba(3, 15, 177, 0.89);
+  background-blend-mode: soft-light;
 }
 .alumni-runner {
   height: 100%;
   /* background-color: brown; */
   position: absolute;
   left: 0;
-  z-index: 1;
+  /* z-index: 1; */
   display: flex;
 }
 .alumni-moveLeft,
 .alumni-moveRight {
   position: absolute;
-  z-index: 2;
+  /* z-index: 1; */
   top: 50%;
   transform: translateY(-50%) rotate(-180deg);
   cursor: pointer;
@@ -61,7 +55,7 @@
 }
 .alumni-profileDiv {
   height: 100%;
-  width: 35%;
+  width: 32%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,11 +95,7 @@
   justify-content: center;
   align-items: center;
   padding: 0 2%;
-  overflow-y: scroll;
 }
-/* .alumni-aboutDiv::-webkit-scrollbar{
-  display: none;
-} */
 .alumni-about {
   text-align: justify;
   font-size: 1em;

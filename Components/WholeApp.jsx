@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 export function Img_Err_Solver(){
   let allImages = [...document.images];
     allImages.forEach(elem=>{
+      elem.removeEventListener("error",()=>{})
       elem.addEventListener("error",(event)=>{
         event.target.style.display = "none"
       })

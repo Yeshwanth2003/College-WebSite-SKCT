@@ -274,7 +274,7 @@ function MyRouter() {
         <Route
           path="*"
           element={(() => {
-            let Component = lazy(() => import("./MainHome"));
+            let Component = lazy(() => import("./IndexPage"));
             return (
               <>
                 <Suspense fallback={<Loading />}>
@@ -285,32 +285,32 @@ function MyRouter() {
           })()}
         />
         <Route path="/allevents">
-        <Route
-          index
-          element={(() => {
-            let Component = lazy(() => import("./subComponents/AllEvents"));
-            return (
-              <>
-                <Suspense fallback={<Loading />}>
-                  <Component />
-                </Suspense>
-              </>
-            );
-          })()}
-        />
-        <Route
-          path=":val"
-          element={(() => {
-            let Component = lazy(() => import("./subComponents/EventDesc"));
-            return (
-              <>
-                <Suspense fallback={<Loading />}>
-                  <Component />
-                </Suspense>
-              </>
-            );
-          })()}
-        />
+          <Route
+            index
+            element={(() => {
+              let Component = lazy(() => import("./subComponents/AllEvents"));
+              return (
+                <>
+                  <Suspense fallback={<Loading />}>
+                    <Component />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
+          <Route
+            path=":val"
+            element={(() => {
+              let Component = lazy(() => import("./subComponents/EventDesc"));
+              return (
+                <>
+                  <Suspense fallback={<Loading />}>
+                    <Component />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
         </Route>
         {/* About Us */}
         <Route
@@ -384,7 +384,9 @@ function MyRouter() {
         <Route
           path="/department"
           element={(() => {
-            let Component = lazy(() => import("./subComponents/departments/DepartmentMain"));
+            let Component = lazy(() =>
+              import("./subComponents/departments/DepartmentMain")
+            );
             return (
               <>
                 <Suspense fallback={<Loading />}>
@@ -410,7 +412,9 @@ function MyRouter() {
         <Route
           path="/proffesionalAssociation"
           element={(() => {
-            let Component = lazy(() => import("./subComponents/ProffessionalAsso"));
+            let Component = lazy(() =>
+              import("./subComponents/ProffessionalAsso")
+            );
             return (
               <>
                 <Suspense fallback={<Loading />}>
@@ -476,7 +480,9 @@ function MyRouter() {
         <Route
           path="/exam/notify"
           element={(() => {
-            let Component = lazy(() => import("./subComponents/XmNotification"));
+            let Component = lazy(() =>
+              import("./subComponents/XmNotification")
+            );
             return (
               <>
                 <Suspense fallback={<Loading />}>
@@ -595,7 +601,9 @@ function MyRouter() {
         <Route
           path="/recruiters"
           element={(() => {
-            let Component = lazy(() => import("./subComponents/SubRecuritiers"));
+            let Component = lazy(() =>
+              import("./subComponents/SubRecuritiers")
+            );
             return (
               <>
                 <Suspense fallback={<Loading />}>
@@ -622,7 +630,9 @@ function MyRouter() {
         <Route
           path="/academicResearch"
           element={(() => {
-            let Component = lazy(() => import("./subComponents/AcademicResearch"));
+            let Component = lazy(() =>
+              import("./subComponents/AcademicResearch")
+            );
             return (
               <>
                 <Suspense fallback={<Loading />}>
@@ -689,7 +699,9 @@ function MyRouter() {
         <Route
           path="/industry_supported_lab"
           element={(() => {
-            let Component = lazy(() => import("./subComponents/IndustrySupportedLab"));
+            let Component = lazy(() =>
+              import("./subComponents/IndustrySupportedLab")
+            );
             return (
               <>
                 <Suspense fallback={<Loading />}>
@@ -703,7 +715,9 @@ function MyRouter() {
         <Route
           path="/coreValues"
           element={(() => {
-            let Component = lazy(() => import("./subComponents/UpperHead/CoreValues"));
+            let Component = lazy(() =>
+              import("./subComponents/UpperHead/CoreValues")
+            );
             return (
               <>
                 <Suspense fallback={<Loading />}>
@@ -716,7 +730,9 @@ function MyRouter() {
         <Route
           path="/coreValues"
           element={(() => {
-            let Component = lazy(() => import("./subComponents/UpperHead/CoreValues"));
+            let Component = lazy(() =>
+              import("./subComponents/UpperHead/CoreValues")
+            );
             return (
               <>
                 <Suspense fallback={<Loading />}>
@@ -742,7 +758,9 @@ function MyRouter() {
         <Route
           path="/nisp"
           element={(() => {
-            let Component = lazy(() => import("./subComponents/UpperHead/NISP"));
+            let Component = lazy(() =>
+              import("./subComponents/UpperHead/NISP")
+            );
             return (
               <>
                 <Suspense fallback={<Loading />}>
@@ -755,7 +773,23 @@ function MyRouter() {
         <Route
           path="/contact"
           element={(() => {
-            let Component = lazy(() => import("./subComponents/UpperHead/Contact"));
+            let Component = lazy(() =>
+              import("./subComponents/UpperHead/Contact")
+            );
+            return (
+              <>
+                <Suspense fallback={<Loading />}>
+                  <Component />
+                </Suspense>
+              </>
+            );
+          })()}
+        />
+        {/* Testing page */}
+        <Route
+          path="/old-home"
+          element={(() => {
+            let Component = lazy(() => import("./MainHome"));
             return (
               <>
                 <Suspense fallback={<Loading />}>

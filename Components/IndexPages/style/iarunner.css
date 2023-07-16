@@ -1,0 +1,73 @@
+.IArunner-wrapper{
+     width: 100%;
+     height: 200px;
+     /* background-color: red; */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+   }
+   .IArunner-Box{
+     width: 98%;
+     height:80%;
+     /* background-color: lightgreen; */
+     overflow: hidden;
+   }
+   .IArunner-runnerDiv{
+     width: 100%;
+     height: 100%;
+     overflow: scroll;
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+     gap: 2px;
+   }
+   .IArunner-runnerDiv::-webkit-scrollbar{
+     display: none;
+   }
+   .ia-runner-imgwrapper-box{
+     width: 180px;
+     height: 100%;
+     /* background-color: yellow; */
+     /* border: 1px solid black; */
+     position: relative;
+   }
+   .ia-runner-link{
+     height: 100%;
+     width: max-content;
+   }
+   .ia-runner-imgwrapper-box::after{
+   position: absolute;
+   content: '';
+   width: 30px;
+   height: 30px;
+   border: #e67e22 5px solid;
+   border-bottom-color:transparent ;
+   inset: 0;
+   margin: auto;
+   border-radius: 100px;
+   animation: iarunnerani 2s infinite;
+   z-index: -1;
+   }
+   @keyframes iarunnerani {
+     100%{
+       transform: rotate(360deg);
+     }
+   }
+   .ia-runner-img{
+     width: 100%;
+     height: 100%;
+     background-color: white;
+   }
+   .IArunner-headingBox{
+     width: 95%;
+     min-height: 10%;
+     text-align: center;
+     padding-bottom: 10px;
+     /* background-color: cornflowerblue; */
+   }
+   .IArunner-headingBox h2,
+   .newCard-theory h2,
+   .announcement-h3{
+     white-space: break-spaces;
+   }

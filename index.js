@@ -3,5 +3,5 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import WholeApp from './Components/WholeApp';
 
-const root = ReactDOM.createRoot(document.querySelector("body"));
+const root = ReactDOM.createRoot(document.querySelector("#app"));
 root.render(<WholeApp />);

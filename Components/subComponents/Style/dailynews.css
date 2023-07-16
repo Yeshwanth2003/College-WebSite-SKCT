@@ -67,7 +67,7 @@
   justify-content: center;
 }
 .dailyNews-tableDiv {
-  width: 100%;
+  width: 95%;
   height: max-content;
   /* background-color: chartreuse; */
 }
@@ -80,6 +80,9 @@
 .dailyNews-tableHead {
   /* background-color: darkred; */
   border-bottom: 2px solid rgb(216, 213, 213);
+}
+.dailyNews-tableHeadData{
+  background-color: rgb(213, 244, 244);
 }
 .dailyNews-tableHeadRow,
 .dailyNews-bodyRow {
@@ -110,6 +113,10 @@
      justify-content: center;
      align-items: center;
 }
+.dailyNews-body{
+  display: flex;
+  justify-content: center;
+}
 @media (max-device-width: 1100px), (width<1100px) {
   .dailyNews-headerDiv {
     flex-direction: column;
@@ -129,9 +136,5 @@
   .dailyNews-tableDiv{
    width: 98%;
    overflow-x: scroll;
-  }
-  .dailyNews-body{
-     display: flex;
-     justify-content: center;
   }
 }

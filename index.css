@@ -5,7 +5,7 @@
   user-select: none;
   font-family: sans-serif;
 }
-body{
+body,#app{
   height: fit-content;
   /* position: relative; */
 }

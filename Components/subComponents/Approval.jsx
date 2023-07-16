@@ -37,13 +37,20 @@ export default function Approval() {
             oneObj.img = element.logo;
           }
 
-          oneObj.credits.push(element.name);
+          oneObj.credits.push({
+            name: element.name,
+            link: `https://data.skct.edu.in${element.pdf}`,
+          });
         });
         finalData.push(oneObj);
       }
       setAppovalData(finalData);
     }
   }, []);
+
+  useEffect(() => {
+    console.log(approvalData);
+  }, [approvalData]);
 
   return (
     <>
@@ -53,19 +60,20 @@ export default function Approval() {
             <h2 className="approval-h2">APPROVALS RANKING AND ACCREDITATION</h2>
           </div>
           <div className="approval-body">
-            <ul className="approval-ul">
-              {approvalData.map((elem) => {
+            <div className="approval-body-inner">
+              {approvalData.map((elem,index) => {
                 return (
                   <>
                     <ApprovalCard
                       credits={elem.credits}
                       img={elem.img}
                       title={elem.title}
+                      index={index}
                     />
                   </>
                 );
               })}
-            </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -73,35 +81,45 @@ export default function Approval() {
   );
 }
 
-function ApprovalCard({ title, img, credits }) {
+function ApprovalCard({ title, img, credits,index }) {
   return (
     <>
-      <label htmlFor={`input${title}`} className="apcard-lable">
-        <input type="checkbox" id={`input${title}`} className="apcard-input"/>
-        <li className="apcard-li">
-          <div className="apcard-wrapper">
-            <div className="apcard-info-div">
+      <div class="apcard-wrapper">
+        <input type="checkbox" id={`apcardInfoInput${index}`} class="apcard-info-input" />
+        <label htmlFor={`apcardInfoInput${index}`} class="apcard-interlable">
+          <div class="apcard-inter">
+            <div class="apcard-img-wrapper">
               <img
                 src={`https://data.skct.edu.in${img}`}
                 alt=""
-                className="apcard-img"
+                class="apcard-img"
               />
-              <h3 className="apcard-heading">{title}</h3>
             </div>
-            <div className="apcard-list-div">
-              <ul className="apcard-list-ul">
-                {credits.map((elem) => {
-                  return (
-                    <>
-                      <li className="apcard-list-li">{elem}</li>
-                    </>
-                  );
-                })}
-              </ul>
+            <div class="apcard-title-wrapper">
+              <h3 class="apcard-h3">
+                {title}
+              </h3>
             </div>
           </div>
-        </li>
-      </label>
+        </label>
+        <div class="apcard-body">
+          <ul class="apcard-ul">
+            {
+              credits.map(elem=>{
+                return(
+                  <>
+                  <a href={elem.link} className="apcard-link" target={"_blank"} rel="noreferrer">
+                    <li className="apcard-li">
+                      {elem.name}
+                    </li>
+                  </a>
+                  </>
+                )
+              })
+            }
+          </ul>
+        </div>
+      </div>
     </>
   );
 }
