@@ -5,12 +5,15 @@ import ContextTag from "./ContextFile";
 import Recruiters from "./IndexPages/Recruiters";
 import CampusView from "./IndexPages/CampusView";
 import NewsAndAbout from "./IndexPages/NewsAndAbout";
+import EventsAndMainRunner from "./IndexPages/EventsAndMainRunner";
 import "./Style/indexpage.css";
 
 export default function Indexpage() {
   let [alumniData, setAlumniData] = useState([]);
   let [recData, setRecData] = useState([]);
-  let [newsData,setNewsData] = useState([]);
+  let [newsData, setNewsData] = useState([]);
+  let [eventsData, setEventsData] = useState([]);
+  let [announcementData,setAnnouncementData]= useState([]);
 
   useEffect(() => {
     fetch("https://data.skct.edu.in/homeone/?format=json")
@@ -24,19 +27,20 @@ export default function Indexpage() {
     fetch("https://data.skct.edu.in/home/?format=json")
       .then((res) => res.json())
       .then((dats) => {
-        // setUP(true);
-        // setUPData(dats[0]["events"].reverse());
-        // setNewsRunnerWidth(dats[0]["news"].length);
+        setEventsData(dats[0]["events"].reverse());
         setNewsData(dats[0]["news"]);
-        // setAnnouncementData(dats[0]["announcements"]);
+        setAnnouncementData(dats[0]["announcements"]);
       });
   }, []);
-  
+
   return (
     <>
+      <ContextTag.Provider value={{ eventsData,announcementData }}>
+        <EventsAndMainRunner />
+      </ContextTag.Provider>
       <IARunner />
       <ContextTag.Provider value={{ newsData }}>
-      <NewsAndAbout/>
+        <NewsAndAbout />
       </ContextTag.Provider>
       <CampusView />
       <ContextTag.Provider value={{ alumniData }}>

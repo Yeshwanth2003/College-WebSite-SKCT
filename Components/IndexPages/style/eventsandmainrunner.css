@@ -1,0 +1,322 @@
+.eandmr-wrapper {
+  height: 640px;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+}
+.eandmr-p1 {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+.eandmr-p1-contentholderdiv {
+  width: 99%;
+  height: 95%;
+  box-shadow: 0 0 2px black;
+  position: relative;
+  overflow: hidden;
+  /* background-color: cadetblue; */
+}
+.eandmr-p2 {
+  width: 35%;
+  height: 100%;
+  /* background-color: aqua; */
+}
+/* Part2Elements */
+.mainHome-runner1-utilityDiv {
+  height: 35%;
+  /* background-color: blueviolet; */
+}
+.mainHome-runner1-CC-div,
+.mainHome-runner1-utilityBox {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.mainHome-runner1-tneaHolder {
+  width: 40%;
+  height: 85%;
+  background-color: #303f99;
+  color: white;
+  font-family: sans-serif;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9em;
+}
+.mainHome-runner1-feesPayDiv,
+.mainHome-runner1-admissionsDiv {
+  height: 60%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.mainHome-runner1-admissionsDiv {
+  width: 30%;
+  transition: all 1000ms;
+}
+.mainHome-runner1-feesPayDiv {
+  width: 40%;
+  transition: all 1000ms;
+}
+.mainHome-runner1-admissionsDiv:hover,
+.mainHome-runner1-feesPayDiv:hover {
+  transform: translateY(-10%);
+  transition: all 250ms;
+  box-shadow: 3px 3px black;
+}
+.mainHome-runner1-admissionsDiv:active,
+.mainHome-runner1-feesPayDiv:active {
+  box-shadow: none;
+}
+.mainHome-runner1-admissionsLink,
+.mainHome-runner1-admissionsButton {
+  width: 100%;
+  height: 100%;
+  background-color: #303f99;
+  border: 0;
+  outline-color: transparent;
+  cursor: pointer;
+  color: white;
+}
+.mainHome-runner1-feespayLink,
+.mainHome-runner1-feespayButton {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  border: 0;
+  outline-color: transparent;
+  cursor: pointer;
+  color: white;
+}
+.mainHome-runner1-feespayButton h2 {
+  animation: feespayButtonAni 2s infinite linear;
+}
+@keyframes feespayButtonAni {
+  0%,
+  100%,
+  50% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+}
+/* Part2Elements */
+.p2-events-wrapper {
+  width: 100%;
+  height: 65%;
+  /* background-color: chartreuse; */
+}
+.p2-events-div {
+  width: 100%;
+  height: 100%;
+}
+.p2-events-heading-div,
+.p2-events-button-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 9%;
+  /* background-color: chartreuse; */
+}
+.p2-events-button {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bolder;
+  color: white;
+  background-color: #303f99;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.p2-events-button:hover {
+  transform: scale(1.1);
+}
+.p2-events-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 82%;
+  /* background-color: crimson; */
+}
+.p2-events-listDiv {
+  height: 100%;
+  width: 90%;
+  border-left: 5px solid orange;
+  box-shadow: 0px 0px 5px black inset;
+  /* background-color: white; */
+  overflow-y: scroll;
+}
+.p2-events-listDiv::-webkit-scrollbar {
+  display: none;
+}
+.upcomingEvent-linkku {
+  text-decoration: none;
+}
+.upcomingEvent-calender {
+  width: 75%;
+  height: 80%;
+  border-radius: 5px;
+  border: 2px solid grey;
+}
+.upcomingEvent-calender-month {
+  height: 30%;
+  background-color: rgb(4, 4, 136);
+  position: relative;
+  border-radius: 3px 3px 0 0;
+}
+.upcomingEvent-calender-date,
+.upcomingEvent-calender-month {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.upcomingEvent-calender-date {
+  height: 70%;
+  position: relative;
+}
+.upcomingEvent-calender-date::after,
+.upcomingEvent-calender-date::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  border-radius: 5px;
+  border-bottom: 2px solid grey;
+  bottom: 3%;
+  z-index: -1;
+}
+.upcomingEvent-calender-date::before {
+  bottom: -8%;
+}
+.upcomingEvent-calender-monthSpan {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: white;
+  font-family: sans-serif;
+}
+.upcomingEvent-calender-dateSpan {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: black;
+  font-family: sans-serif;
+}
+.upcomingEvent-box {
+  width: 95%;
+  height: 100px;
+  display: flex;
+  border: 2px solid grey;
+  border-radius: 5px;
+  margin: 2.5%;
+}
+.upcomingEvent-calanderBox {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.upcomingEvent-infoBox {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.upcomingEvent-infoP {
+  text-align: center;
+  color: #303f99;
+}
+/* announcement */
+.announcementRunner-reel {
+  height: 100%;
+  position: absolute;
+  display: flex;
+  transition: 0.5s;
+}
+.announcementCard-wrapper {
+  width: 100%;
+  height: 100%;
+  /* background-color: black; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.announcementCard-img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.announcementCard-waterMark {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  background-color: rgba(255, 255, 255, 0.7);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: royalblue;
+}
+.announcement-runner-controller {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+}
+.announcement-runner-rigth {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  right: 0;
+  cursor: pointer;
+  /* background-color: #303f99; */
+}
+.announcement-runner-left {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  left: 0;
+  cursor: pointer;
+  /* background-color: #303f99; */
+}
+@media (max-device-width: 1100px), (width<1100px) {
+  .eandmr-wrapper {
+    flex-direction: column;
+    height: max-content;
+  }
+  .eandmr-p1 {
+    width: 100%;
+    height: 40vh;
+  }
+  .eandmr-p1-contentholderdiv {
+    height: 98%;
+  }
+  .eandmr-p2 {
+    width: 100%;
+    height: 90vh;
+  }
+  .mainHome-runner1-utilityDiv {
+    height: 30%;
+  }
+  .mainHome-runner1-tneaHolder {
+    width: 55%;
+  }
+  .p2-events-wrapper {
+    height: 70%;
+  }
+  .announcement-h3 {
+    font-size: 0.9em;
+  }
+  .announcementCard-waterMark {
+    height: 15%;
+  }
+}

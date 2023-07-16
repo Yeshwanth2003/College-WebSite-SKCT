@@ -785,20 +785,6 @@ function MyRouter() {
             );
           })()}
         />
-        {/* Testing page */}
-        <Route
-          path="/old-home"
-          element={(() => {
-            let Component = lazy(() => import("./MainHome"));
-            return (
-              <>
-                <Suspense fallback={<Loading />}>
-                  <Component />
-                </Suspense>
-              </>
-            );
-          })()}
-        />
       </Routes>
     </>
   );

@@ -11,7 +11,7 @@ export default function CampusView() {
           <div className="campuslife-videotag">
             <iframe
               src="https://www.youtube.com/embed/1Qzr8jDWRVM?autoplay=0&mute=1&controls=0&loop=1&playlist=1Qzr8jDWRVM"
-              frameborder="0"
+              frameBorder="0"
               allowFullScreen
               title="campusView"
               allow="autoplay"
@@ -19,7 +19,9 @@ export default function CampusView() {
             />
           </div>
           <div className="campusview-textcontent">
-               
+               <h1 className="campusview-wordings">
+                "Learning Amidst Nature's Masterpiece"
+               </h1>
           </div>
         </div>
       </div>

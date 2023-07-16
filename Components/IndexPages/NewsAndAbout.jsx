@@ -37,7 +37,8 @@ export default function NewsAndAbout() {
               </p>
             </div>
           </div>
-          <div className="about-add-div">{/*  */}</div>
+          <div className="about-add-div"></div>
+          {/*  */}
         </div>
         <div className="nanda-newsdiv">
           <News />
