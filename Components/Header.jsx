@@ -2,7 +2,15 @@ import "./Style/header.css";
 import { useContext, useEffect } from "react";
 import ContextTag from "./ContextFile";
 import ClgLogoImg from "./asserts/collegeHeaderLogo.png";
+import LaptopUpperHead from "./headerComponents/LaptopUpperHead";
 import { Link } from "react-router-dom";
+import NBA from "./asserts/nba.png";
+import NIRF from "./asserts/nirf.png";
+import NAAC from "./asserts/naac.png";
+import AICET from "./asserts/aicte.png";
+import LaptopMainNav from "./headerComponents/LaptopMainNav";
+import INSLOGO from "./asserts/instutionlogo.png";
+import CLGLOGO from "./asserts/skctlogo.png";
 
 export default function Header() {
   return (
@@ -14,91 +22,70 @@ export default function Header() {
     </>
   );
 }
-function HeaderLogo() {
+
+function LaptopHeader() {
   return (
     <>
-      <div className="header-LogoWrapper">
-        <img className="header-logoImg" src={ClgLogoImg} alt="" />
+      <div class="laptopheader-wrapper laptopHeader_wrapper">
+        <div class="laptopheader-logo-div">
+          {/* <!-- logo --> */}
+          <div className="laptopheader-logoholder">
+            <div className="laptopheader-ins-logo-div">
+              <img src={INSLOGO} className="laptopheader-ins-logo-img" alt="" />
+            </div>
+            <div className="laptopheader-clg-logo-div">
+              <img src={CLGLOGO} className="laptopheader-clg-logo-img" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="laptopheader-accredation-div">
+          <div className="laptopheader-accredation-holder">
+            <div className="laptopheader-accredation-img-div">
+              <img src={NAAC} alt="" className="laptopheader-accre-img" />
+            </div>
+            <div className="laptopheader-accredation-img-div">
+              <img src={NBA} alt="" className="laptopheader-accre-img" />
+            </div>
+            <div className="laptopheader-accredation-img-div">
+              <img src={AICET} alt="" className="laptopheader-accre-img" />
+            </div>
+            <div className="laptopheader-accredation-img-div">
+              <img src={NIRF} alt="" className="laptopheader-accre-img" />
+            </div>
+          </div>
+        </div>
+        <div class="laptopheader-upperpart">
+          {/* <!-- upperhead --> */}
+          <LaptopUpperHead />
+        </div>
+        <div class="custom-shape-divider-bottom-1689593908">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 150"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+        <div class="laptopheader-optnsDiv">
+          {/* <!-- optns --> */}
+          <LaptopMainNav />
+        </div>
       </div>
     </>
   );
 }
-
-function LaptopHeader() {
+function LaptopHeaderOld() {
   return (
     <>
       <div className="laptopHeader_wrapper">
         <div className="laptopHeader-upperPart">
           <div className="laptopHeader-upperLink-Holder">
-            <ul className="laptopHeader-upperLink-ul">
-              <li className="laptopHeader-upperLink-li">
-                <div className="laptopHeader-upperLink-contentDiv">
-                  <h5>
-                    <Link to="/coreValues" className="laptopHeader-addLink">
-                      Core Values
-                    </Link>
-                  </h5>
-                </div>
-              </li>
-              <li className="laptopHeader-upperLink-li">
-                <div className="laptopHeader-upperLink-contentDiv">
-                  <h5>
-                    <Link
-                      to={"/IQAC"}
-                      className="laptopHeader-addLink"
-                      style={{ color: "gold" }}
-                    >
-                      IQAC
-                    </Link>
-                  </h5>
-                </div>
-              </li>
-              <li className="laptopHeader-upperLink-li">
-                <div className="laptopHeader-upperLink-contentDiv">
-                  <h5>
-                    <Link
-                      to="/iic"
-                      className="laptopHeader-addLink"
-                      style={{ color: "gold" }}
-                    >
-                      IIC
-                    </Link>
-                  </h5>
-                </div>
-              </li>
-              <li className="laptopHeader-upperLink-li">
-                <div className="laptopHeader-upperLink-contentDiv">
-                  <h5>
-                    <a
-                      target={"_blank"}
-                      rel="noreferrer"
-                      href="http://117.239.103.162/"
-                      className="laptopHeader-addLink"
-                    >
-                      Alumni
-                    </a>
-                  </h5>
-                </div>
-              </li>
-              <li className="laptopHeader-upperLink-li">
-                <div className="laptopHeader-upperLink-contentDiv">
-                  <h5>
-                    <Link to="/nisp" className="laptopHeader-addLink">
-                      NISP
-                    </Link>
-                  </h5>
-                </div>
-              </li>
-              <li className="laptopHeader-upperLink-li">
-                <div className="laptopHeader-upperLink-contentDiv">
-                  <h5>
-                    <Link to="/contact" className="laptopHeader-addLink">
-                      Contact Us
-                    </Link>
-                  </h5>
-                </div>
-              </li>
-            </ul>
+            <LaptopUpperHead />
           </div>
         </div>
         <div className="laptopHeader-lowerPart">
@@ -106,416 +93,7 @@ function LaptopHeader() {
             <HeaderLogo />
           </div>
           <nav className="laptopHeader-navBar">
-            <ul className="laptopHeader-ul-lower">
-              <li className="laptopHeader-li-lower">
-                <div
-                  className="laptopHeader-li-ContentDiv"
-                  style={{ justifyContent: "center" }}
-                >
-                  <h4>
-                    <Link
-                      to="/"
-                      className="laptopHeader-links laptopheader-mainLink"
-                    >
-                      Home
-                    </Link>
-                  </h4>
-                </div>
-              </li>
-              <li className="laptopHeader-li-lower">
-                <div className="laptopHeader-li-ContentDiv ">
-                  <h4 className="laptop-linkHeading">
-                    <Link
-                      to="/"
-                      className="laptopHeader-links laptopheader-mainLink"
-                    >
-                      About Us
-                    </Link>
-                  </h4>
-                  <div className="laptopHeader-dropDownDiv aboutUs-dropDown-Lap">
-                    <ul className="laptopHeader-dropDown-ul">
-                      <Link
-                        to={"/overView"}
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">
-                          Vision & Mission
-                        </li>
-                      </Link>
-                      <Link
-                        to={"/management"}
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">Management</li>
-                      </Link>
-                      <Link
-                        to="/approvals"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">
-                          Approvals & Accreditation
-                        </li>
-                      </Link>
-                      <Link
-                        to="/skctmedia"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">
-                          Media @ SKCT
-                        </li>
-                      </Link>
-                      <Link
-                        to="/skctdigest"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">
-                          Daily News Letter @ SKCT
-                        </li>
-                      </Link>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li className="laptopHeader-li-lower">
-                <div className="laptopHeader-li-ContentDiv">
-                  <h4>
-                    <Link
-                      to="/"
-                      className="laptopHeader-links laptopheader-mainLink"
-                    >
-                      Academics
-                    </Link>
-                  </h4>
-                  <div className="laptopHeader-dropDownDiv academics-dropDown-Lap">
-                    <ul className="laptopHeader-dropDown-ul">
-                      <Link
-                        to="/department"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">Department</li>
-                      </Link>
-                      <Link
-                        to="/academicsCalender"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">
-                          Academics Calendar
-                        </li>
-                      </Link>
-                      <Link
-                        to="/proffesionalAssociation"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">
-                          Professional Association
-                        </li>
-                      </Link>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li className="laptopHeader-li-lower">
-                <div className="laptopHeader-li-ContentDiv">
-                  <h4>
-                    <Link
-                      to="/"
-                      className="laptopHeader-links laptopheader-mainLink"
-                    >
-                      Examination
-                    </Link>
-                  </h4>
-                  <div className="laptopHeader-dropDownDiv examination-dropDown-Lap">
-                    <ul className="laptopHeader-dropDown-ul">
-                      <Link
-                        to="/exam/staff"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">CEO Office</li>
-                      </Link>
-                      <Link
-                        to="/academicsCalender"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li laptopHeader-dropDown-li-SubListContainer">
-                          TimeTable
-                          <div className="laptopHeader-dropDown-subListDiv">
-                            <ul className="laptopHeader-dropDown-subListUl">
-                              <Link
-                                to="/"
-                                className="laptopHeader-dropDown-subListLink"
-                                style={{ fontSize: "1em" }}
-                              >
-                                <li className="laptopHeader-dropDown-li laptopHeader-dropDown-subListLi">
-                                  End Sem Exam
-                                </li>
-                              </Link>
-                            </ul>
-                          </div>
-                        </li>
-                      </Link>
-                      <Link
-                        to="/exam/forms"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">Forms</li>
-                      </Link>
-                      <Link
-                        to="/regulations"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">
-                          Regulations
-                        </li>
-                      </Link>
-                      <Link
-                        to="/exam/results"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">Results</li>
-                      </Link>
-                      <Link
-                        to="/exam/notify"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">
-                          Notification
-                        </li>
-                      </Link>
-                      <a
-                        href="https://nad.gov.in/"
-                        target={"_blank"}
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                        rel="noreferrer"
-                      >
-                        <li className="laptopHeader-dropDown-li">NAD</li>
-                      </a>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li className="laptopHeader-li-lower">
-                <div className="laptopHeader-li-ContentDiv">
-                  <h4>
-                    <Link
-                      to="/"
-                      className="laptopHeader-links laptopheader-mainLink"
-                    >
-                      Campus Life
-                    </Link>
-                  </h4>
-                  <div className="laptopHeader-dropDownDiv CL-dropDown-Lap">
-                    <ul className="laptopHeader-dropDown-ul">
-                      <Link
-                        to="/facilities"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">Facilities</li>
-                      </Link>
-                      <Link
-                        to="/library"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">Library</li>
-                      </Link>
-                      <Link
-                        to="/sports"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">Sports</li>
-                      </Link>
-                      <Link
-                        to="/hostel"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">Hostel</li>
-                      </Link>
-                      <Link
-                        to="/nss_yrc"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">NSS/YRC</li>
-                      </Link>
-                      <Link
-                        to="/social"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">
-                          Social and Community Services
-                        </li>
-                      </Link>
-                      <Link
-                        to="/gallery"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">Gallery</li>
-                      </Link>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li className="laptopHeader-li-lower">
-                <div className="laptopHeader-li-ContentDiv">
-                  <h4>
-                    <Link
-                      to="/"
-                      className="laptopHeader-links laptopheader-mainLink"
-                    >
-                      Placement
-                    </Link>
-                  </h4>
-                  <div className="laptopHeader-dropDownDiv placements-dropDown-Lap">
-                    <ul className="laptopHeader-dropDown-ul">
-                      <Link
-                        to="/placement/placement_cell"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">
-                          Placement Cell
-                        </li>
-                      </Link>
-                      <Link
-                        to="/recruiters"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">Recruiters</li>
-                      </Link>
-                      <Link
-                        to="/placement/training"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">Training</li>
-                      </Link>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li className="laptopHeader-li-lower">
-                <div className="laptopHeader-li-ContentDiv">
-                  <h4>
-                    <Link
-                      to="/"
-                      className="laptopHeader-links laptopheader-mainLink"
-                    >
-                      Research
-                    </Link>
-                  </h4>
-                  <div className="laptopHeader-dropDownDiv research-dropDown-Lap">
-                    <ul className="laptopHeader-dropDown-ul">
-                      <Link
-                        to="/academicResearch"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">
-                          Academic Research
-                        </li>
-                      </Link>
-                      <Link
-                        to="/iprCell"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">IPR Cell</li>
-                      </Link>
-                      <Link
-                        to="/researchCenter"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">
-                          Research Centers
-                        </li>
-                      </Link>
-                      <Link
-                        to="/iic"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">
-                          Incubation Centers
-                        </li>
-                      </Link>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li className="laptopHeader-li-lower">
-                <div className="laptopHeader-li-ContentDiv">
-                  <h4>
-                    <Link
-                      to="/admissions"
-                      className="laptopHeader-links laptopheader-mainLink"
-                    >
-                      Admissions
-                    </Link>
-                  </h4>
-                </div>
-              </li>
-              <li className="laptopHeader-li-lower">
-                <div className="laptopHeader-li-ContentDiv">
-                  <h4>
-                    <Link
-                      to="/"
-                      className="laptopHeader-links laptopheader-mainLink"
-                    >
-                      Industry Connect
-                    </Link>
-                  </h4>
-                  <div className="laptopHeader-dropDownDiv IC-dropDown-Lap">
-                    <ul className="laptopHeader-dropDown-ul">
-                      <Link
-                        to="/mous"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">MoUS</li>
-                      </Link>
-                      <Link
-                        to="/coe"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">COE</li>
-                      </Link>
-                      <Link
-                        to="/industry_supported_lab"
-                        className="laptopHeader-links"
-                        style={{ fontSize: "1em" }}
-                      >
-                        <li className="laptopHeader-dropDown-li">
-                          Industry Supported Lab
-                        </li>
-                      </Link>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-            </ul>
+            <LaptopMainNav />
           </nav>
         </div>
       </div>
@@ -1468,6 +1046,16 @@ export function MobileNav() {
             </ul>
           </div>
         </nav>
+      </div>
+    </>
+  );
+}
+
+function HeaderLogo() {
+  return (
+    <>
+      <div className="header-LogoWrapper">
+        <img className="header-logoImg" src={ClgLogoImg} alt="" />
       </div>
     </>
   );

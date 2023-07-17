@@ -33,6 +33,9 @@ export default function Home() {
           <ContextTag.Provider value={{ setNavDisplay }}>
             <Header />
           </ContextTag.Provider>
+          {/*  */}
+ 
+          {/*  */}
         </header>
         <MyRouter />
         <FooterNav />

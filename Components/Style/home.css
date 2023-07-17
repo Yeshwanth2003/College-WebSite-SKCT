@@ -6,11 +6,11 @@
      /* background-color: red; */
 }
 .home-header-wrapper{
-     height: 100px;
+     height: 145px;
      /* background-color: red; */
      box-shadow: 0px 0px 6px  black;
      position: sticky;
-     top: 0px;
+     top: -90px;
      z-index: 10000;
 }
 .home-social-links{
@@ -142,4 +142,7 @@
           opacity: 0;
           display: none;
      }
+.home-header-wrapper{
+     top: 0px;
+}
 }
