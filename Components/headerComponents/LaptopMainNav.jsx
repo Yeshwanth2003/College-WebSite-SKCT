@@ -132,7 +132,7 @@ export default function LaptopMainNav() {
                     <div className="laptopHeader-dropDown-subListDiv">
                       <ul className="laptopHeader-dropDown-subListUl">
                         <Link
-                          to="/"
+                          to="/endSemTimetable"
                           className="laptopHeader-dropDown-subListLink"
                           style={{ fontSize: "1em" }}
                         >

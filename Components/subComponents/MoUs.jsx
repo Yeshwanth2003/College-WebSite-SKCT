@@ -96,10 +96,10 @@ function MousCata({index,activity,date,industry}){
      return(
           <>
           <tr className="mousCard-tr">
-               <td className="mousCard-td">{index}</td>
+               <td className="mousCard-td table-left-allign">{index}</td>
                <td className="mousCard-td">{industry}</td>
                <td className="mousCard-td">{date}</td>
-               <td className="mousCard-td">{activity}</td>
+               <td className="mousCard-td table-left-allign">{activity}</td>
           </tr>
           </>
      )

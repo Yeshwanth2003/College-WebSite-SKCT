@@ -34,7 +34,7 @@ export default function Home() {
             <Header />
           </ContextTag.Provider>
           {/*  */}
- 
+
           {/*  */}
         </header>
         <MyRouter />
@@ -485,6 +485,21 @@ function MyRouter() {
           element={(() => {
             let Component = lazy(() =>
               import("./subComponents/XmNotification")
+            );
+            return (
+              <>
+                <Suspense fallback={<Loading />}>
+                  <Component />
+                </Suspense>
+              </>
+            );
+          })()}
+        />
+        <Route
+          path="/endSemTimetable"
+          element={(() => {
+            let Component = lazy(() =>
+              import("./OtherThanHomeOrSubComponents/EndSemTimetable")
             );
             return (
               <>

@@ -5,10 +5,9 @@ export default function NISP() {
   let [nispData, setNispData] = useState(null);
 
   useEffect(() => {
-    fetch("https://data.skct.edu.in/nisp/")
-      .then((res) => res.json())
+      import("../../../DataCenter/subComponentsUpperData/nispData")
       .then((dats) => {
-        setNispData(dats);
+        setNispData(dats.default);
       });
   }, []);
 

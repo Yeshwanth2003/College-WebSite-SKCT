@@ -55,9 +55,9 @@ function ISLCard({ index, lab, date, fo }) {
     <>
       <tr className="islCard-tr">
         <td className="islCard-td">{index}</td>
-        <td className="islCard-td">{lab}</td>
+        <td className="islCard-td table-left-allign">{lab}</td>
         <td className="islCard-td">{date}</td>
-        <td className="islCard-td">{fo}</td>
+        <td className="islCard-td table-left-allign">{fo}</td>
       </tr>
     </>
   );

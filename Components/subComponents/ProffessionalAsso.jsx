@@ -57,9 +57,9 @@ function ProffAssoCard({INDEX,NAME,YEAR,ACTIVITY}){
           <>
            <tr className="proffCard-tbody-row">
                <td className="proffCard-tbody-data">{INDEX}</td>
-               <td className="proffCard-tbody-data">{NAME}</td>
+               <td className="proffCard-tbody-data table-left-allign">{NAME}</td>
                <td className="proffCard-tbody-data">{YEAR}</td>
-               <td className="proffCard-tbody-data">{ACTIVITY}</td>
+               <td className="proffCard-tbody-data table-left-allign">{ACTIVITY}</td>
            </tr>
           </>
      )

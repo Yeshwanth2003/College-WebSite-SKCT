@@ -58,7 +58,7 @@ function PlaceCard1({name,link}){
      <a href={link} className="placeC1-link" target={'_blank'} rel="noreferrer">
           <div className="placeC1-container">
                <div className="placeC1-symbolDiv">
-                    <span className="placeC1-span">&#8594;</span>
+                    <span className="placeC1-span">&#9733;</span>
                </div>
                <div className="placeC1-nameDiv">
                     <p className="placeC1-p">

@@ -2,21 +2,20 @@ import { lazy, Suspense, useEffect } from "react";
 import Loading from "./Loading";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-export function Img_Err_Solver(){
+export function Img_Err_Solver() {
   let allImages = [...document.images];
-    allImages.forEach(elem=>{
-      elem.removeEventListener("error",()=>{})
-      elem.addEventListener("error",(event)=>{
-        event.target.style.display = "none"
-      })
-    })
+  allImages.forEach((elem) => {
+    elem.removeEventListener("error", () => {});
+    elem.addEventListener("error", (event) => {
+      event.target.style.display = "none";
+    });
+  });
 }
 
 export default function WholeApp() {
-
-  useEffect(()=>{
-    Img_Err_Solver()
-  })
+  useEffect(() => {
+    Img_Err_Solver();
+  });
 
   return (
     <>
@@ -91,13 +90,11 @@ function WholeAppRouter() {
           <Route
             path="/researchPolicy"
             element={(() => {
-              let Component = lazy(() =>
-                import("./PDFViewer")
-              );
+              let Component = lazy(() => import("./PDFViewer"));
               return (
                 <>
                   <Suspense fallback={<Loading />}>
-                    <Component link={"ResearchPolicySKCT.pdf"}/>
+                    <Component link={"ResearchPolicySKCT.pdf"} />
                   </Suspense>
                 </>
               );

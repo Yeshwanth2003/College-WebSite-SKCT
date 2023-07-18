@@ -1,7 +1,7 @@
 const DataMapper = [
   {
     key: "CIVIL",
-    departmentName: "Department Of CIVIL",
+    departmentName: "Department of CIVIL",
     departmentLinks: [
       {
         name: "hod",
@@ -187,7 +187,7 @@ const DataMapper = [
   },
   {
     key: "CSE",
-    departmentName: "Department Of CSE",
+    departmentName: "Department of CSE",
     departmentLinks: [
       {
         name: "hod",
@@ -390,7 +390,7 @@ const DataMapper = [
   },
   {
     key: "ECE",
-    departmentName: "Department Of ECE",
+    departmentName: "Department of ECE",
     departmentLinks: [
       {
         name: "hod",
@@ -588,7 +588,7 @@ const DataMapper = [
   },
   {
     key: "EEE",
-    departmentName: "Department Of EEE",
+    departmentName: "Department of EEE",
     departmentLinks: [
       {
         name: "hod",
@@ -776,7 +776,7 @@ const DataMapper = [
   },
   {
     key: "ICE",
-    departmentName: "Department Of ICE",
+    departmentName: "Department of ICE",
     departmentLinks: [
       {
         name: "hod",
@@ -930,7 +930,7 @@ const DataMapper = [
   },
   {
     key: "MECH",
-    departmentName: "Department Of MECH",
+    departmentName: "Department of MECH",
     departmentLinks: [
       {
         name: "hod",
@@ -1127,7 +1127,7 @@ const DataMapper = [
   },
   {
     key: "IT",
-    departmentName: "Department Of IT",
+    departmentName: "Department of IT",
     departmentLinks: [
       {
         name: "hod",
@@ -1300,7 +1300,7 @@ const DataMapper = [
   },
   {
     key: "S&H",
-    departmentName: "Department Of S&H",
+    departmentName: "Department of S&H",
     departmentLinks: [
       {
         name: "hod",
@@ -1432,7 +1432,7 @@ const DataMapper = [
   },
   {
     key: "SOM",
-    departmentName: "Department Of SOM",
+    departmentName: "Department of SOM",
     departmentLinks: [
       {
         name: "hod",

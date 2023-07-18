@@ -67,7 +67,7 @@
   flex-direction: column;
 }
 .departmentWrapper-header {
-  height: 12vh;
+  height: 145px;
   /* background-color: red; */
   box-shadow: 0px 0px 6px black;
   position: sticky;

@@ -6,10 +6,9 @@ export default function SKCTMedia(){
      let[mediaData,setMediaData] = useState([]);
 
      useEffect(()=>{
-          fetch("https://data.skct.edu.in/skm/")
-          .then(res=>res.json())
+          import("../../DataCenter/subComponentsData/Media@SKCT/mediaData")
           .then(dats=>{
-            setMediaData(dats)
+            setMediaData(dats.default)
           })
      },[])
 

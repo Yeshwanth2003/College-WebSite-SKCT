@@ -337,9 +337,8 @@ export default function Admission(props) {
 
   const [pdfs, setPdfs] = useState([]);
   useEffect(() => {
-    fetch("https://data.skct.edu.in/admission/?format=json")
-      .then((response) => response.json())
-      .then((data) => setPdfs(data));
+       import("../../DataCenter/subComponentsData/Admission/admissionData")
+      .then((data) => setPdfs(data.default));
   }, []);
 
   return (

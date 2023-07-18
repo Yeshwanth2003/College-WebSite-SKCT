@@ -1,0 +1,50 @@
+.timetable-container {
+     padding: 16px;
+     text-align: left;
+     font-family: Montserrat, sans-serif !important;
+ }
+ 
+ .timetable-content {
+     border: 1px solid black;
+ }
+ 
+ .timetable-examination {
+     padding: 0px 24px;
+     font-weight: 600;
+ }
+ 
+ .timetable-examination:first-child {
+     padding-top: 24px;
+ }
+ 
+ .timetable-examination h3 {
+     font-size: 24px;
+     color: #FF8C00;
+     margin: 10px 0px 20px;
+ }
+ 
+ .timetable-examination ul li {
+     font-size: 16px;
+     margin: 15px 0px;
+ }
+ 
+ .timetable-examination ul li div {
+     gap: 2em;
+     padding: 16px;
+     display: flex;
+ }
+ 
+ .timetable-examination ul li div a {
+     padding: 6px 8px;
+     color: #1976D2;
+     border-radius: 0.2em;
+     text-decoration: none;
+     text-transform: capitalize;
+     transition: all 150ms ease-in-out;
+     background-color: rgba(128, 128, 128, 0.39);
+ }
+ 
+ .timetable-examination ul li div a:hover {
+     color: white;
+     background-color: blue;
+ }

@@ -60,7 +60,7 @@ function LabCard({ name, img1, img2, img3 }) {
   return (
     <>
       <div className="labCard-wrapper">
-        <details className="labCard-details" open>
+        <details className="labCard-details" >
           <summary className="labCard-summary"><h3 className="labCard-summary-h3">{name}</h3></summary>
           <div className="labCard-body">
             <div className="labCard-imgHolder">

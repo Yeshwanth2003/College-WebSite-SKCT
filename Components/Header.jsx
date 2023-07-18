@@ -11,6 +11,7 @@ import AICET from "./asserts/aicte.png";
 import LaptopMainNav from "./headerComponents/LaptopMainNav";
 import INSLOGO from "./asserts/instutionlogo.png";
 import CLGLOGO from "./asserts/skctlogo.png";
+import UGC from './asserts/ugc.jpeg'
 
 export default function Header() {
   return (
@@ -51,6 +52,9 @@ function LaptopHeader() {
             </div>
             <div className="laptopheader-accredation-img-div">
               <img src={NIRF} alt="" className="laptopheader-accre-img" />
+            </div>
+            <div className="laptopheader-accredation-img-div">
+              <img src={UGC} alt="" className="laptopheader-accre-img" />
             </div>
           </div>
         </div>
@@ -291,7 +295,7 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <Link className="mobile-nav-link" to="/management">
+                            <Link className="mobile-nav-link" to="/endSemTimetable">
                               Time Table
                             </Link>
                           </div>

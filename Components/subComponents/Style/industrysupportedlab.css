@@ -23,14 +23,14 @@
 .isl-body {
   width: 100%;
   display: flex;
-
   align-items: center;
   margin: 20px 0;
+  justify-content: center;
 }
 .isl-table {
-  width: 98%;
+  width: 85%;
   height: max-content;
-  background-color: aliceblue;
+  background-color: gray;
   font-family: sans-serif;
   text-align: center;
 }

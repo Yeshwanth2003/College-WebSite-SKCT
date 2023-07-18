@@ -58,11 +58,14 @@
 .mous-bodyContents{
      width: 98%;
      height: max-content;
+     display: flex;
+     justify-content: center;
+     align-items: center;
 }
 .mous-table{
-     width: 100%;
+     width: 85%;
      height: max-content;
-     background-color: aliceblue;
+     background-color: gray;
      font-family: sans-serif;
 }
 .mous-tdH{

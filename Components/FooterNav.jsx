@@ -58,15 +58,13 @@ export default function FooterNav() {
   ];
 
   useEffect(() => {
-    fetch(`https://data.skct.edu.in/foot/`)
-      .then((res) => res.json())
+    import("../DataCenter/FooterData/footData")
       .then((dats) => {
-        setFootD1(dats);
+        setFootD1(dats.default);
       });
-    fetch(`https://data.skct.edu.in/nav/`)
-      .then((res) => res.json())
+    import("../DataCenter/FooterData/footNavData")
       .then((dats) => {
-        setFootD2(dats);
+        setFootD2(dats.default);
       });
   }, []);
   return (

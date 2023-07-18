@@ -5,10 +5,9 @@ export default function IIC() {
   let [iicData, setIICData] = useState([]);
 
   useEffect(() => {
-    fetch("https://data.skct.edu.in/iic/")
-      .then((res) => res.json())
+    import("../../../DataCenter/subComponentsUpperData/iicData")
       .then((dats) => {
-        setIICData(dats);
+        setIICData(dats.default);
       });
   }, []);
 
