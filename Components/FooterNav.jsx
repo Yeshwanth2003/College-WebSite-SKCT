@@ -22,7 +22,7 @@ export default function FooterNav() {
     {
       pdf: "https://docs.google.com/forms/d/e/1FAIpQLSepr_JgMYQmkbzamZT5sZBUbOZUhUxqxUfqJmA9nflbJfMhzA/viewform",
       name: "Click here",
-    }
+    },
   ];
   let FBForm = [
     {
@@ -32,7 +32,7 @@ export default function FooterNav() {
     {
       pdf: "https://faculty-feedback-skct-edu.netlify.app/",
       name: "Faculty",
-    }
+    },
   ];
   let instutionsData = [
     {
@@ -78,26 +78,38 @@ export default function FooterNav() {
               <FootCard
                 Data={footD1?.downloads}
                 heading={"Downloads & Reports"}
+                key="footCard1"
               />
-              <FootCard Data={AICTEData} heading={"AICTE"} />
-              <FootCard Data={footD2} heading={"NIRF"} />
+              <FootCard Data={AICTEData} heading={"AICTE"} key="footCard2" />
+              <FootCard Data={footD2} heading={"NIRF"} key="footCard3" />
             </div>
             <div className="footerNav-body-Sec footerNav-body-Sec2">
-              <FootCard Data={footD1?.reports} heading={"Reports"} />
+              <FootCard
+                Data={footD1?.reports}
+                heading={"Reports"}
+                key="footCard4"
+              />
             </div>
             <div className="footerNav-body-Sec footerNav-body-Sec3">
-              <FootCard Data={instutionsData} heading={"Our Institutions"} />
+              <FootCard
+                Data={instutionsData}
+                heading={"Our Institutions"}
+                key="footCard5"
+              />
               <FootCard
                 Data={footD1?.brochures}
                 heading={"Prospectus/Brochure"}
+                key="footCard6"
               />
               <FootCard2
                 Data={GRS}
                 heading={"Grievance Redressal System"}
+                key="footCard7"
               />
               <FootCard2
                 Data={FBForm}
                 heading={"Grievance Redressal System"}
+                key="footCard8"
               />
             </div>
             <div className="footerNav-body-Sec footerNav-body-Sec4">
@@ -157,7 +169,7 @@ function FootCard({ Data, heading }) {
         <div className="footCard-body">
           <ul className="footCard-ul">
             {Data?.length > 0 &&
-              Data.map((elem) => {
+              Data.map((elem,index) => {
                 return (
                   <>
                     <a
@@ -165,8 +177,9 @@ function FootCard({ Data, heading }) {
                       className="footCard-a"
                       target={"_blank"}
                       rel="noreferrer"
+                      key={`${index}`}
                     >
-                      <li className="footCard-li">{elem.name}</li>
+                      <li className="footCard-li"  key={`${index}`}>{elem.name}</li>
                     </a>
                   </>
                 );
@@ -188,7 +201,7 @@ function FootCard2({ Data, heading }) {
         <div className="footCard-body">
           <ul className="footCard-ul">
             {Data?.length > 0 &&
-              Data.map((elem) => {
+              Data.map((elem,index) => {
                 return (
                   <>
                     <a
@@ -196,8 +209,9 @@ function FootCard2({ Data, heading }) {
                       className="footCard-a"
                       target={"_blank"}
                       rel="noreferrer"
+                      key={`${index}`}
                     >
-                      <li className="footCard-li1 footCard-li">{elem.name}</li>
+                      <li className="footCard-li1 footCard-li"  key={`${index}`}>{elem.name}</li>
                     </a>
                   </>
                 );

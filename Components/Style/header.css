@@ -183,7 +183,7 @@
   display: block;
 }
 .laptopHeader-li-ContentDiv:hover .laptopheader-mainLink {
-  color: rgb(201, 53, 53);
+  color: rgb(240, 204, 0);
 }
 /* SubList Holders */
 .laptopHeader-dropDown-li-SubListContainer {
@@ -392,7 +392,7 @@
 .laptopheader-wrapper {
   position: relative;
   height: 100%;
-  box-shadow: 0 0 10px black,0 0 10px #0d1b69 inset;
+  box-shadow: 0 0 10px black;
   background-color: white;
 }
 .custom-shape-divider-bottom-1689593908 {
@@ -429,29 +429,6 @@
   align-items: center;
   font-size: 1.1em;
 }
-.laptopheader-upperpart::before{
-content: '';
-position: absolute;
-width: 40px;
-height: 30px;
-bottom: 0;
-right: 0;
-transform: translateY(100%);
-background-color: rgb(3, 3, 145);
-display: block;
-}
-.laptopheader-upperpart::after{
-  content: '';
-  position: absolute;
-  width: 40px;
-  height: 30px;
-  bottom: 0;
-  right: 0;
-  transform: translate(-5%,100%);
-  background-color: white;
-  display: block;
-  border-radius: 0 100% 0 0 ;
-  }
 .laptopheader-accredation-div {
   position: absolute;
   width: 50%;

@@ -41,12 +41,10 @@ function AnnouncementRunner() {
       );
 
       hoverListenDiv.addEventListener("mouseover", () => {
-        console.log("hover");
         clearInterval(timeoutPointer);
       });
 
       hoverListenDiv.addEventListener("mouseleave", () => {
-        console.log("out");
         timeoutPointer = setInterval(intervalFunction, 3000);
       });
 
@@ -168,10 +166,10 @@ function Part2Events() {
     </>
   );
 }
-function UpcomingEventCard({ date, month, infoTitle, key, link }) {
+function UpcomingEventCard({ date, month, infoTitle, link }) {
   return (
     <>
-      <div className="upcomingEvent-box" key={key}>
+      <div className="upcomingEvent-box" >
         <div className="upcomingEvent-calanderBox">
           <div className="upcomingEvent-calender">
             <div className="upcomingEvent-calender-month">

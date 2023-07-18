@@ -250,7 +250,7 @@ export default function Home() {
       </div>
       <div id="scrollDiv" className="scrollTo-topDiv" onClick={ScrollTop}>
         <svg
-          enable-background="new 0 0 32 32"
+          enableBackground="new 0 0 32 32"
           height="40px"
           id="Layer_1"
           version="1.1"

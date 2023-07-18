@@ -42,7 +42,7 @@ function Scrollmenu({ title, sections }) {
   );
 }
 
-function Imageslider({ slides, fit = "cover", fill = "white" }) {
+function Imageslider({ slides=[], fit = "cover", fill = "white" }) {
   const [currentIdx, setCurrentIdx] = useState(0);
 
   const goToPrev = () => {
