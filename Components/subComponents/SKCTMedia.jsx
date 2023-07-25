@@ -35,6 +35,7 @@ export default function SKCTMedia(){
                                         )
                                    })
                               }
+                              <div className="skctmedia-actbody-hoverdiv"></div>
                          </div>
                          </div>
                     </div>

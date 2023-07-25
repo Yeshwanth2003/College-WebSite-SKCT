@@ -30,6 +30,7 @@ function LaptopHeader() {
       <div className="laptopheader-wrapper laptopHeader_wrapper">
         <div className="laptopheader-logo-div">
           {/* <!-- logo --> */}
+          <Link to="/" >
           <div className="laptopheader-logoholder">
             <div className="laptopheader-ins-logo-div">
               <img src={INSLOGO} className="laptopheader-ins-logo-img" alt="" />
@@ -38,6 +39,7 @@ function LaptopHeader() {
               <img src={CLGLOGO} className="laptopheader-clg-logo-img" alt="" />
             </div>
           </div>
+          </Link>
         </div>
         <div className="laptopheader-accredation-div">
           <div className="laptopheader-accredation-holder">

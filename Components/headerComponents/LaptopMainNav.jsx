@@ -4,18 +4,7 @@ export default function LaptopMainNav() {
   return (
     <>
       <ul className="laptopHeader-ul-lower">
-        <li className="laptopHeader-li-lower">
-          <div
-            className="laptopHeader-li-ContentDiv"
-            style={{ justifyContent: "center" }}
-          >
-            <h4>
-              <Link to="/" className="laptopHeader-links laptopheader-mainLink">
-                Home
-              </Link>
-            </h4>
-          </div>
-        </li>
+        {/* we had an home */}
         <li className="laptopHeader-li-lower">
           <div className="laptopHeader-li-ContentDiv ">
             <h4 className="laptop-linkHeading">

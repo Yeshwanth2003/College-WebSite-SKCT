@@ -13,7 +13,7 @@ export default function Indexpage() {
   let [recData, setRecData] = useState([]);
   let [newsData, setNewsData] = useState([]);
   let [eventsData, setEventsData] = useState([]);
-  let [announcementData,setAnnouncementData]= useState([]);
+  let [announcementData, setAnnouncementData] = useState([]);
 
   useEffect(() => {
     fetch("https://data.skct.edu.in/homeone/?format=json")
@@ -35,10 +35,12 @@ export default function Indexpage() {
 
   return (
     <>
-      <ContextTag.Provider value={{ eventsData,announcementData }}>
+      <ContextTag.Provider value={{ eventsData, announcementData }}>
         <EventsAndMainRunner />
       </ContextTag.Provider>
-      <IARunner />
+      <div className="indexpage-iarunner-wrapper">
+        <IARunner />
+      </div>
       <ContextTag.Provider value={{ newsData }}>
         <NewsAndAbout />
       </ContextTag.Provider>
