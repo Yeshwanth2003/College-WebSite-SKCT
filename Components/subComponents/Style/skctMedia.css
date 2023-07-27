@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .skctmedia-contentdiv {
   width: 98%;
@@ -49,13 +50,11 @@
   justify-content: center;
 }
 .skctmedia-actBody-inner{
-  /* position: relative; */
   padding: 2%;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
-  grid-gap: 5px;
-  /* background-color: darkcyan; */
+  grid-gap: 10px;
 }
 .mediaCard-wrapper {
   width: 15vw;
@@ -65,14 +64,19 @@
   transition: 0.5s;
 }
 .mediaCard-wrapper:hover{
-  transform: scale(1.2);
   cursor: pointer;
-  z-index: 1000;
   border-radius: 10px;
   overflow: hidden;
   background-color: rgba(254, 255, 255, 0.591);
   /* box-shadow: 0 0 10px black inset; */
   font-weight: bolder;
+  transition: 0.2s;
+  animation: jump 0.5s;
+}
+@keyframes jump{
+  100%{
+    transform: scale(1.03);
+  }
 }
 .mediaCard-imgDiv{
   height: 75%;
@@ -103,18 +107,53 @@
   color: black;
 }
 .skctmedia-actbody-hoverdiv{
+  position: fixed;
+  width: 500px;
+  height: 550px;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%,30%);
+  background-color: rgba(255, 254, 254, 0.262);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.media-hoverdiv-close{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 0 10px;
   position: absolute;
   top: 0;
-  left: 0;
+}
+.skctMedia-hover-body{
+ flex: 1;
+ width: 100%;
+ height: 100%;
+ /* background-color: aqua; */
+}
+.skctMedia-hover-imgDiv{
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.695);
-  visibility: hidden;
-  border: 0 solid black;
-  /* transition: 5s; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
-.skctmedia-actBody-inner:has(.mediaCard-wrapper:hover) .skctmedia-actbody-hoverdiv{
-  visibility: visible;
+.skctMedia-hover-img{
+  max-width: 100%;
+  max-height: 100%;
+}
+.skctMedia-hoverDiv-overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.603);
+  top: 0;
+  left: 0;
 }
 @media (max-device-width: 1100px),(width<1100px) {
   .skctmedia-actBody-inner {
@@ -124,11 +163,8 @@
      width: 70vw;
      height: 40vh;
   }
-.skctmedia-actBody-inner:has(.mediaCard-wrapper:hover) .skctmedia-actbody-hoverdiv{
-  visibility: hidden;
-}
+
 .mediaCard-wrapper:hover{
-  transform: scale(1);
   cursor: pointer;
   z-index: 0;
   border-radius: 0px;
@@ -136,5 +172,9 @@
   background-color: rgba(254, 255, 255, 0.591);
   /* box-shadow: 0 0 10px black inset; */
   font-weight: bolder;
+}
+.skctmedia-actbody-hoverdiv{
+  width: 90%;
+  height: 70%;
 }
 }
