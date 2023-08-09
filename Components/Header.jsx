@@ -34,9 +34,6 @@ function LaptopHeader() {
         this.window.pageYOffset >= 95
       );
     });
-    return () => {
-      window.removeEventListener("scroll");
-    };
   }, []);
   return (
     <>
