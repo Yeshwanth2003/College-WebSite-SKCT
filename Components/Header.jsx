@@ -11,7 +11,7 @@ import AICET from "./asserts/aicte.png";
 import LaptopMainNav from "./headerComponents/LaptopMainNav";
 import INSLOGO from "./asserts/instutionlogo.png";
 import CLGLOGO from "./asserts/skctlogo.png";
-import UGC from './asserts/ugc.jpeg'
+import UGC from "./asserts/ugc.jpeg";
 
 export default function Header() {
   return (
@@ -25,20 +25,41 @@ export default function Header() {
 }
 
 function LaptopHeader() {
+  // change header based on scroll
+  useEffect(() => {
+    const headerManiNav = document.querySelector("#laptopHeaderMainNav");
+    window.addEventListener("scroll", function () {
+      headerManiNav.classList.toggle(
+        "laptopheader-optnsDiv-onScroll",
+        this.window.pageYOffset >= 95
+      );
+    });
+    return () => {
+      window.removeEventListener("scroll");
+    };
+  }, []);
   return (
     <>
       <div className="laptopheader-wrapper laptopHeader_wrapper">
         <div className="laptopheader-logo-div">
           {/* <!-- logo --> */}
-          <Link to="/" >
-          <div className="laptopheader-logoholder">
-            <div className="laptopheader-ins-logo-div">
-              <img src={INSLOGO} className="laptopheader-ins-logo-img" alt="" />
+          <Link to="/">
+            <div className="laptopheader-logoholder">
+              <div className="laptopheader-ins-logo-div">
+                <img
+                  src={INSLOGO}
+                  className="laptopheader-ins-logo-img"
+                  alt=""
+                />
+              </div>
+              <div className="laptopheader-clg-logo-div">
+                <img
+                  src={CLGLOGO}
+                  className="laptopheader-clg-logo-img"
+                  alt=""
+                />
+              </div>
             </div>
-            <div className="laptopheader-clg-logo-div">
-              <img src={CLGLOGO} className="laptopheader-clg-logo-img" alt="" />
-            </div>
-          </div>
           </Link>
         </div>
         <div className="laptopheader-accredation-div">
@@ -77,7 +98,7 @@ function LaptopHeader() {
             ></path>
           </svg>
         </div>
-        <div className="laptopheader-optnsDiv">
+        <div id="laptopHeaderMainNav" className="laptopheader-optnsDiv">
           {/* <!-- optns --> */}
           <LaptopMainNav />
         </div>
@@ -297,7 +318,10 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <Link className="mobile-nav-link" to="/endSemTimetable">
+                            <Link
+                              className="mobile-nav-link"
+                              to="/endSemTimetable"
+                            >
                               Time Table
                             </Link>
                           </div>
@@ -888,8 +912,8 @@ export function MobileNav() {
                         </div>
                         <div className="mobile-nav-link-content">
                           <div className="mobile-nav-linkDiv">
-                            <Link className="mobile-nav-link" to="/">
-                              Incubation Center
+                            <Link className="mobile-nav-link" to="/IIC">
+                              IIC
                             </Link>
                           </div>
                         </div>

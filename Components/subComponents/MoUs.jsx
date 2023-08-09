@@ -10,6 +10,8 @@ export default function MoUs() {
       import("../../DataCenter/subComponentsData/IndustryConnectData/mousData")
        .then(res=>res.default)
        .then(dats=>{
+          dats = dats.reverse()
+          console.log();
           setMousData(dats)
           setMousDataCopy(dats)
        })
@@ -97,7 +99,7 @@ function MousCata({index,activity,date,industry}){
           <>
           <tr className="mousCard-tr">
                <td className="mousCard-td table-left-allign">{index}</td>
-               <td className="mousCard-td">{industry}</td>
+               <td className="mousCard-td table-left-allign">{industry}</td>
                <td className="mousCard-td">{date}</td>
                <td className="mousCard-td table-left-allign">{activity}</td>
           </tr>

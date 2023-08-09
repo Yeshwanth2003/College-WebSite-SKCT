@@ -1,5 +1,6 @@
 import "./Style/IQAC.css";
 import logo from "../../asserts/collegeHeaderLogo.png";
+import { Link } from "react-router-dom";
 
 function IQAC() {
   return (
@@ -15,9 +16,9 @@ function IQAC() {
               />
             </center>
             <center>
-              <a href="/">
+              <Link to="/">
                 <button className="IQAC-Home">Home</button>
-              </a>
+              </Link>
             </center>
           </div>
 
@@ -25,25 +26,25 @@ function IQAC() {
             <h3 className="IQAC-h3">IQAC</h3>
 
             <div className="IQAC-about">
-              <a href="/">
+              <Link to="/">
                 <button className="IQAC-button">Composition & Minutes</button>
-              </a>
-              <a href="/">
+              </Link>
+              <Link to="/">
                 <button className="IQAC-button">
                   Statutory & Non-statutory Bodies
                 </button>
-              </a>{" "}
-              <a href="/">
+              </Link>{" "}
+              <Link to="/">
                 <button className="IQAC-button">
                   Student Satisfaction Survey
                 </button>
-              </a>
-              <a href="/">
+              </Link>
+              <Link to="/">
                 <button className="IQAC-button">NAAC</button>
-              </a>
-              <a href="/">
+              </Link>
+              <Link to="/">
                 <button className="IQAC-button">Feedback Analysis</button>
-              </a>
+              </Link>
             </div>
           </div>
 

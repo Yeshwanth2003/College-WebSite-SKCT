@@ -100,6 +100,19 @@ function WholeAppRouter() {
               );
             })()}
           />
+          <Route
+            path="/ethicalPolicy"
+            element={(() => {
+              let Component = lazy(() => import("./PDFViewer"));
+              return (
+                <>
+                  <Suspense fallback={<Loading />}>
+                    <Component link={"Ethicalpolicy.pdf"} />
+                  </Suspense>
+                </>
+              );
+            })()}
+          />
         </Routes>
       </BrowserRouter>
     </>

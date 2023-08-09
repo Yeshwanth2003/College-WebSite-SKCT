@@ -1,6 +1,23 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function LaptopMainNav() {
+  function ScrollToTop() {
+    window.scroll({ top: 0, left: 0, behavior: "smooth" });
+  }
+  // subscribe to scroll to top event
+  useEffect(() => {
+    const Links = document.querySelectorAll(".laptopHeader-links");
+    Links.forEach((elem) => {
+      elem.addEventListener("click", ScrollToTop);
+    });
+    return () => {
+      Links.forEach((elem) => {
+        elem.removeEventListener("click", ScrollToTop);
+      });
+    };
+  }, []);
+
   return (
     <>
       <ul className="laptopHeader-ul-lower">
@@ -309,9 +326,7 @@ export default function LaptopMainNav() {
                   className="laptopHeader-links"
                   style={{ fontSize: "1em" }}
                 >
-                  <li className="laptopHeader-dropDown-li">
-                    Incubation Centers
-                  </li>
+                  <li className="laptopHeader-dropDown-li">IIC</li>
                 </Link>
               </ul>
             </div>

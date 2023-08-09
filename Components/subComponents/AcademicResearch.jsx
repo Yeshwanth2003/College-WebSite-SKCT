@@ -11,6 +11,7 @@ const ARPAGESTATES = {
   CP: "4",
   FR: "5",
   BPS: "6",
+  RC:"7"
 };
 
 export default function AcademicResearch() {
@@ -49,21 +50,22 @@ export default function AcademicResearch() {
                 </li>
                 <li
                   id="ArNavList"
-                  className="ar-nav-li"
+                  className="ar-nav-li ar-nav-li-with-dd"
                   pagename={ARPAGESTATES.POLICY}
                 >
-                  <Link
-                    to="/researchPolicy"
+                  <button
+                    className="ar-nav-button"
+                    onClick={() => {
+                      setIRS(ARPAGESTATES.ABOUTUS);
+                    }}
                   >
-                    <button
-                      className="ar-nav-button"
-                      onClick={() => {
-                        setIRS(ARPAGESTATES.POLICY);
-                      }}
-                    >
-                      Policy
-                    </button>
-                  </Link>
+                    Policy
+                  </button>
+                  {/* Only dropdown */}
+                  <div className="ar-nav-policy-dropdown-div">
+                    <Link className="ar-dd-link" to={"/researchPolicy"}>Research Policy</Link>
+                    <Link className="ar-dd-link" to={"/ethicalPolicy"}>Ethical Policy</Link>
+                  </div>
                 </li>
                 <li
                   id="ArNavList"
@@ -135,6 +137,20 @@ export default function AcademicResearch() {
                     Funding Received
                   </button>
                 </li>
+                <li
+                  id="ArNavList"
+                  className="ar-nav-li"
+                  pagename={ARPAGESTATES.RC}
+                >
+                  <button
+                    className="ar-nav-button"
+                    onClick={() => {
+                      setIRS(ARPAGESTATES.RC);
+                    }}
+                  >
+                    Research Commitee
+                  </button>
+                </li>
               </ul>
             </div>
             <div className="ar-nav-triDotDiv">
@@ -172,11 +188,17 @@ function ARrouter({ pageState }) {
         </Suspense>
       </>
     );
-  } 
-  else if(pageState === ARPAGESTATES.JP){
-    let Component = lazy(() =>
-      import("./AcademicResearchPages/Journals")
+  } else if (pageState === ARPAGESTATES.JP) {
+    let Component = lazy(() => import("./AcademicResearchPages/Journals"));
+    return (
+      <>
+        <Suspense fallback={<Loading />}>
+          <Component />
+        </Suspense>
+      </>
     );
+  } else if (pageState === ARPAGESTATES.CP) {
+    let Component = lazy(() => import("./AcademicResearchPages/Conference"));
     return (
       <>
         <Suspense fallback={<Loading />}>
@@ -185,10 +207,8 @@ function ARrouter({ pageState }) {
       </>
     );
   }
-  else if(pageState === ARPAGESTATES.CP){
-    let Component = lazy(() =>
-      import("./AcademicResearchPages/Conference")
-    );
+  else if (pageState === ARPAGESTATES.RC) {
+    let Component = lazy(() => import("./AcademicResearchPages/ResearchCommitee"));
     return (
       <>
         <Suspense fallback={<Loading />}>
@@ -196,8 +216,7 @@ function ARrouter({ pageState }) {
         </Suspense>
       </>
     );
-  }
-  else {
+  } else {
     let Component = lazy(() => import("./AcademicResearchPages/AboutUs"));
     return (
       <>

@@ -172,7 +172,7 @@ export default function Home() {
             <a
               target={"_blank"}
               rel="noreferrer"
-              href="https://www.instagram.com/skct__official/"
+              href="https://www.linkedin.com/school/srikrishnacollegeoftechnology/"
               className="home-social-link-a"
             >
               <div className="linkedin sociLink">

@@ -104,11 +104,11 @@ export default function DailyNews({ title, link, p1, p2, inpage }) {
                             DATE={
                               p2 !== undefined
                                 ? elem.name
-                                : new Date(elem.date).toLocaleDateString()
+                                : elem.date
                             }
                             DIGEST={
                               p2 !== undefined
-                                ? new Date(elem.date).toLocaleDateString()
+                                ? elem.date
                                 : elem.digest
                             }
                             NewsDataLink={
