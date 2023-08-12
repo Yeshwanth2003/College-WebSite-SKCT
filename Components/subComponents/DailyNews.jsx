@@ -1,10 +1,42 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { mkMonth } from "../IndexPages/EventsAndMainRunner";
 import "./Style/dailynews.css";
+
+export default function DailyNews() {
+  const [currentData, setCUrData] = useState(null);
+
+  return (
+    <>
+      {currentData && (
+        <>
+          <div className="dailyNews-viewer">
+            <div className="dailynews-viewer-headingdiv">
+              <h2 className="dailynews-viewer-h2">
+                {`SKCT Digest - ${mkMonth(
+                  Number(currentData?.reverse()[0].date.split(".")[1])
+                )}`}
+              </h2>
+            </div>
+            <embed
+              className="dailynews-viewer-embed"
+              src={`https://data.skct.edu.in${currentData?.reverse()[0].pdf}#view=FitH&toolbar=0&scrollbar=0`}
+              type="application/pdf"
+            />
+          </div>
+        </>
+      )}
+      <details className="dailyNews-details-more">
+        <summary>More.....</summary>
+        <DailyTable setCUrData={setCUrData} />
+      </details>
+    </>
+  );
+}
 
 // Under Use For All Event too
 
-export default function DailyNews({ title, link, p1, p2, inpage }) {
+export function DailyTable({ title, link, p1, p2, inpage, setCUrData }) {
   let [newsData, setNewsData] = useState([]);
   let [searchNewsData, setSearchNewsData] = useState([]);
 
@@ -12,10 +44,11 @@ export default function DailyNews({ title, link, p1, p2, inpage }) {
     fetch(link !== undefined ? link : "https://data.skct.edu.in/skd")
       .then((res) => res.json())
       .then((dats) => {
+        setCUrData(dats);
         setNewsData(dats);
         setSearchNewsData(dats);
       });
-  }, [link]);
+  }, [link, setCUrData]);
 
   function FilterResults(eve) {
     let sValue = eve.target.value.trim();
@@ -47,9 +80,11 @@ export default function DailyNews({ title, link, p1, p2, inpage }) {
         <div className="dailyNews-content">
           <div className="dailyNews-headerDiv">
             <div className="dailyNews-headerDiv1">
-              <h2 className="dailyNews-heading">
-                {title !== undefined ? title : "DAILY NEWSLETTER"}
-              </h2>
+              {title !== undefined ? (
+                <h2 className="dailyNews-heading">{title} </h2>
+              ) : (
+                <></>
+              )}
             </div>
             <div className="dailyNews-headerDiv2">
               <div className="dailyNews-searchDiv">
@@ -101,16 +136,8 @@ export default function DailyNews({ title, link, p1, p2, inpage }) {
                       return (
                         <>
                           <NewsRowCard
-                            DATE={
-                              p2 !== undefined
-                                ? elem.name
-                                : elem.date
-                            }
-                            DIGEST={
-                              p2 !== undefined
-                                ? elem.date
-                                : elem.digest
-                            }
+                            DATE={p2 !== undefined ? elem.name : elem.date}
+                            DIGEST={p2 !== undefined ? elem.date : elem.digest}
                             NewsDataLink={
                               link !== undefined
                                 ? `/allevents/${elem.pk}`
@@ -143,10 +170,7 @@ function NewsRowCard({ SNO, DATE, DIGEST, NewsDataLink, inpage }) {
         <td className="dailyNews-bodyRowData">{DATE}</td>
         <td className="dailyNews-bodyRowData">
           {inpage === true ? (
-            <Link
-              to={NewsDataLink}
-              className="dailyNews-dataLink"
-            >
+            <Link to={NewsDataLink} className="dailyNews-dataLink">
               {DIGEST}
             </Link>
           ) : (

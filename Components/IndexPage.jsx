@@ -29,7 +29,7 @@ export default function Indexpage() {
       .then((dats) => {
         setEventsData(dats[0]["events"].reverse());
         setNewsData(dats[0]["news"]);
-        setAnnouncementData(dats[0]["announcements"]);
+        setAnnouncementData(dats[0]["announcements"].reverse());
       });
   }, []);
 

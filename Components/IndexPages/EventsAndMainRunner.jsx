@@ -220,7 +220,7 @@ function Part2Elements() {
     </>
   );
 }
-function mkMonth(byNum) {
+export function mkMonth(byNum) {
   let month;
   switch (byNum) {
     case 0:
