@@ -1,56 +1,50 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import useFetch from "../../CustomHooks/useFetch";
 import "./Style/approval.css";
 
 export default function Approval() {
   let [approvalData, setAppovalData] = useState([]);
 
-  useEffect(() => {
-    fetch("https://data.skct.edu.in/approvals")
-      .then((res) => res.json())
-      .then((dats) => {
-        createJSON(dats);
-      });
+  useFetch("https://data.skct.edu.in/approvals", function ({ err, data }) {
+    if (err) return;
+    createJSON(data);
+  });
+  // cluster maker
+  function createJSON(data) {
+    let keys = [
+      "Anna University",
+      "NAAC",
+      "NBA",
+      "NIRF",
+      "AICTE",
+      "UGC",
+      "Atal",
+    ];
+    let finalData = [];
 
-    function createJSON(data) {
-      let keys = [
-        "Anna University",
-        "NAAC",
-        "NBA",
-        "NIRF",
-        "AICTE",
-        "UGC",
-        "Atal",
-      ];
-      let finalData = [];
+    for (let i of keys) {
+      let oneObj = {
+        title: i,
+        img: null,
+        credits: [],
+      };
 
-      for (let i of keys) {
-        let oneObj = {
-          title: i,
-          img: null,
-          credits: [],
-        };
+      data.forEach((element) => {
+        if (!element.name.includes(i)) return;
 
-        data.forEach((element) => {
-          if (!element.name.includes(i)) return;
+        if (!oneObj.img) {
+          oneObj.img = element.logo;
+        }
 
-          if (!oneObj.img) {
-            oneObj.img = element.logo;
-          }
-
-          oneObj.credits.push({
-            name: element.name,
-            link: `https://data.skct.edu.in${element.pdf}`,
-          });
+        oneObj.credits.push({
+          name: element.name,
+          link: `https://data.skct.edu.in${element.pdf}`,
         });
-        finalData.push(oneObj);
-      }
-      setAppovalData(finalData);
+      });
+      finalData.push(oneObj);
     }
-  }, []);
-
-  useEffect(() => {
-    console.log(approvalData);
-  }, [approvalData]);
+    setAppovalData(finalData);
+  }
 
   return (
     <>
@@ -61,7 +55,7 @@ export default function Approval() {
           </div>
           <div className="approval-body">
             <div className="approval-body-inner">
-              {approvalData.map((elem,index) => {
+              {approvalData.map((elem, index) => {
                 return (
                   <>
                     <ApprovalCard
@@ -81,11 +75,15 @@ export default function Approval() {
   );
 }
 
-function ApprovalCard({ title, img, credits,index }) {
+function ApprovalCard({ title, img, credits, index }) {
   return (
     <>
       <div class="apcard-wrapper">
-        <input type="checkbox" id={`apcardInfoInput${index}`} class="apcard-info-input" />
+        <input
+          type="checkbox"
+          id={`apcardInfoInput${index}`}
+          class="apcard-info-input"
+        />
         <label htmlFor={`apcardInfoInput${index}`} class="apcard-interlable">
           <div class="apcard-inter">
             <div class="apcard-img-wrapper">
@@ -96,27 +94,26 @@ function ApprovalCard({ title, img, credits,index }) {
               />
             </div>
             <div class="apcard-title-wrapper">
-              <h3 class="apcard-h3">
-                {title}
-              </h3>
+              <h3 class="apcard-h3">{title}</h3>
             </div>
           </div>
         </label>
         <div class="apcard-body">
           <ul class="apcard-ul">
-            {
-              credits.map(elem=>{
-                return(
-                  <>
-                  <a href={elem.link} className="apcard-link" target={"_blank"} rel="noreferrer">
-                    <li className="apcard-li">
-                      {elem.name}
-                    </li>
+            {credits.map((elem) => {
+              return (
+                <>
+                  <a
+                    href={elem.link}
+                    className="apcard-link"
+                    target={"_blank"}
+                    rel="noreferrer"
+                  >
+                    <li className="apcard-li">{elem.name}</li>
                   </a>
-                  </>
-                )
-              })
-            }
+                </>
+              );
+            })}
           </ul>
         </div>
       </div>
