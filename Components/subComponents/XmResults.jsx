@@ -6,8 +6,8 @@ export default function XmResults() {
      let [xmResultData,setXmResultData] = useState([])
 
      useEffect(()=>{
-        import("../../DataCenter/subComponentsData/XamDatas/xmResultsData")
-        .then(res=>res.default)
+        fetch("https://data.skct.edu.in/result/")
+        .then(res=>res.json())
         .then(dats=>{
           setXmResultData(dats)
         })
