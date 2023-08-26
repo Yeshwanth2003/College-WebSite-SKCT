@@ -38,9 +38,7 @@ export default function Indexpage() {
       <ContextTag.Provider value={{ eventsData, announcementData }}>
         <EventsAndMainRunner />
       </ContextTag.Provider>
-      <div className="indexpage-iarunner-wrapper">
-        <IARunner />
-      </div>
+      <IARunner />
       <ContextTag.Provider value={{ newsData }}>
         <NewsAndAbout />
       </ContextTag.Provider>

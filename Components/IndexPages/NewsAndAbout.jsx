@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef } from "react";
 import ContextTag from "../ContextFile";
 import "./style/newsandabout.css";
-import IARunner from "./IARunner"
+import CollegeStat from "./CollegeStat";
 
 export default function NewsAndAbout() {
   return (
@@ -39,9 +39,8 @@ export default function NewsAndAbout() {
             </div>
           </div>
           <div className="about-add-div">
-            <IARunner />
+            <CollegeStat />
           </div>
-          {/*  */}
         </div>
         <div className="nanda-newsdiv">
           <News />

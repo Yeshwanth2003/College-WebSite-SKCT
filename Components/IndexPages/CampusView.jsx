@@ -10,7 +10,7 @@ export default function CampusView() {
         <div className="campusview-videoplayer">
           <div className="campuslife-videotag">
             <iframe
-              src="https://www.youtube.com/embed/1Qzr8jDWRVM?autoplay=0&mute=1&controls=0&loop=1&playlist=1Qzr8jDWRVM"
+              src="https://www.youtube.com/embed/1Qzr8jDWRVM?autoplay=1&mute=1&controls=0&loop=1&playlist=1Qzr8jDWRVM"
               frameBorder="0"
               allowFullScreen
               title="campusView"
