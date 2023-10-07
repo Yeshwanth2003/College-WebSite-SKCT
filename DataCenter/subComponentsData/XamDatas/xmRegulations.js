@@ -36,7 +36,7 @@ const xmRegu = [
   {
     title: "R - 2022",
     depts: [
-      {
+    {
         name: "B.E. - CIVIL",
         pdf: "",
       },

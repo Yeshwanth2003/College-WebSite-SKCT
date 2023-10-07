@@ -6,6 +6,7 @@ import Recruiters from "./IndexPages/Recruiters";
 import CampusView from "./IndexPages/CampusView";
 import NewsAndAbout from "./IndexPages/NewsAndAbout";
 import EventsAndMainRunner from "./IndexPages/EventsAndMainRunner";
+import Courses from "./IndexPages/Courses";
 import "./Style/indexpage.css";
 
 export default function Indexpage() {
@@ -42,6 +43,7 @@ export default function Indexpage() {
       <ContextTag.Provider value={{ newsData }}>
         <NewsAndAbout />
       </ContextTag.Provider>
+      {/* <Courses /> */}
       <CampusView />
       <ContextTag.Provider value={{ alumniData }}>
         <Alumni />

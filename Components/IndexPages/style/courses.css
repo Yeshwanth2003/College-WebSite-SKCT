@@ -1,0 +1,38 @@
+.i-courses-wrapper {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  gap: 20px;
+}
+.i-courses-container {
+  width: 90%;
+  height: max-content;
+  overflow: scroll;
+  position: relative;
+  height: 300px;
+  display: flex;
+  background-color: aqua;
+}
+.i-courses-interface {
+  & h2 {
+    color: orange;
+  }
+}
+.i-courses-runer {
+  inset: 0;
+  margin: auto;
+  position: absolute;
+  display: flex;
+  /* flex-wrap: wrap; */
+  width: max-content;
+  gap: 20px;
+  
+}
+.i-c-dept-wrapper {
+  background-color: brown;
+  width: ;
+}
