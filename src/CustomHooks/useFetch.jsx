@@ -15,5 +15,6 @@ export default function useFetch(U_R_L, CALL_BACK) {
           CALL_BACK({ err: ERROR ? ERROR : "something occured", data: null });
         }
       );
-  }, [U_R_L, CALL_BACK]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 }

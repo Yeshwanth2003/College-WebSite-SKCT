@@ -1,15 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import useFetch from "../../CustomHooks/useFetch";
 import "./Style/ceoOffice.css";
 
 export default function CeoOffice() {
   let [staffData, setStaffData] = useState([]);
-  useEffect(() => {
-    fetch("https://data.skct.edu.in/staff/")
-      .then((res) => res.json())
-      .then((dats) => {
-        setStaffData(dats.sort((a, b) => a.order - b.order));
-      });
-  }, []);
+
+  useFetch("https://data.skct.edu.in/staff/", ({ err, data }) => {
+    setStaffData(data.sort((a, b) => a.order - b.order));
+  });
 
   return (
     <>

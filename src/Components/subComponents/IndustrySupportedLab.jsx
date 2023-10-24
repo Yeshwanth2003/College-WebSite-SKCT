@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
+import useImport from "../../CustomHooks/useImport";
 import "./Style/industrysupportedlab.css";
+
 export default function ISL() {
   let [islData, setIslData] = useState([]);
 
-  useEffect(() => {
-    import("../../DataCenter/subComponentsData/IndustryConnectData/ISLData")
-      .then((res) => res.default)
-      .then((dats) => {
-        setIslData(dats);
-      });
-  }, []);
+  useImport(
+    "subComponentsData/IndustryConnectData/ISLData",
+    ({ err, data }) => {
+      setIslData(data);
+    }
+  );
 
   return (
     <>

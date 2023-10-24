@@ -1,14 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import useFetch from "../../CustomHooks/useFetch";
 import "./Style/acaCalander.css";
 
-export default function AcademicsCalander({calanderLink}) {
+export default function AcademicsCalander({ calanderLink }) {
   let [calData, setCalData] = useState([]);
 
-  useEffect(() => {
-    fetch((calanderLink!==undefined?calanderLink:"https://data.skct.edu.in/calender/"))
-      .then((res) => res.json())
-      .then((dats) => setCalData(dats));
-  }, [calanderLink]);
+  useFetch(
+    calanderLink !== undefined
+      ? calanderLink
+      : "https://data.skct.edu.in/calender/",
+    ({ err, data }) => {
+      setCalData(data);
+    }
+  );
 
   return (
     <>

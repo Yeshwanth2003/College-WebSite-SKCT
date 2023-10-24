@@ -1,16 +1,13 @@
 import "./Style/Management.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import useFetch from "../../CustomHooks/useFetch";
 
 export default function Management(props) {
   const [principal, setPrincipal] = useState({});
 
-  useEffect(() => {
-    fetch("https://data.skct.edu.in/principal/")
-      .then((res) => res.json())
-      .then((dats) => {
-        setPrincipal(dats);
-      });
-  }, []);
+  useFetch("https://data.skct.edu.in/principal/", ({ err, data }) => {
+    setPrincipal(data);
+  });
 
   return (
     <>

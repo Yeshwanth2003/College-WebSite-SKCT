@@ -1,26 +1,23 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import useImport from "../../CustomHooks/useImport";
 import "./Style/skctMedia.css";
 
 export default function SKCTMedia() {
   let [mediaData, setMediaData] = useState([]);
   let [hoverImg, setHI] = useState(null);
-  let [overlayDisplay,setOVD] = useState("none")
+  let [overlayDisplay, setOVD] = useState("none");
 
-  useEffect(() => {
-    import("../../DataCenter/subComponentsData/Media@SKCT/mediaData").then(
-      (dats) => {
-        setMediaData(dats.default);
-      }
-    );
-  }, []);
+  useImport("subComponentsData/Media@SKCT/mediaData", ({ err, data }) => {
+    setMediaData(data);
+  });
 
   function closeHover() {
     setHI(null);
-    setOVD("none")
+    setOVD("none");
   }
   function setImagHover(val) {
     setHI(val);
-    setOVD("block")
+    setOVD("block");
   }
   return (
     <>
@@ -52,7 +49,10 @@ export default function SKCTMedia() {
                       </>
                     );
                   })}
-                <div className="skctMedia-hoverDiv-overlay" style={{display:overlayDisplay}}></div>
+                <div
+                  className="skctMedia-hoverDiv-overlay"
+                  style={{ display: overlayDisplay }}
+                ></div>
                 {hoverImg !== null && (
                   <div className="skctmedia-actbody-hoverdiv">
                     <div className="skctMedia-hover-body">

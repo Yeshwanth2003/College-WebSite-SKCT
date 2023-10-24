@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
+import useImport from "../../../CustomHooks/useImport";
 import "./Style/iic.css";
 
 export default function IIC() {
   let [iicData, setIICData] = useState([]);
 
-  useEffect(() => {
-    import("../../../DataCenter/subComponentsUpperData/iicData")
-      .then((dats) => {
-        setIICData(dats.default);
-      });
-  }, []);
+  useImport("subComponentsUpperData/iicData", ({ err, data }) => {
+    setIICData(data);
+  });
 
   useEffect(() => {
     if (iicData.length === 0) return;

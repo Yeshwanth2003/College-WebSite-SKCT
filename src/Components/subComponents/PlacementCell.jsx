@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import "./Style/placementCell.css";
 import React, { useEffect, useState, useCallback } from "react";
+import useImport from "../../CustomHooks/useImport";
 
 function Imageslider({ slides, fit = "cover", fill = "white" }) {
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -83,11 +84,13 @@ function Imageslider({ slides, fit = "cover", fill = "white" }) {
 
 export default function Placementcell(props) {
   const [phv, setPhv] = useState([]);
-  useEffect(() => {
-    import("../../DataCenter/subComponentsData/Placements/placementCell/placementCellData")
-      .then((response) => response.default)
-      .then((data) => setPhv(data));
-  }, []);
+
+  useImport(
+    "subComponentsData/Placements/placementCell/placementCellData",
+    ({ err, data }) => {
+      setPhv(data);
+    }
+  );
 
   const slides = [];
   const imgs = phv?.slide !== undefined && phv?.slide;

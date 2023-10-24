@@ -1,42 +1,40 @@
 import { useEffect, useState } from "react";
+import useImport from "../../CustomHooks/useImport";
 import "./Style/mous.css";
 
 export default function MoUs() {
+  let [mousData, setMousData] = useState([]);
+  let [mousDataCopy, setMousDataCopy] = useState([]);
 
-     let [mousData,setMousData] = useState([]);
-     let [mousDataCopy,setMousDataCopy] = useState([]);
+  useImport(
+    "subComponentsData/IndustryConnectData/mousData",
+    ({ err, data }) => {
+      data = data.reverse();
+      setMousData(data);
+      setMousDataCopy(data);
+    }
+  );
 
-     useEffect(()=>{
-      import("../../DataCenter/subComponentsData/IndustryConnectData/mousData")
-       .then(res=>res.default)
-       .then(dats=>{
-          dats = dats.reverse()
-          console.log();
-          setMousData(dats)
-          setMousDataCopy(dats)
-       })
-     },[])
-
-     function filterData(event){
-          let val = event.target.value;
-          setMousData(mousDataCopy.filter((elem,index)=>{
-               return(
-                    elem.date.includes(val) ||
-                    elem.industry.includes(val) ||
-                    elem.activity.includes(val) ||
-                    index.toString().includes(val)
-               )
-          }))
-     }
+  function filterData(event) {
+    let val = event.target.value;
+    setMousData(
+      mousDataCopy.filter((elem, index) => {
+        return (
+          elem.date.includes(val) ||
+          elem.industry.includes(val) ||
+          elem.activity.includes(val) ||
+          index.toString().includes(val)
+        );
+      })
+    );
+  }
 
   return (
     <>
       <div className="mous-wrapper">
         <div className="mous-container">
           <div className="mous-headingDiv">
-            <h2 className="mous-heading">
-              MOUS
-            </h2>
+            <h2 className="mous-heading">MOUS</h2>
           </div>
           <div className="mous-body">
             <div className="mous-searchDiv">
@@ -46,8 +44,8 @@ export default function MoUs() {
                     type="text"
                     className="mous-input"
                     placeholder="Search"
-                    onChange={(event)=>{
-                        filterData(event)
+                    onChange={(event) => {
+                      filterData(event);
                     }}
                   />
                 </div>
@@ -64,28 +62,31 @@ export default function MoUs() {
               </div>
             </div>
             <div className="mous-bodyContents">
-               <table className="mous-table">
-                    <thead className="mous-thead">
-                         <tr className="mous-trH">
-                              <td className="mous-tdH">S.NO</td>
-                              <td className="mous-tdH">Industry</td>
-                              <td className="mous-tdH">Date</td>
-                              <td className="mous-tdH">Outcome</td>
-                         </tr>
-                    </thead>
-                    <tbody className="mous-tbody">
-                         {
-                             mousData.length>0 &&
-                             mousData.map((elem,index)=>{
-                              return(
-                                   <>
-                                   <MousCata activity={elem.activity} date={elem.date} index={index+1} industry={elem.industry}/>
-                                   </>
-                              )
-                             })
-                         }
-                    </tbody>
-               </table>
+              <table className="mous-table">
+                <thead className="mous-thead">
+                  <tr className="mous-trH">
+                    <td className="mous-tdH">S.NO</td>
+                    <td className="mous-tdH">Industry</td>
+                    <td className="mous-tdH">Date</td>
+                    <td className="mous-tdH">Outcome</td>
+                  </tr>
+                </thead>
+                <tbody className="mous-tbody">
+                  {mousData.length > 0 &&
+                    mousData.map((elem, index) => {
+                      return (
+                        <>
+                          <MousCata
+                            activity={elem.activity}
+                            date={elem.date}
+                            index={index + 1}
+                            industry={elem.industry}
+                          />
+                        </>
+                      );
+                    })}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -94,15 +95,15 @@ export default function MoUs() {
   );
 }
 
-function MousCata({index,activity,date,industry}){
-     return(
-          <>
-          <tr className="mousCard-tr">
-               <td className="mousCard-td table-left-allign">{index}</td>
-               <td className="mousCard-td table-left-allign">{industry}</td>
-               <td className="mousCard-td">{date}</td>
-               <td className="mousCard-td table-left-allign">{activity}</td>
-          </tr>
-          </>
-     )
+function MousCata({ index, activity, date, industry }) {
+  return (
+    <>
+      <tr className="mousCard-tr">
+        <td className="mousCard-td table-left-allign">{index}</td>
+        <td className="mousCard-td table-left-allign">{industry}</td>
+        <td className="mousCard-td">{date}</td>
+        <td className="mousCard-td table-left-allign">{activity}</td>
+      </tr>
+    </>
+  );
 }

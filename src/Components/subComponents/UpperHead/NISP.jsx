@@ -1,19 +1,16 @@
 import { useEffect, useState } from "react";
+import useImport from "../../../CustomHooks/useImport";
 import "./Style/nisp.css";
 
 export default function NISP() {
   let [nispData, setNispData] = useState(null);
 
-  useEffect(() => {
-      import("../../../DataCenter/subComponentsUpperData/nispData")
-      .then((dats) => {
-        setNispData(dats.default);
-      });
-  }, []);
+  useImport("subComponentsUpperData/nispData", ({ err, data }) => {
+    setNispData(data);
+  });
 
   //   update Dom
   useEffect(() => {
-
     if (nispData === null) return;
     let aboutP = document.getElementById("nispAboutP");
     aboutP.innerHTML += nispData?.about;
@@ -27,7 +24,9 @@ export default function NISP() {
 
   function scroller(event) {
     let val = event.target.getAttribute("scrollto");
-    document.getElementById(val).scrollIntoView({behavior:"smooth", block: "center" });
+    document
+      .getElementById(val)
+      .scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
   return (

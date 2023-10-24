@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
+import useFetch from "../../CustomHooks/useFetch";
 import "./Style/cgallery.css";
 
 export default function CGallery() {
@@ -6,13 +7,9 @@ export default function CGallery() {
   let [currentImage, setCurrentImage] = useState(null);
   let [thisIndex, setThisIndex] = useState(0);
 
-  useEffect(() => {
-    fetch("https://data.skct.edu.in/cgallery/")
-      .then((res) => res.json())
-      .then((dats) => {
-        setGalleryData(dats.reverse());
-      });
-  }, []);
+  useFetch("https://data.skct.edu.in/cgallery/", ({ err, data }) => {
+    setGalleryData(data.reverse());
+  });
 
   const imgViewr = useCallback(
     function (link) {
@@ -114,7 +111,7 @@ function GalleryCard({ link, imgViewr, elemLink }) {
   return (
     <>
       <div className="cgallery-imgDiv" onClick={imgViewr.bind(this, elemLink)}>
-        <img src={link} alt="" className="cgallery-img" />
+        <img loading="lazy" src={link} alt="" className="cgallery-img" />
       </div>
     </>
   );

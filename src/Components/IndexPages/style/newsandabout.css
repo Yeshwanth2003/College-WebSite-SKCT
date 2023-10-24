@@ -1,6 +1,6 @@
 .nanda-wrapper {
   width: 100%;
-  height: 630px;
+  min-height: 630px;
   display: flex;
 }
 .nanda-headingdiv {

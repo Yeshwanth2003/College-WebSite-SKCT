@@ -1,18 +1,15 @@
 import "./Style/xmresult.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import useFetch from "../../CustomHooks/useFetch";
 
 // haveUsed xmResults since similar
 
 export default function XmResults() {
   let [xmResultData, setXmResultData] = useState([]);
 
-  useEffect(() => {
-    fetch("https://data.skct.edu.in/notify/")
-      .then((res) => res.json())
-      .then((dats) => {
-        setXmResultData(dats);
-      });
-  }, []);
+  useFetch("https://data.skct.edu.in/notify/", ({ err, data }) => {
+    setXmResultData(data);
+  });
 
   return (
     <>

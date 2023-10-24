@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
+import useImport from "../../CustomHooks/useImport";
 import "./Style/iprcell.css";
 
 export default function IPRcell() {
   let [iprData, setIPRData] = useState([]);
 
-  useEffect(() => {
-    import("../../DataCenter/subComponentsData/Research/ipccell/iprcellData")
-      .then((res) => res.default)
-      .then((dats) => {
-        setIPRData(dats);
-      });
-  }, []);
+  useImport(
+    "subComponentsData/Research/ipccell/iprcellData",
+    ({ err, data }) => {
+      setIPRData(data);
+    }
+  );
 
   useEffect(() => {
     if (iprData.length !== 0) {

@@ -40,6 +40,15 @@ export function DailyTable({ title, link, p1, p2, inpage, setCUrData }) {
   let [newsData, setNewsData] = useState([]);
   let [searchNewsData, setSearchNewsData] = useState([]);
 
+  // useFetch(
+  //   link !== undefined ? link : "https://data.skct.edu.in/skd",
+  //   ({ err, data }) => {
+  //     setCUrData(data);
+  //     setNewsData(data);
+  //     setSearchNewsData(data);
+  //   }
+  // );
+
   useEffect(() => {
     fetch(link !== undefined ? link : "https://data.skct.edu.in/skd")
       .then((res) => res.json())

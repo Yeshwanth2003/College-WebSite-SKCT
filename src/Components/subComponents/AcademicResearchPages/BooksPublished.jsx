@@ -1,21 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import useImport from "../../../CustomHooks/useImport";
 import "./styles/booksPublished.css";
 
 export default function BooksPublished() {
   let [bpData, setBpData] = useState([]);
   let [maniBpData, setManiBpData] = useState([]);
 
-  useEffect(() => {
-    import(
-      "../../../DataCenter/subComponentsData/Research/AcademicResearch/AcLOTData"
-    )
-      .then((res) => res.default)
-      .then((dats) => {
-        setManiBpData(dats.bookpub);
-        setBpData(dats.bookpub);
-      });
-  }, []);
-
+  useImport(
+    "subComponentsData/Research/AcademicResearch/AcLOTData",
+    ({ err, data }) => {
+      setManiBpData(data["bookpub"]);
+      setBpData(data["bookpub"]);
+    }
+  );
   function FilterResult(event) {
     let searchVal = event.target.value.trim();
     if (event.target.value.trim().length === 0) {
@@ -70,11 +67,16 @@ export default function BooksPublished() {
               </tr>
             </thead>
             <tbody className="bp-tbody">
-              {
-                bpData.map((elem,index)=>{
-                  return <BpRow index={index+1} name={elem.name}  top={elem.title} pd={elem.pdetails}/>;
-                })
-              }
+              {bpData.map((elem, index) => {
+                return (
+                  <BpRow
+                    index={index + 1}
+                    name={elem.name}
+                    top={elem.title}
+                    pd={elem.pdetails}
+                  />
+                );
+              })}
             </tbody>
           </table>
         </div>
@@ -82,15 +84,15 @@ export default function BooksPublished() {
     </>
   );
 }
-function BpRow({index,name,top,pd}){
-  return(
+function BpRow({ index, name, top, pd }) {
+  return (
     <>
-    <tr className="bprow-tr">
-      <td className="bprow-td">{index}</td>
-      <td className="bprow-td">{name}</td>
-      <td className="bprow-td">{top}</td>
-      <td className="bprow-td">{pd}</td>
-    </tr>
+      <tr className="bprow-tr">
+        <td className="bprow-td">{index}</td>
+        <td className="bprow-td">{name}</td>
+        <td className="bprow-td">{top}</td>
+        <td className="bprow-td">{pd}</td>
+      </tr>
     </>
-  )
+  );
 }

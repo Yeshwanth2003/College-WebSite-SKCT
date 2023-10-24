@@ -39,6 +39,13 @@ function DeptCard({ link, img, name }) {
           <div className="i-c-info">
             <h3>{name}</h3>
           </div>
+          <div className="i-c-dept-desc">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
+              dolores atque aliquid tempora porro suscipit iste natus ipsam
+              possimus ratione?
+            </p>
+          </div>
         </div>
       </div>
     </>

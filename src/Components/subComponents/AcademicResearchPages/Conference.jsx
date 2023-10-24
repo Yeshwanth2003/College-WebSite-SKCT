@@ -1,20 +1,18 @@
 import { useEffect, useState } from "react";
+import useImport from "../../../CustomHooks/useImport";
 import "./styles/conference.css";
 
 export default function Conference() {
   let [conData, setConData] = useState([]);
   let [conMainData, setConMainData] = useState([]);
 
-  useEffect(() => {
-    import(
-      "../../../DataCenter/subComponentsData/Research/AcademicResearch/AcLOTData"
-    )
-      .then((res) => res.default)
-      .then((dats) => {
-        setConMainData(dats.conference);
-        setConData(dats.conference);
-      });
-  }, []);
+  useImport(
+    "subComponentsData/Research/AcademicResearch/AcLOTData",
+    ({ err, data }) => {
+      setConMainData(data.conference);
+      setConData(data.conference);
+    }
+  );
 
   function OnSearch(event) {
     let sval = event.target.value.trim();

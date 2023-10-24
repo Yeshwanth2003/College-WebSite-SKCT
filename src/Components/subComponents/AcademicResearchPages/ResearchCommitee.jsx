@@ -1,15 +1,14 @@
-import { useEffect } from "react";
+import useImport from "../../../CustomHooks/useImport";
 import "./styles/researchcommitee.css";
 
 export default function ResearchCommitee() {
-  useEffect(() => {
-    import(
-      "../../../DataCenter/subComponentsData/Research/AcademicResearch/People"
-    ).then((res) => {
+  useImport(
+    "subComponentsData/Research/AcademicResearch/People",
+    ({ err, data }) => {
       const resComm = document.querySelector("#resComm");
-      resComm.innerHTML = res.default.content;
-    });
-  }, []);
+      resComm.innerHTML = data.content;
+    }
+  );
 
   return (
     <>

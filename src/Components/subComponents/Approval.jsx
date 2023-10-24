@@ -1,12 +1,11 @@
 import { useState } from "react";
-import useFetch from "../../CustomHooks/useFetch";
+import useImport from "../../CustomHooks/useImport";
 import "./Style/approval.css";
 
 export default function Approval() {
   let [approvalData, setAppovalData] = useState([]);
 
-  useFetch("https://data.skct.edu.in/approvals", function ({ err, data }) {
-    if (err) return;
+  useImport("subComponentsData/Approval/approvalData.js", ({ err, data }) => {
     createJSON(data);
   });
   // cluster maker

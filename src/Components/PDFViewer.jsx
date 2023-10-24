@@ -1,21 +1,17 @@
-import { useEffect, useState } from "react"
-import './Style/pdfViewer.css'
+import { useState } from "react";
+import useImport from "../CustomHooks/useImport";
+import "./Style/pdfViewer.css";
 
-export default function PDFViewer({link}){
+export default function PDFViewer({ link }) {
+  let [PDF, setPDF] = useState(null);
 
-     let [PDF,setPDF] = useState(null);
+  useImport(`CommonPDF/${link}`, ({ err, data }) => {
+    setPDF(data);
+  });
 
-     useEffect(()=>{
-         
-       import(`../DataCenter/CommonPDF/${link}`)
-       .then(res=>{
-          setPDF(res.default)
-       })
-     },[link])
-
-     return(
-          <>
-          <embed type="application/pdf" src={PDF}></embed>
-          </>
-     )
+  return (
+    <>
+      <embed type="application/pdf" src={PDF}></embed>
+    </>
+  );
 }

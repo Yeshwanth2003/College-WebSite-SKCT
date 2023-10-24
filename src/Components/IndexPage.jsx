@@ -7,6 +7,7 @@ import CampusView from "./IndexPages/CampusView";
 import NewsAndAbout from "./IndexPages/NewsAndAbout";
 import EventsAndMainRunner from "./IndexPages/EventsAndMainRunner";
 import Courses from "./IndexPages/Courses";
+import useImport from "../CustomHooks/useImport";
 import "./Style/indexpage.css";
 
 export default function Indexpage() {
@@ -16,23 +17,16 @@ export default function Indexpage() {
   let [eventsData, setEventsData] = useState([]);
   let [announcementData, setAnnouncementData] = useState([]);
 
-  useEffect(() => {
-    fetch("https://data.skct.edu.in/homeone/?format=json")
-      .then((res) => res.json())
-      .then((dats) => {
-        setRecData(dats["rec"]);
-        setAlumniData(dats["test"]);
-      });
-  }, []);
-  useEffect(() => {
-    fetch("https://data.skct.edu.in/home/?format=json")
-      .then((res) => res.json())
-      .then((dats) => {
-        setEventsData(dats[0]["events"].reverse());
-        setNewsData(dats[0]["news"]);
-        setAnnouncementData(dats[0]["announcements"].reverse());
-      });
-  }, []);
+  useImport("IndexData/home.js", ({ err, data }) => {
+    setEventsData(data[0]["events"].reverse());
+    setNewsData(data[0]["news"]);
+    setAnnouncementData(data[0]["announcements"].reverse());
+  });
+
+  useImport("IndexData/homeone.js", ({ err, data }) => {
+    setRecData(data["rec"]);
+    setAlumniData(data["test"]);
+  });
 
   return (
     <>
@@ -43,7 +37,7 @@ export default function Indexpage() {
       <ContextTag.Provider value={{ newsData }}>
         <NewsAndAbout />
       </ContextTag.Provider>
-      {/* <Courses /> */}
+      <Courses />
       <CampusView />
       <ContextTag.Provider value={{ alumniData }}>
         <Alumni />

@@ -1,72 +1,72 @@
-.proffasso-wrapper{
-     width: 100%;
-     height: fit-content;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     font-size: 1em;
+.proffasso-wrapper {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
 }
-.proffasso-content{
-     width: 98%;
-     height: max-content;
+.proffasso-content {
+  width: 98%;
+  height: max-content;
 }
-.proffasso-headingDiv{
-     height: 80px;
-     /* background-color: honeydew; */
-     display: flex;
-     align-items: center;
+.proffasso-headingDiv {
+  height: 80px;
+  /* background-color: honeydew; */
+  display: flex;
+  align-items: center;
 }
-.proffasso-h2{
-     color: #e67e22;
+.proffasso-h2 {
+  color: #e67e22;
   font-family: sans-serif;
   margin: 0 2%;
   white-space: normal;
 }
-.proffasso-body{
-     /* background-color: goldenrod; */
-     height: max-content;
-     margin: 20px 0;
-     display: flex;
-     justify-content: center;
-     align-items: center;
+.proffasso-body {
+  /* background-color: goldenrod; */
+  height: max-content;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.proffasso-table{
-     background-color: rgb(167, 164, 164);
-     width: 70%;
+.proffasso-table {
+  background-color: rgb(167, 164, 164);
+  width: 70%;
 }
 .proffasso-headRow,
-.proffCard-tbody-row{
-     height: 40px;
-     background-color: white;
-     text-align: center;
-     font-family: sans-serif;
-     font-size: 0.895em;
+.proffCard-tbody-row {
+  height: 40px;
+  background-color: white;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 0.895em;
 }
-.proffasso-headRow{
-     background-color: rgb(202, 248, 248);
+.proffasso-headRow {
+  background-color: rgb(202, 248, 248);
 }
-.proffasso-headRow{
-     font-size: 1.1em;
+.proffasso-headRow {
+  font-size: 1.1em;
 }
-.proffCard-tbody-row:hover{
-     background-color: rgb(239, 237, 237);
+.proffCard-tbody-row:hover {
+  background-color: rgb(239, 237, 237);
 }
-.proffCard-tbody-data{
-     /* background-color: seagreen; */
-     min-width: 100px;
-     max-width: max-content;
-     padding: 10px 10px;
-
+.proffCard-tbody-data {
+  /* background-color: seagreen; */
+  min-width: 100px;
+  max-width: max-content;
+  padding: 10px 10px;
 }
 
 @media (max-device-width: 1100px), (width<1100px) {
-     .proffCard-tbody-data{
-          min-width: 200px;
-     }
-     .proffasso-body{
-          overflow-x: scroll;
-     }
-     .proffasso-table{
-          width: 90%;
-     }
+  .proffCard-tbody-data {
+    min-width: 200px;
+  }
+  .proffasso-body {
+    overflow-x: scroll;
+    justify-content: start;
+  }
+  .proffasso-table {
+    width: 90%;
+  }
 }

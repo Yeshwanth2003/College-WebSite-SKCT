@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   font-family: sans-serif;
+  /* background-color: red; */
 }
 .iic-contents {
   width: 97%;
@@ -34,7 +35,7 @@
 .iic-about-p {
   text-align: justify;
 }
-.iic-people-div{
+.iic-people-div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,7 +53,7 @@
   border: 1px solid gray;
   padding: 15px 10px;
 }
-.iic-people-div th{
+.iic-people-div th {
   background-color: rgb(221, 242, 242);
 }
 .iicCalCard-wrapper {
@@ -103,14 +104,17 @@
 .iic-people-div::-webkit-scrollbar {
   display: none;
 }
-.iic-people-div td{
+.iic-people-div td {
   text-align: left;
 }
 @media (max-device-width: 1100px), (width<1100px) {
   .iic-contents {
     width: 93%;
   }
-  .iic-people-div table{
+  .iic-people-div {
+    align-items: start;
+  }
+  .iic-people-div table {
     width: 98%;
   }
 }

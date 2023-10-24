@@ -11,6 +11,11 @@ export default function useImport(P_ATH, CALL_BACK) {
         (ERROR) => {
           CALL_BACK({ err: ERROR ? ERROR : "something occured", data: null });
         }
-      );
-  }, [P_ATH, CALL_BACK]);
+      )
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 }

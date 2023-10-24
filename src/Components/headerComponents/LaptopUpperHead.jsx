@@ -16,13 +16,13 @@ export default function LaptopUpperHead() {
         <li className="laptopHeader-upperLink-li">
           <div className="laptopHeader-upperLink-contentDiv">
             <h5>
-              <Link
-                to={"/IQAC"}
+              <a
+                href={"/iqac.html"}
                 className="laptopHeader-addLink"
                 style={{ color: "gold" }}
               >
                 IQAC
-              </Link>
+              </a>
             </h5>
           </div>
         </li>

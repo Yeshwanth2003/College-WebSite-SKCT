@@ -1,5 +1,6 @@
 import "./Style/library.css";
 import React, { useEffect, useState, useCallback } from "react";
+import useImport from "../../CustomHooks/useImport";
 
 function Scrollmenu({ title, sections }) {
   const scrollto = (id) => {
@@ -108,6 +109,7 @@ function Imageslider({ slides, fit = "cover", fill = "white" }) {
                 key={id}
                 src={`https://data.skct.edu.in${slide?.img}`}
                 alt={`${slide?.name}`}
+                loading="lazy"
                 style={{
                   objectFit: fit,
                 }}
@@ -172,11 +174,10 @@ export default function Library(props) {
   ];
 
   const [lib, setLib] = useState({});
-  useEffect(() => {
-    fetch("https://data.skct.edu.in/library/?format=json")
-      .then((response) => response.json())
-      .then((data) => setLib(data));
-  }, []);
+
+  useImport("subComponentsData/LibraryData/librarydata.js", ({ err, data }) => {
+    setLib(data);
+  });
 
   const slides = [];
   const imgs = lib?.img !== undefined && lib?.img;

@@ -1,42 +1,43 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import "./Style/xmForm.css";
-import {Link, Route, Routes} from 'react-router-dom'
+import { Link, Route, Routes } from "react-router-dom";
 import Loading from "../Loading";
+import useImport from "../../CustomHooks/useImport";
 
 export default function XmForm() {
   return <XmFormRouter />;
 }
 
-function XmFormRouter(){
-  return(
+function XmFormRouter() {
+  return (
     <>
-    <Routes>
-      <Route path="*" element={<XmFormDefault />} />
-      <Route path="/info/*" element={(()=>{
-        let Component = lazy(()=>import("./XmForms/FormIndex"))
-        return(
-          <>
-          <Suspense fallback={<Loading />}>
-                <Component />
-          </Suspense>
-          </>
-        )
-      })()} />
-    </Routes>
+      <Routes>
+        <Route path="*" element={<XmFormDefault />} />
+        <Route
+          path="/info/*"
+          element={(() => {
+            let Component = lazy(() => import("./XmForms/FormIndex"));
+            return (
+              <>
+                <Suspense fallback={<Loading />}>
+                  <Component />
+                </Suspense>
+              </>
+            );
+          })()}
+        />
+      </Routes>
     </>
-  )
+  );
 }
 
 function XmFormDefault() {
   let [fD, setFd] = useState([]);
 
-  useEffect(() => {
-    fetch("https://data.skct.edu.in/form/")
-      .then((res) => res.json())
-      .then((dats) => {
-        setFd(dats);
-      });
-  }, []);
+  useImport("subComponentsData/XmForm/form.js", ({ err, data }) => {
+    setFd(data);
+  });
+
   return (
     <>
       <div className="xmf-wrapper">

@@ -1,5 +1,6 @@
 import "./Style/sports.css";
 import React, { useEffect, useState, useCallback } from "react";
+import useImport from "../../CustomHooks/useImport";
 
 function Scrollmenu({ title, sections }) {
   const scrollto = (id) => {
@@ -42,7 +43,7 @@ function Scrollmenu({ title, sections }) {
   );
 }
 
-function Imageslider({ slides=[], fit = "cover", fill = "white" }) {
+function Imageslider({ slides = [], fit = "cover", fill = "white" }) {
   const [currentIdx, setCurrentIdx] = useState(0);
 
   const goToPrev = () => {
@@ -108,6 +109,7 @@ function Imageslider({ slides=[], fit = "cover", fill = "white" }) {
                 key={id}
                 src={`https://data.skct.edu.in${slide?.img}`}
                 alt={`${slide?.name}`}
+                loading="lazy"
                 style={{
                   objectFit: fit,
                 }}
@@ -145,6 +147,7 @@ function Accordion({ des, name, imgs }) {
             {imgs?.map((img, id) => (
               <div key={id} className="description-img">
                 <img
+                  loading="lazy"
                   src={`https://data.skct.edu.in${
                     img.img === undefined ? img : img.img
                   }`}
@@ -169,11 +172,10 @@ export default function Sports(props) {
   ];
 
   const [sports, setSports] = useState({});
-  useEffect(() => {
-    fetch("https://data.skct.edu.in/college_sports/?format=json")
-      .then((response) => response.json())
-      .then((data) => setSports(data));
-  }, []);
+
+  useImport("subComponentsData/sportsData/sportsData.js", ({ err, data }) => {
+    setSports(data);
+  });
 
   const slides = sports?.slider;
 

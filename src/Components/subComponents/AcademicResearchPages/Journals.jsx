@@ -1,20 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import useImport from "../../../CustomHooks/useImport";
 import "./styles/journals.css";
 
 export default function Journals() {
   let [jData, setJData] = useState([]);
   let [jMData, setJMData] = useState([]);
 
-  useEffect(() => {
-    import(
-      "../../../DataCenter/subComponentsData/Research/AcademicResearch/AcLOTData"
-    )
-      .then((res) => res.default)
-      .then((dats) => {
-        setJData(dats.publication);
-        setJMData(dats.publication);
-      });
-  }, []);
+  useImport(
+    "subComponentsData/Research/AcademicResearch/AcLOTData",
+    ({ err, data }) => {
+      setJData(data.publication);
+      setJMData(data.publication);
+    }
+  );
 
   function OnSearch(event) {
     let sValue = event.target.value.trim();
